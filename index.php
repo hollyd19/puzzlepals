@@ -280,10 +280,15 @@ function sort_puzzles($user){
 		$images_name= $puzzle[0];
 		$puzzle_size= $level;
 		if ($puzzle_size=="9"){
+                        echo "<p> easy images: $images_name </p>"; 
 			array_push($easy, $images_name);
 		} elseif($puzzle_size=="25"){
+                                          echo "<p> med images: $images_name </p>"; 
+
 			array_push($medium, $images_name);
 		} elseif($puzzle_size=="49"){
+                                          echo "<p> hard images: $images_name </p>"; 
+
 			array_push($hard, $images_name);
 		}
 	}
