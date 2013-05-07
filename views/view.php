@@ -1,6 +1,6 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div class="content">
-     <h5><a href= "landing-form.php">Go back to home</a></h5>
+     <h5><a href= "index.php">Go back to home</a></h5>
 
     <div id="box">
      <?php

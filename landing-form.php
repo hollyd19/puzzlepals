@@ -1,15 +1,15 @@
 <?php
 require("functions.php");
 
-function sort_puzzles(){
-	$in_progress_puzzles= query_puzzles();
+function sort_puzzles($user){
+	$in_progress_puzzles= query_puzzles($user);
 	$easy=array();
 	$medium=array();
 	$hard=array();
-	foreach ($in_progress_puzzles as $in_progress_puzzle){
-		$puzzle= explode("_", $in_progress_puzzle);
+	foreach ($in_progress_puzzles as $in_progress_puzzle=>$level){
+		$puzzle= explode(".", $in_progress_puzzle);
 		$images_name= $puzzle[0];
-		$puzzle_size= $puzzle[1];
+		$puzzle_size= $level;
 		if ($puzzle_size=="9"){
 			array_push($easy, $images_name);
 		} elseif($puzzle_size=="25"){
@@ -21,7 +21,7 @@ function sort_puzzles(){
 	return array($easy, $medium, $hard);
 }
 
-list($easy, $medium, $hard)= sort_puzzles();
+list($easy, $medium, $hard)= sort_puzzles($user);
 
 require("views/landing_header.php");
 require("views/landing_form_view.php");
