@@ -261,7 +261,9 @@ $app_name = idx($app_info, 'name', '');
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
       </div>
       </header>
-      <?php } ?>
+      <?php }
+      echo $user_id;
+      ?>
       
       <?php
       
