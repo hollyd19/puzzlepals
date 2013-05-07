@@ -276,7 +276,8 @@ function sort_puzzles($user){
 	$medium=array();
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
-                echo $item["name"];
+                echo "hello"; 
+                echo $item;
                 echo "<br/>";
                 echo $item["level"];
                 echo "<br/>";

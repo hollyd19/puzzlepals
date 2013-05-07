@@ -143,16 +143,11 @@
 		$query= array("users"=>array('$in'=>array($user))); 
 		$cursor=$collection->find($query);
 		$results= array();
+		$a=0; 
 		foreach($cursor as $document){
-			echo "<p>"; 
-			echo $document['imageURL'];
-			echo "<br/>"; 
-			echo $document['level'];
-						echo "<br/>"; 
-
-			echo $document['_id'];
-			echo "</p>"; 
-			$result[$document['imageURL']] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']); 
+			
+			$result[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']); 
+			$a++; 
 		}
 	}
 	
