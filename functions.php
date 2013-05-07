@@ -146,7 +146,7 @@
 		foreach($cursor as $document){
 			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']);
 			$var=$results[$a];
-			echo "<p>level: $var["level"] </p>"; 
+			echo "<p>level: ".$var['level']." </p>"; 
 			$a++; 
 		}
 		return $results; 
