@@ -139,10 +139,19 @@
 	
 	function get_users_puzzle($user, $db){
 		$collection=$db->puzzle;
+		echo $user; 
 		$query= array("users"=>array('$in'=>array($user))); 
 		$cursor=$collection->find($query);
 		$results= array();
 		foreach($cursor as $document){
+			echo "<p>"; 
+			echo $document['imageURL'];
+			echo "<br/>"; 
+			echo $document['level'];
+						echo "<br/>"; 
+
+			echo $document['_id'];
+			echo "</p>"; 
 			$result[$document['imageURL']] = array($document['level'], $document['_id']); 
 		}
 	}
@@ -165,6 +174,7 @@
 	function query_puzzles($user){
 		$db_info=connect_to_db();
 		$db=$db_info['db_name'];
+		echo $user; 
 		$result= get_users_puzzle($user, $db);
 		return $result;
 	}
