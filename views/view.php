@@ -9,7 +9,7 @@
 		<input type="text" value="User ID" name="user_ids" />
 	</p>-->
 	<p>
-		<input type="button" class="btn btn-primary" onclick="Send Request to Many Users with MFS" value="MFS"/>
+		<input type="button" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Send Request to Many Users with MFS"/>
 	</p>
 	 
     <div id="box">
