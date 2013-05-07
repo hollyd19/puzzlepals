@@ -179,18 +179,11 @@
 		$collection->remove(array("puzzleID"=>$puzzle_id));
 	}
 	
-	function sendRequestToRecipients() {
-		var user_ids = document.getElementsByName("user_ids")[0].value;
-		FB.ui({method: 'apprequests', message: 'Request message goes here', to: user_ids}, requestCallback);
+	function update_puzzle_users($puzzle_id, $db, $new_user){
+		$collection=$db->puzzle;
+		$new_data = array('$addToSet' => array("users" => $new_user));
+		$cursor= $collection->update(array("_id"=>$puzzle_id), $new_data);
 	}
-	
-	function sendRequestViaMultiFriendSelector() {
-		FB.ui({method: 'apprequests', message: 'MFS message goes here'}, requestCallback);
-	}
-	
-	function requestCallback(response){
-		//Handle callback here
-	}
-	
+
 
 ?>

@@ -4,19 +4,13 @@
 
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
-	<p>
+	<!--<p>
 		<input type="button" class="btn btn-primary" onclick="sendRequestToRecipients(); return false;" value="Send Request to Users Directly"/>
 		<input type="text" value="User ID" name="user_ids" />
-	</p>
+	</p>-->
 	<p>
-		<input type="button" class="btn btn-primary" onclick="Send Request to Many Users with MFS"/>
+		<input type="button" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Send Request to Many Users with MFS"/>
 	</p>
-	<script>';
-		FB.init({
-			appID : "311774552286219", 
-			frictionlessRequests: true
-		});
-	</script>'
 	 
     <div id="box">
      <?php

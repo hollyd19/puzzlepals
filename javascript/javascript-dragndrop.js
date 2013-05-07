@@ -200,16 +200,17 @@ function getRandomInt (min, max, left) {
         }
         
     }
-    return result;
+    return result
 }
 
-function get_all_piece_info(puzzle_name){
+function get_all_piece_info(){
+	var puzzle_name=$("input[name=p-id]").val();
+		console.log(puzzle_name); 
 	$('.piece img').each(function(){
 		var x=$(this).offset().left;
 		var y=$(this).offset().top;
 		var info=$(this).attr("src");
 		var info_array=info.split("/");
-		var puzzle_name=info_array[1];
 		var piece_id_info=info_array[2];
 		piece_id_info=piece_id_info.split(".");
 		var piece_id=piece_id_info[0];
@@ -349,4 +350,18 @@ function enable_scrollbar() {
 		railVisible: true
 	});
 }
+
+function sendRequestToRecipients() {
+	var user_ids = document.getElementsByName("user_ids")[0].value;
+	FB.ui({method: 'apprequests', message: 'Request message goes here', to: user_ids}, requestCallback);
+}
+
+function sendRequestViaMultiFriendSelector() {
+	FB.ui({method: 'apprequests', message: 'MFS message goes here'}, requestCallback);
+}
+
+function requestCallback(response){
+	//Handle callback here
+}
+
 
