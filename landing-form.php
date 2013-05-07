@@ -1,8 +1,8 @@
 <?php
 require("functions.php");
 
-function sort_puzzles(){
-	$in_progress_puzzles= query_puzzles();
+function sort_puzzles($user){
+	$in_progress_puzzles= query_puzzles($user);
 	$easy=array();
 	$medium=array();
 	$hard=array();
@@ -21,7 +21,7 @@ function sort_puzzles(){
 	return array($easy, $medium, $hard);
 }
 
-list($easy, $medium, $hard)= sort_puzzles();
+list($easy, $medium, $hard)= sort_puzzles($user);
 
 require("views/landing_header.php");
 require("views/landing_form_view.php");

@@ -267,8 +267,8 @@ $app_name = idx($app_info, 'name', '');
       
 require("functions.php");
 
-function sort_puzzles(){
-	$in_progress_puzzles= query_puzzles();
+function sort_puzzles($user){
+	$in_progress_puzzles= query_puzzles($user);
 	$easy=array();
 	$medium=array();
 	$hard=array();
@@ -287,7 +287,7 @@ function sort_puzzles(){
 	return array($easy, $medium, $hard);
 }
 
-list($easy, $medium, $hard)= sort_puzzles();
+list($easy, $medium, $hard)= sort_puzzles($user_id);
 
 require("views/landing_form_view.php");
 
