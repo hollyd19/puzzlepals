@@ -57,6 +57,17 @@ try {
 		echo $collection;
 	}*/
 	
+	$collection_test= $db->puzzle;
+	$cursor= $collection_test=>find();
+	foreach($cursor as $document){
+		echo "<ul>";
+		$doc=$document['users'];
+		foreach($doc as $item) {
+			echo "<li>$item</li>";
+		}
+		echo "</ul>";
+	}
+	
 	$collection_test= $db->people;
 	/*$document= array("title"=>"First element added", "attempting"=>"Taylor");
 	$collection_test->insert($document);*/
