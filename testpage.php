@@ -34,23 +34,40 @@ try {
 		echo "<p>$document['img_url'] </p>";
 	}*/
 	
- 	$collection = $db->command(array("create" => "Test"));
- 	
- 	$list = $db->listCollections();
+ 	$collection = $db->command(array("create" => "puzzle"));
+ 	include("functions.php");
+	$one= array("taylor", "nicole");
+	$two= array("holly", "nicole");
+	$three= array("nicole", "bobby");
+	$four = array("bobby", "taylor", "nicole");
+	$five = array("bobby");
+	$six= array("nicole");
+	add_new_puzzle($one, "pizzal", $db);
+	add_new_puzzle($two, "pizzal", $db);
+	add_new_puzzle($three, "pizzal", $db);
+	add_new_puzzle($four, "pizzal", $db);
+	add_new_puzzle($five, "pizzal", $db);
+	add_new_puzzle($six, "pizzal", $db);
+	
+	get_users_puzzle("nicole", $db);
+	
+ 	/*$list = $db->listCollections();
 	
 	foreach ($list as $collection) {
 		echo $collection;
-	}
+	}*/
 	
 	$collection_test= $db->people;
 	/*$document= array("title"=>"First element added", "attempting"=>"Taylor");
 	$collection_test->insert($document);*/
 	
-	$cursor= $collection_test->find(array("title"=>"Taylor", "age"=>"21"));
+	/*$cursor= $collection_test->find(array("title"=>"Taylor", "age"=>"21"));
 	foreach($cursor as $document){
 		echo $document["title"] ."\n";
 		echo $document["age"]. "\n";
-	}
+	}*/
+	
+	
  	
   } catch ( MongoConnectionException $e ) {
     die('Error connecting to MongoDB server');
@@ -61,13 +78,6 @@ try {
   }
 ?>
 
-	<?php
-		echo "<img src=\"images/babyandpup.jpg\" alt=\"hello\"/>"; 
-		$image= new Imagick("images/babyandpup.jpg");
-		$image->thumbnailImage(100, 0);
-
-		echo $image;
-		echo "hello";
-	?>
+	
   </body>
 </html>

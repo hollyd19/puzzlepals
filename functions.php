@@ -84,9 +84,9 @@
 	}
 	
 
-	function add_new_puzzle($users, $db){
+	function add_new_puzzle($users, $imageURL, $db){
 		$collection=$db->puzzle;
-		$document= array("users"=>$users, "completed"=>"false");
+		$document= array("users"=>$users, "imageURL"=>$imageURL, "completed"=>"false");
 		$collection->insert($document);
 		return $document['_id']; 
 	}
@@ -135,6 +135,22 @@
 			array_push($result, $document["correctLOCATION"]);
 		}
 		return $result;
+	}
+	
+	function get_users_puzzle($user, $db){
+		$collection=$db->puzzle;
+		$query= array("users"=>array('$in'=>array($user))); 
+		$cursor=$collection->find($query);
+		foreach($cursor as $document){
+			echo "<p>Users</p>";
+			$var= $document['users'];
+			echo "<ul>";
+			foreach($var as $item){
+				echo "<li>$item</li>";
+			}
+			echo "<p> ID :".$document['_id']." </p>";
+			echo "</ul>"; 
+		}
 	}
 	
 	function get_puzzle($puzzle_name, $db){
