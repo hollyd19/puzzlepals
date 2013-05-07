@@ -270,7 +270,6 @@ $app_name = idx($app_info, 'name', '');
 require("functions.php");
 
 function sort_puzzles($user){
-        echo $user; 
 	$in_progress_puzzles= query_puzzles($user);
 	$easy=array();
 	$medium=array();

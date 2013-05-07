@@ -149,6 +149,7 @@
 			$result[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']); 
 			$a++; 
 		}
+		return result; 
 	}
 	
 	function get_puzzle($puzzle_name, $db){
