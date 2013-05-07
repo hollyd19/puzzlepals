@@ -49,7 +49,7 @@ try {
 	add_new_puzzle($five, "pizzal", $db);
 	add_new_puzzle($six, "pizzal", $db);
 	
-	get_users_puzzle("nicole", $db);
+	get_users_puzzle("", $db);
 	
  	/*$list = $db->listCollections();
 	
@@ -57,7 +57,8 @@ try {
 		echo $collection;
 	}*/
 	
-	$collection_test= $db->people;
+	$collection_test= $db->puzzle;
+	$cursor(puzzle)
 	/*$document= array("title"=>"First element added", "attempting"=>"Taylor");
 	$collection_test->insert($document);*/
 	
