@@ -359,6 +359,9 @@ function sendRequestViaMultiFriendSelector() {
 
 function requestCallback(response){
 	//Handle callback here
+	if((response != null) &&(response != false)) {
+      alert('User Accepts');
+    }
 }
 
 
