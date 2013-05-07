@@ -24,7 +24,7 @@ try {
  		$collection= $db->puzzle_piece;
  		$collection->insert($document);
  	}
- 	/*add_puzzle_piece("this is the id", 0, 0, "images/imgs.jpeg");
+ 	add_puzzle_piece("this is the id", 0, 0, "images/imgs.jpeg");
  	$collection= $db->puzzle_piece;
  	$cursor= $collection->find();
 	foreach($cursor as $document){
@@ -32,11 +32,11 @@ try {
 		echo '<p>$document["x_currrent"]</p>';
 		echo '<p>$document["x_final"]</p>';
 		echo "<p>$document['img_url'] </p>";
-	}*/
+	}
 	
  	$collection = $db->command(array("create" => "puzzle"));
  	include("functions.php");
-	$one= array("taylor", "nicole");
+	/*$one= array("taylor", "nicole");
 	$two= array("holly", "nicole");
 	$three= array("nicole", "bobby");
 	$four = array("bobby", "taylor", "nicole");
@@ -51,7 +51,7 @@ try {
 	
 	get_users_puzzle("nicole", $db);
 	
- 	/*$list = $db->listCollections();
+ 	$list = $db->listCollections();
 	
 	foreach ($list as $collection) {
 		echo $collection;
