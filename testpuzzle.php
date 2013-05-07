@@ -29,7 +29,11 @@ if (isset($_POST['create'])){
 	$img_w_ext = explode(".", $imgexp[2]);
 	$puzzle_name = $img_w_ext[0]. "_" . $_POST['puzzle_size'];
 	list($images, $width, $height)= make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name);
-	$puzzle_string=""; 
+	
+    
+    require("views/header.php");
+    
+    $puzzle_string=""; 
       include("functions.php");
     $db_info=connect_to_db();
     if($db_info['connected']){
@@ -42,8 +46,6 @@ if (isset($_POST['create'])){
 	
 	<input type="hidden" name="p-id" value="<?php echo $puzzle_string; ?>"/>
 <?php    }
-    
-    require("views/header.php");
   
 }
 
