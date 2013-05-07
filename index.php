@@ -250,7 +250,21 @@ $app_name = idx($app_info, 'name', '');
         </div>
       </div>
       </header>
-<?php
+      
+      
+      
+    
+<?php } else { ?>
+
+      <div>
+        <h1>Welcome</h1>
+        <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
+      </div>
+      </header>
+      <?php } ?>
+      
+      
+      <?php
 require("functions.php");
 
 function sort_puzzles(){
@@ -278,18 +292,7 @@ list($easy, $medium, $hard)= sort_puzzles();
 require("views/landing_form_view.php");
 
 
-?>      
-      
-      
-    
-<?php } else { ?>
-
-      <div>
-        <h1>Welcome</h1>
-        <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
-      </div>
-      </header>
-      <?php } ?>
+?>
     
   </body>
 </html>
