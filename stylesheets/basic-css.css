@@ -25,3 +25,7 @@
       float: left;
   }
   
+  
+  #frozen_div {
+    min-width: 1200px;
+  }
