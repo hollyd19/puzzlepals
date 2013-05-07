@@ -72,8 +72,10 @@ $(document).ready(function () {
     /*LINKS TO TEST PUZZLE*/
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
+	var name_id= puzzle_name.split("--");
 	////console.log(puzzle_name); 
-	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
+	$("input[name=\"in_prog_puzzle\"]").val(name_id[0]);
+	$("input[name=\"id\"]").val(name_id[1]);
 	return true; 
     })
 });
@@ -198,16 +200,17 @@ function getRandomInt (min, max, left) {
         }
         
     }
-    return result;
+    return result
 }
 
-function get_all_piece_info(puzzle_name){
+function get_all_piece_info(){
+	var puzzle_name=$("input[name=p-id]").val();
+		console.log(puzzle_name); 
 	$('.piece img').each(function(){
 		var x=$(this).offset().left;
 		var y=$(this).offset().top;
 		var info=$(this).attr("src");
 		var info_array=info.split("/");
-		var puzzle_name=info_array[1];
 		var piece_id_info=info_array[2];
 		piece_id_info=piece_id_info.split(".");
 		var piece_id=piece_id_info[0];
@@ -230,7 +233,7 @@ function get_new_location() {
 	var y=p.offset().top;
 	var info=p.attr("src");
 	var info_array=info.split("/");
-	var puzzle_name=info_array[1];
+	var puzzle_name=$("input[name=p-id]").val();
 	var piece_id_info=info_array[2];
 	piece_id_info=piece_id_info.split(".");
 	var piece_id=piece_id_info[0];

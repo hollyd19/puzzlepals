@@ -139,11 +139,20 @@
 	
 	function get_users_puzzle($user, $db){
 		$collection=$db->puzzle;
+		echo $user; 
 		$query= array("users"=>array('$in'=>array($user))); 
 		$cursor=$collection->find($query);
 		$results= array();
 		foreach($cursor as $document){
-			$result[$document['imageURL']] = $document['level']; 
+			echo "<p>"; 
+			echo $document['imageURL'];
+			echo "<br/>"; 
+			echo $document['level'];
+						echo "<br/>"; 
+
+			echo $document['_id'];
+			echo "</p>"; 
+			$result[$document['imageURL']] = array($document['level'], $document['_id']); 
 		}
 	}
 	
@@ -165,6 +174,7 @@
 	function query_puzzles($user){
 		$db_info=connect_to_db();
 		$db=$db_info['db_name'];
+		echo $user; 
 		$result= get_users_puzzle($user, $db);
 		return $result;
 	}
@@ -172,11 +182,15 @@
 	function drop_puzzles($db){
 		$collection= $db->piece; 
 		$response = $collection->drop();
+		$collection=$db->puzzle;
+		$response=$collection->drop(); 
 	}
 	
 	function delete_puzzle($puzzle_id, $db){
 		$collection = $db->piece;
 		$collection->remove(array("puzzleID"=>$puzzle_id));
+		$collection = $db->puzzle;
+		$collection->remove(array("_id"=>$puzzle_id));
 	}
 	
 	function update_puzzle_users($puzzle_id, $db, $new_user){
