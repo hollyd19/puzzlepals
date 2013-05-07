@@ -240,6 +240,73 @@ $app_name = idx($app_info, 'name', '');
           </ul>
         </div>
       </div>
+      
+      <?php
+      
+      function make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name){
+        $image_size= getimagesize($image_url);
+        $width_of_piece= $image_size[0]/sqrt($puzzle_size);
+        $height_of_piece= $image_size[1]/sqrt($puzzle_size);
+        $org_img = imagecreatefrompng($image_url);
+        
+        for ($i=0; $i<sqrt($puzzle_size);$i++) {
+            for ($k=0; $k<sqrt($puzzle_size); $k++){
+                $img = imagecreatetruecolor(''.$width_of_piece,''.$height_of_piece);
+                mkdir("images/".$puzzle_name);
+                $dest_image= "images/".$puzzle_name.'/'.$k.$i.".png";
+                imagecopy($img,$org_img, 0, 0, $i*$width_of_piece, $k*$height_of_piece, $image_size[0], $image_size[1]);
+                imagepng($img,$dest_image);
+                imagedestroy($img);
+                $images[$i][$k]= $dest_image;
+                //need to send info to database to save puzzle pieces and their destinations
+            }
+        }
+        $return= array($images, $width_of_piece, $height_of_piece);
+        return $return;
+}
+
+if (isset($_POST['create'])){
+	$image_url = $_POST["picture"];
+	$puzzle_size = $_POST["puzzle_size"];
+	
+	$imgexp = explode("/", $image_url);
+	$img_w_ext = explode(".", $imgexp[2]);
+	$puzzle_name = $img_w_ext[0]. "_" . $_POST['puzzle_size'];
+
+    
+    
+    list($images, $width, $height)= make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name);
+    require("views/header.php");
+    
+}
+
+if($_POST['in_prog_puzzle']!=""){
+    require("functions.php");
+    
+    $puzzle_id= $_POST['in_prog_puzzle'];
+    $temp= explode('_', $puzzle_id);
+    $image_url= "images/puzzle-photos/".$temp[0].".png";
+    
+    $num_pieces= $temp[1];
+    
+     list($images, $width, $height)= make_puzzle_from_pic($image_url, $num_pieces, $puzzle_id);
+    
+    require("views/old_puzzle_header.php");
+    
+}
+
+    
+    
+    require("views/view.php");
+    require("views/footer.php");
+    
+      
+      
+      
+      
+      ?>
+      
+      
       <?php } else { ?>
       <div>
         <h1>Welcome</h1>
@@ -248,137 +315,6 @@ $app_name = idx($app_info, 'name', '');
       <?php } ?>
     </header>
 
-    <section id="get-started">
-      <p>Welcome to your Facebook app, running on <span>heroku</span>!</p>
-      <a href="https://devcenter.heroku.com/articles/facebook" target="_top" class="button">Learn How to Edit This App</a>
-    </section>
-
-    <?php
-      if ($user_id) {
-    ?>
-
-    <section id="samples" class="clearfix">
-      <h1>Examples of the Facebook Graph API</h1>
-
-      <div class="list">
-        <h3>A few of your friends</h3>
-        <ul class="friends">
-          <?php
-            foreach ($friends as $friend) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($friend, 'id');
-              $name = idx($friend, 'name');
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
-              <?php echo he($name); ?>
-            </a>
-          </li>
-          <?php
-            }
-          ?>
-        </ul>
-      </div>
-
-      <div class="list inline">
-        <h3>Recent photos</h3>
-        <ul class="photos">
-          <?php
-            $i = 0;
-            foreach ($photos as $photo) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($photo, 'id');
-              $picture = idx($photo, 'picture');
-              $link = idx($photo, 'link');
-
-              $class = ($i++ % 4 === 0) ? 'first-column' : '';
-          ?>
-          <li style="background-image: url(<?php echo he($picture); ?>);" class="<?php echo $class; ?>">
-            <a href="<?php echo he($link); ?>" target="_top"></a>
-          </li>
-          <?php
-            }
-          ?>
-        </ul>
-      </div>
-
-      <div class="list">
-        <h3>Things you like</h3>
-        <ul class="things">
-          <?php
-            foreach ($likes as $like) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($like, 'id');
-              $item = idx($like, 'name');
-
-              // This display's the object that the user liked as a link to
-              // that object's page.
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($item); ?>">
-              <?php echo he($item); ?>
-            </a>
-          </li>
-          <?php
-            }
-          ?>
-        </ul>
-      </div>
-
-      <div class="list">
-        <h3>Friends using this app</h3>
-        <ul class="friends">
-          <?php
-            foreach ($app_using_friends as $auf) {
-              // Extract the pieces of info we need from the requests above
-              $id = idx($auf, 'uid');
-              $name = idx($auf, 'name');
-          ?>
-          <li>
-            <a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
-              <img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($name); ?>">
-              <?php echo he($name); ?>
-            </a>
-          </li>
-          <?php
-            }
-          ?>
-        </ul>
-      </div>
-    </section>
-
-    <?php
-      }
-    ?>
-
-    <section id="guides" class="clearfix">
-      <h1>Learn More About Heroku &amp; Facebook Apps</h1>
-      <ul>
-        <li>
-          <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top" class="icon heroku">Heroku</a>
-          <p>Learn more about <a href="https://www.heroku.com/?utm_source=facebook&utm_medium=app&utm_campaign=fb_integration" target="_top">Heroku</a>, or read developer docs in the Heroku <a href="https://devcenter.heroku.com/" target="_top">Dev Center</a>.</p>
-        </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/web/" target="_top" class="icon websites">Websites</a>
-          <p>
-            Drive growth and engagement on your site with
-            Facebook Login and Social Plugins.
-          </p>
-        </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/mobile/" target="_top" class="icon mobile-apps">Mobile Apps</a>
-          <p>
-            Integrate with our core experience by building apps
-            that operate within Facebook.
-          </p>
-        </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/canvas/" target="_top" class="icon apps-on-facebook">Apps on Facebook</a>
-          <p>Let users find and connect to their friends in mobile apps and games.</p>
-        </li>
-      </ul>
-    </section>
+    
   </body>
 </html>
