@@ -4,13 +4,10 @@
 
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
+	
 	<!--<p>
-		<input type="button" class="btn btn-primary" onclick="sendRequestToRecipients(); return false;" value="Send Request to Users Directly"/>
-		<input type="text" value="User ID" name="user_ids" />
+		<input type="button" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Invite Friends to Collaborate"/>
 	</p>-->
-	<p>
-		<input type="button" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Send Request to Many Users with MFS"/>
-	</p>
 	 
     <div id="box">
      <?php
