@@ -40,7 +40,7 @@ if (isset($_POST['create'])){
 	$puzzle_id=add_new_puzzle($users, $image_url, $puzzle_size, $db);
 	echo "<script type=\"text/javascript\">";
 	echo "$(window).load(function(){
-		get_all_piece_info(".$puzzle_id.")
+		get_all_piece_info(".$puzzle_id.");
 	});</script>"; 
     }
 }
