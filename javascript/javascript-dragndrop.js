@@ -201,7 +201,7 @@ function getRandomInt (min, max, left) {
     return result;
 }
 
-function get_all_piece_info(){
+function get_all_piece_info(puzzle_name){
 	$('.piece img').each(function(){
 		var x=$(this).offset().left;
 		var y=$(this).offset().top;

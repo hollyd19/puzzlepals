@@ -14,5 +14,5 @@
     <script type="text/javascript" src="javascript/javascript-dragndrop.js"></script>
 	
   </head>
-  <body onload="size_places(<?php echo $width.", ". $height.",".sizeof($images); ?>); locate_pieces(); get_all_piece_info();">
+  <body onload="size_places(<?php echo $width.", ". $height.",".sizeof($images); ?>); locate_pieces();">
   
