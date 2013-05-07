@@ -171,6 +171,15 @@ $app_name = idx($app_info, 'name', '');
           document.createElement(tags.pop());
       </script>
     <![endif]-->
+    
+    <link href="../stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+	
+	<!--   <link href="stylesheets/basic-css.css" rel="stylesheet" type="text/css"/> -->
+    <script src="../javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="javascript/jquery-ui.js"></script>
+    <script type="text/javascript" src="javascript/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="javascript/javascript-dragndrop.js"></script>
   </head>
   <body>
     <div id="fb-root"></div>
@@ -241,71 +250,35 @@ $app_name = idx($app_info, 'name', '');
         </div>
       </div>
       
-      <?php
-      
-      function make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name){
-        $image_size= getimagesize($image_url);
-        $width_of_piece= $image_size[0]/sqrt($puzzle_size);
-        $height_of_piece= $image_size[1]/sqrt($puzzle_size);
-        $org_img = imagecreatefrompng($image_url);
-        
-        for ($i=0; $i<sqrt($puzzle_size);$i++) {
-            for ($k=0; $k<sqrt($puzzle_size); $k++){
-                $img = imagecreatetruecolor(''.$width_of_piece,''.$height_of_piece);
-                mkdir("images/".$puzzle_name);
-                $dest_image= "images/".$puzzle_name.'/'.$k.$i.".png";
-                imagecopy($img,$org_img, 0, 0, $i*$width_of_piece, $k*$height_of_piece, $image_size[0], $image_size[1]);
-                imagepng($img,$dest_image);
-                imagedestroy($img);
-                $images[$i][$k]= $dest_image;
-                //need to send info to database to save puzzle pieces and their destinations
-            }
-        }
-        $return= array($images, $width_of_piece, $height_of_piece);
-        return $return;
+<?php
+require("functions.php");
+
+function sort_puzzles(){
+	$in_progress_puzzles= query_puzzles();
+	$easy=array();
+	$medium=array();
+	$hard=array();
+	foreach ($in_progress_puzzles as $in_progress_puzzle){
+		$puzzle= explode("_", $in_progress_puzzle);
+		$images_name= $puzzle[0];
+		$puzzle_size= $puzzle[1];
+		if ($puzzle_size=="9"){
+			array_push($easy, $images_name);
+		} elseif($puzzle_size=="25"){
+			array_push($medium, $images_name);
+		} elseif($puzzle_size=="49"){
+			array_push($hard, $images_name);
+		}
+	}
+	return array($easy, $medium, $hard);
 }
 
-if (isset($_POST['create'])){
-	$image_url = $_POST["picture"];
-	$puzzle_size = $_POST["puzzle_size"];
-	
-	$imgexp = explode("/", $image_url);
-	$img_w_ext = explode(".", $imgexp[2]);
-	$puzzle_name = $img_w_ext[0]. "_" . $_POST['puzzle_size'];
+list($easy, $medium, $hard)= sort_puzzles();
 
-    
-    
-    list($images, $width, $height)= make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name);
-    require("views/header.php");
-    
-}
+require("views/landing_form_view.php");
 
-if($_POST['in_prog_puzzle']!=""){
-    require("functions.php");
-    
-    $puzzle_id= $_POST['in_prog_puzzle'];
-    $temp= explode('_', $puzzle_id);
-    $image_url= "images/puzzle-photos/".$temp[0].".png";
-    
-    $num_pieces= $temp[1];
-    
-     list($images, $width, $height)= make_puzzle_from_pic($image_url, $num_pieces, $puzzle_id);
-    
-    require("views/old_puzzle_header.php");
-    
-}
 
-    
-    
-    require("views/view.php");
-    require("views/footer.php");
-    
-      
-      
-      
-      
-      ?>
-      
+?>      
       
       <?php } else { ?>
       <div>
