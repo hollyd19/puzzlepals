@@ -143,7 +143,7 @@
 		$cursor=$collection->find($query);
 		$results= array();
 		foreach($cursor as $document){
-			$result[$document['imageURL']] = $document['level']; 
+			$result[$document['imageURL']] = array($document['level'], $document['_id']); 
 		}
 	}
 	
