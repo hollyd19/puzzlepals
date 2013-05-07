@@ -83,6 +83,7 @@
 		$collection= $db->command(array("create"=>$collection_name));
 	}
 	
+
 	function add_new_puzzle($users, $db){
 		$collection=$db->puzzle;
 		$document= array("users"=>$users, "completed"=>"false");
@@ -149,7 +150,7 @@
 			echo "".$document["y"]. "~!@#$%^&*";
 			echo "". $var[0] ."~!@#$%^&*";
 		}
-}
+	}
 	
 	function query_puzzles(){
 		$db_info=connect_to_db();
