@@ -178,5 +178,11 @@
 		$collection = $db->piece;
 		$collection->remove(array("puzzleID"=>$puzzle_id));
 	}
+	
+	function update_puzzle_users($puzzle_id, $db, $new_user){
+		$collection=$db->puzzle;
+		$new_data = array('$addToSet' => array("users" => $new_user));
+		$cursor= $collection->update(array("_id"=>$puzzle_id), $new_data);
+	}
 
 ?>
