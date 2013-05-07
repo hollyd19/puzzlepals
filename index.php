@@ -262,7 +262,7 @@ $app_name = idx($app_info, 'name', '');
       </div>
       </header>
       <?php } ?>
-      
+      I DON'T KNOW WHAT'S HAPPENING!
       
       <?php
 require("functions.php");
