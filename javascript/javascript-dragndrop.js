@@ -231,7 +231,7 @@ function get_new_location() {
 	var y=p.offset().top;
 	var info=p.attr("src");
 	var info_array=info.split("/");
-	var puzzle_name=info_array[1];
+	var puzzle_name=$("input[name=p-id]").val();
 	var piece_id_info=info_array[2];
 	piece_id_info=piece_id_info.split(".");
 	var piece_id=piece_id_info[0];

@@ -36,7 +36,7 @@ try {
 	
  	$collection = $db->command(array("create" => "puzzle"));
  	include("functions.php");
-	$one= array("taylor", "nicole");
+	/*$one= array("taylor", "nicole");
 	$two= array("holly", "nicole");
 	$three= array("nicole", "bobby");
 	$four = array("bobby", "taylor", "nicole");
@@ -50,7 +50,7 @@ try {
 	add_new_puzzle($six, "pizzal", $db);
 	
 	get_users_puzzle("", $db);
-	
+	*/
  	/*$list = $db->listCollections();
 	
 	foreach ($list as $collection) {

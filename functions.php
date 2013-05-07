@@ -172,11 +172,15 @@
 	function drop_puzzles($db){
 		$collection= $db->piece; 
 		$response = $collection->drop();
+		$collection=$db->puzzle;
+		$response=$collection->drop(); 
 	}
 	
 	function delete_puzzle($puzzle_id, $db){
 		$collection = $db->piece;
 		$collection->remove(array("puzzleID"=>$puzzle_id));
+		$collection = $db->puzzle;
+		$collection->remove(array("_id"=>$puzzle_id));
 	}
 	
 	function update_puzzle_users($puzzle_id, $db, $new_user){
