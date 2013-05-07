@@ -34,9 +34,10 @@ if (isset($_POST['create'])){
     include("functions.php");
     $db_info=connect_to_db();
     if($db_info['connected']){
-	create_collection("puzzle", $db_info['name']);
+	$db=$db_info['db_name'];
+	create_collection("puzzle", $db); 
 	$users=array("Taylor", "holly", "Nicole"); 
-	$puzzle_id=add_new_puzzle($users, $image_url, $puzzle_size, $db_info['name']);
+	$puzzle_id=add_new_puzzle($users, $image_url, $puzzle_size, $db);
 	echo "<script type=\"text/javascript\">";
 	echo "$(window).load(function(){
 		get_all_piece_info(".$puzzle_id.")
