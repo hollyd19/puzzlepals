@@ -249,7 +249,7 @@ $app_name = idx($app_info, 'name', '');
           </ul>
         </div>
       </div>
-      
+      </header>
 <?php
 require("functions.php");
 
@@ -280,14 +280,16 @@ require("views/landing_form_view.php");
 
 ?>      
       
-      <?php } else { ?>
+      
+    
+<?php } else { ?>
+
       <div>
         <h1>Welcome</h1>
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
       </div>
+      </header>
       <?php } ?>
-    </header>
-
     
   </body>
 </html>
