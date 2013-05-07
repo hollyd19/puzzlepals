@@ -139,7 +139,7 @@
 	
 	function get_users_puzzle($user, $db){
 		$collection=$db->puzzle;
-		$query=array('$in'=>array("users"=>$user));
+		$query= array("users"=>array('$in'=>array($user))); 
 		$cursor=$collection->find($query);
 		foreach($cursor as $document){
 			echo "<p>Users</p>";
