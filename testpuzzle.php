@@ -37,8 +37,12 @@ if (isset($_POST['create'])){
 	create_collection("puzzle", $db); 
 	$users=array($_POST['id']); 
 	$puzzle_id=add_new_puzzle($users, $image_url, $puzzle_size, $db);
-	$puzzle_string=$puzzle_id.""; 
-    }
+	$puzzle_string=$puzzle_id."";
+	?>
+	
+	<input type="hidden" name="p-id" value="<?php echo $puzzle_string; ?>"/>
+<?php    }
+    
     require("views/header.php");
   
 }
