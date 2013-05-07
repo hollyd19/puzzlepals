@@ -137,17 +137,16 @@
 		return $result;
 	}
 	
-	function get_users_puzzle($user){
-		$db_info=connect_to_db();
-		$db=$db_info['db_name'];
+	function get_users_puzzle($user, $db){
 		$collection=$db->puzzle;
-		echo $user; 
 		$query= array("users"=>array('$in'=>array($user))); 
 		$cursor=$collection->find($query);
 		$results= array();
 		$a=0; 
 		foreach($cursor as $document){
-			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']); 
+			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']);
+			$var=$results[$a];
+			echo "<p>level: $var["level"] </p>"; 
 			$a++; 
 		}
 		return $results; 
@@ -168,12 +167,12 @@
 		}
 	}
 	
-	/*function query_puzzles($user){
+	function query_puzzles($user){
 		$db_info=connect_to_db();
 		$db=$db_info['db_name'];
 		$result= get_users_puzzle($user, $db);
 		return $result;
-	}*/
+	}
 	
 	function drop_puzzles($db){
 		$collection= $db->piece; 

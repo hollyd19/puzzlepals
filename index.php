@@ -270,10 +270,12 @@ $app_name = idx($app_info, 'name', '');
 require("functions.php");
 
 function sort_puzzles($user){
-	$in_progress_puzzles= query_users_puzzles($user);
+	$in_progress_puzzles= query_puzzles($user);
 	$easy=array();
 	$medium=array();
 	$hard=array();
+        echo "size: ";
+        echo sizeof($in_progress_puzzles); 
 	foreach ($in_progress_puzzles as $item){
                 echo "hello"; 
                 echo $item;
