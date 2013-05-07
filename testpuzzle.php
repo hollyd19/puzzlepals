@@ -28,8 +28,8 @@ if (isset($_POST['create'])){
 	$imgexp = explode("/", $image_url);
 	$img_w_ext = explode(".", $imgexp[2]);
 	$puzzle_name = $img_w_ext[0]. "_" . $_POST['puzzle_size'];
-	$puzzle_id=""; 
-    list($images, $width, $height)= make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name);
+	list($images, $width, $height)= make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name);
+	$puzzle_string=""; 
       include("functions.php");
     $db_info=connect_to_db();
     if($db_info['connected']){
@@ -37,6 +37,7 @@ if (isset($_POST['create'])){
 	create_collection("puzzle", $db); 
 	$users=array($_POST['id']); 
 	$puzzle_id=add_new_puzzle($users, $image_url, $puzzle_size, $db);
+	$puzzle_string=$puzzle_id.""; 
     }
     require("views/header.php");
   
