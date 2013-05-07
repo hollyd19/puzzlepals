@@ -141,9 +141,9 @@
 		$collection=$db->puzzle;
 		$query= array("users"=>array('$in'=>array($user))); 
 		$cursor=$collection->find($query);
+		$results= array();
 		foreach($cursor as $document){
-			$document['imageURL'];
-			$document['level']; 
+			$result[$document['imageURL']] = $document['level']; 
 		}
 	}
 	
@@ -164,14 +164,8 @@
 	
 	function query_puzzles(){
 		$db_info=connect_to_db();
-		$collection=$db_info['db_name']->piece;
-		$cursor=$collection->find();
-		$result=array();
-		foreach($cursor as $doc){
-			if (!in_array($doc['puzzleID'], $result) && preg_match('/_\d/', $doc['puzzleID'])) {
-				$result[]=$doc['puzzleID'];
-			}
-		}
+		$db=$db_info['db_name'];
+		$result= get_user_puzzles($user, $db);
 		return $result;
 	}
 	
