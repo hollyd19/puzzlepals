@@ -152,7 +152,7 @@
 
 			echo $document['_id'];
 			echo "</p>"; 
-			$result[$document['imageURL']] = array($document['level'], $document['_id']); 
+			$result[$document['imageURL']] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']); 
 		}
 	}
 	

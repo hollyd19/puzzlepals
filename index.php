@@ -275,10 +275,14 @@ function sort_puzzles($user){
 	$easy=array();
 	$medium=array();
 	$hard=array();
-	foreach ($in_progress_puzzles as $in_progress_puzzle=>$level){
-		$puzzle= explode(".", $in_progress_puzzle);
+	foreach ($in_progress_puzzles as $item){
+                echo $item["name"];
+                echo "<br/>";
+                echo $item["level"];
+                echo "<br/>";
+		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
-		$puzzle_size= $level;
+		$puzzle_size= $item["level"];
 		if ($puzzle_size=="9"){
                         echo "<p> easy images: $images_name </p>"; 
 			array_push($easy, $images_name);
