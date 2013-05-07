@@ -262,10 +262,10 @@ $app_name = idx($app_info, 'name', '');
       </div>
       </header>
       <?php } ?>
-      I DON'T KNOW WHAT'S HAPPENING!
       
       <?php
-require("functions.php");
+      
+include("functions.php");
 
 function sort_puzzles(){
 	$in_progress_puzzles= query_puzzles();
@@ -289,10 +289,9 @@ function sort_puzzles(){
 
 list($easy, $medium, $hard)= sort_puzzles();
 
-require("views/landing_form_view.php");
+include("views/landing_form_view.php");
 
 
 ?>
-    
   </body>
 </html>

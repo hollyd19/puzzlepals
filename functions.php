@@ -15,7 +15,7 @@
 				$x= $_POST['x'];
 				$y=$_POST['y'];
 				$img_url="images/".$puzzle_id."/".$piece_num.".png";
-				add_new_piece($puzzle_id, $piece_num, $img_url, $x, $y, "Taylor", "Nicole", $db);
+				add_new_piece($puzzle_id, $piece_num, $img_url, $x, $y, $db);
 				break;
 			
 			case "update_location":
@@ -83,9 +83,17 @@
 		$collection= $db->command(array("create"=>$collection_name));
 	}
 	
-	function add_new_piece($puzzle_id, $piece_num, $img_url, $current_x, $current_y, $user_one, $user_two, $db){
+
+	function add_new_puzzle($users, $db){
+		$collection=$db->puzzle;
+		$document= array("users"=>$users, "completed"=>"false");
+		$collection->insert($document);
+		return $document['_id']; 
+	}
+	
+	function add_new_piece($puzzle_id, $piece_num, $img_url, $current_x, $current_y, $db){
 		$collection_created= $db->piece;
-		$puzzle_piece= array("puzzleID"=>$puzzle_id, "pieceNUMBER"=>$piece_num, "imgURL"=>$img_url, "x"=>$current_x, "y"=>$current_y, "correctLOCATION"=>"false", "users"=>array($user_one, $user_two));
+		$puzzle_piece= array("puzzleID"=>$puzzle_id, "pieceNUMBER"=>$piece_num, "imgURL"=>$img_url, "x"=>$current_x, "y"=>$current_y, "correctLOCATION"=>"false", "status"=>"ready");
 		$collection_created->insert($puzzle_piece);
 		$piece_info=array("puzzle_id"=>$puzzle_id, "piece_num"=>$piece_num); 
 		return $piece_info;
@@ -129,14 +137,6 @@
 		return $result;
 	}
 	
-	function update_piece_users($piece_info, $db, $new_user){
-		$collection=$db->piece;
-		$p_id=$piece_info["puzzle_id"]."";
-		$p_num=$piece_info["piece_num"]."";
-		$new_data = array('$addToSet' => array("users" => $new_user));
-		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
-	}
-	
 	function get_puzzle($puzzle_name, $db){
 		$collection= $db->piece;
 		$cursor=$collection->find(array("puzzleID"=>$puzzle_name));
@@ -150,7 +150,7 @@
 			echo "".$document["y"]. "~!@#$%^&*";
 			echo "". $var[0] ."~!@#$%^&*";
 		}
-}
+	}
 	
 	function query_puzzles(){
 		$db_info=connect_to_db();
