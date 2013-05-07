@@ -262,7 +262,6 @@ $app_name = idx($app_info, 'name', '');
       </div>
       </header>
       <?php } ?>
-      I DON'T KNOW WHAT'S HAPPENING!
       
       <?php
       
@@ -294,6 +293,5 @@ include("views/landing_form_view.php");
 
 
 ?>
-    <p>howdy</p>
   </body>
 </html>
