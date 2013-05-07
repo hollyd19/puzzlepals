@@ -202,7 +202,7 @@ function getRandomInt (min, max, left) {
 }
 
 function get_all_piece_info(){
-	var puzzle_name=$("input[name=pid]").val();
+	var puzzle_name=$("input[name=p-id]").val();
 		console.log(puzzle_name); 
 	$('.piece img').each(function(){
 		var x=$(this).offset().left;
