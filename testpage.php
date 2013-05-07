@@ -58,7 +58,7 @@ try {
 	}*/
 	
 	$collection_test= $db->puzzle;
-	$cursor= $collection_test=>find();
+	$cursor= $collection_test->find();
 	foreach($cursor as $document){
 		echo "<ul>";
 		$doc=$document['users'];
