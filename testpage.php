@@ -24,16 +24,16 @@ try {
  		$collection= $db->puzzle_piece;
  		$collection->insert($document);
  	}
- 	/*add_puzzle_piece("this is the id", 0, 0, "images/imgs.jpeg");
+ 	add_puzzle_piece("this is the id", 0, 0, "images/imgs.jpeg");
  	$collection= $db->puzzle_piece;
  	$cursor= $collection->find();
-	foreach($cursor as $document){
+	/*foreach($cursor as $document){
 		echo '<p>$document["puzzle_id"]</p>';
 		echo '<p>$document["x_currrent"]</p>';
 		echo '<p>$document["x_final"]</p>';
 		echo "<p>$document['img_url'] </p>";
-	}*/
-	
+	}
+	*/
  	$collection = $db->command(array("create" => "puzzle"));
  	include("functions.php");
 	/*$one= array("taylor", "nicole");
@@ -49,9 +49,15 @@ try {
 	add_new_puzzle($five, "pizzal", $db);
 	add_new_puzzle($six, "pizzal", $db);
 	
+<<<<<<< HEAD
 	get_users_puzzle("", $db);
 	*/
  	/*$list = $db->listCollections();
+=======
+	get_users_puzzle("nicole", $db);
+	
+ 	$list = $db->listCollections();
+>>>>>>> 043fc360bb62e012ad16022e656020bf4ce9ec6a
 	
 	foreach ($list as $collection) {
 		echo $collection;
@@ -67,6 +73,10 @@ try {
 		}
 		echo "</ul>"; 
 	}
+
+	
+	$collection_test= $db->people;
+
 	/*$document= array("title"=>"First element added", "attempting"=>"Taylor");
 	$collection_test->insert($document);*/
 	

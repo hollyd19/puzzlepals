@@ -72,8 +72,10 @@ $(document).ready(function () {
     /*LINKS TO TEST PUZZLE*/
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
+	var name_id= puzzle_name.split("--");
 	////console.log(puzzle_name); 
-	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
+	$("input[name=\"in_prog_puzzle\"]").val(name_id[0]);
+	$("input[name=\"id\"]").val(name_id[1]);
 	return true; 
     })
 });
