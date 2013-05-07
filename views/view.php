@@ -9,14 +9,8 @@
 		<input type="text" value="User ID" name="user_ids" />
 	</p>-->
 	<p>
-		<input type="button" class="btn btn-primary" onclick="Send Request to Many Users with MFS"/>
+		<input type="button" class="btn btn-primary" onclick="Send Request to Many Users with MFS" value="MFS"/>
 	</p>
-	<!-- <script>
-		FB.init({
-			appID : "311774552286219", 
-			frictionlessRequests: true
-		});
-	</script>-->
 	 
     <div id="box">
      <?php
