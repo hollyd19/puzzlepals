@@ -25,6 +25,7 @@
 					echo '<input type="radio" name="puzzle_size" value="9" checked>Easy<br/>';
 					echo '<input type="radio" name="puzzle_size" value="25">Medium<br/>';
 					echo '<input type="radio" name="puzzle_size" value="49">Hard<br/>';
+					echo '<input type="hidden" name="id" value="'.$user_id.'"/>';
 					echo '<br/>';
 					echo '</div>';
 				

@@ -185,4 +185,5 @@
 		$cursor= $collection->update(array("_id"=>$puzzle_id), $new_data);
 	}
 
+
 ?>
