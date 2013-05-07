@@ -16,7 +16,7 @@ try {
  	$db = $m->selectDB($db_name);
  	 $collection= $db->command(array("create" => "puzzle_piece"));
 
- 	function add_puzzle_piece($puzzle_id, $x_final, $y_final, $img_url){
+ 	/*function add_puzzle_piece($puzzle_id, $x_final, $y_final, $img_url){
  		$x_current=rand(0, 600);
  		$y_current=rand(0, 400);
  		$document= array("puzzle_id"=>$puzzle_id, "x_current"=>$_current, 
