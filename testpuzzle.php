@@ -28,7 +28,7 @@ if (isset($_POST['create'])){
 	$imgexp = explode("/", $image_url);
 	$img_w_ext = explode(".", $imgexp[2]);
 	$puzzle_name = $img_w_ext[0]. "_" . $_POST['puzzle_size'];
-	$puzzle_id==""; 
+	$puzzle_id=""; 
     list($images, $width, $height)= make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name);
       include("functions.php");
     $db_info=connect_to_db();
