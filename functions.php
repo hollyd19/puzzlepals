@@ -179,18 +179,6 @@
 		$collection->remove(array("puzzleID"=>$puzzle_id));
 	}
 	
-	function sendRequestToRecipients() {
-		var user_ids = document.getElementsByName("user_ids")[0].value;
-		FB.ui({method: 'apprequests', message: 'Request message goes here', to: user_ids}, requestCallback);
-	}
-	
-	function sendRequestViaMultiFriendSelector() {
-		FB.ui({method: 'apprequests', message: 'MFS message goes here'}, requestCallback);
-	}
-	
-	function requestCallback(response){
-		//Handle callback here
-	}
 	
 
 ?>
