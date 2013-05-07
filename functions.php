@@ -165,7 +165,7 @@
 	function query_puzzles($user){
 		$db_info=connect_to_db();
 		$db=$db_info['db_name'];
-		$result= get_user_puzzles($user, $db);
+		$result= get_users_puzzle($user, $db);
 		return $result;
 	}
 	
