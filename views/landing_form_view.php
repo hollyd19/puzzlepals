@@ -48,7 +48,11 @@
 		<?php
 			for($a=0; $a<sizeof($easy); $a++){
 				$var= $easy[$a];
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_9_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				$string_of_players="";
+				foreach($var['users'] as $player1){
+					$string_of_players= $string_of_players + $player1 + "<br/>";
+				}
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_9_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 	
 			}
 			echo '</div>';
@@ -56,7 +60,11 @@
 		echo '<div class="span3 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				$string_of_players="";
+				foreach($var['users'] as $player1){
+					$string_of_players= $string_of_players + $player1 + "<br/>";
+				}
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 
 			}
 		echo '</div>';
@@ -64,7 +72,11 @@
 		echo '<div class="span3 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
 			for($a=0; $a<sizeof($hard); $a++){
 				$var= $hard[$a];
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_49_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				$string_of_players="";
+				foreach($var['users'] as $player1){
+					$string_of_players= $string_of_players + $player1 + "<br/>";
+				}
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_49_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 
 			}
 		echo '</div></form></div>';

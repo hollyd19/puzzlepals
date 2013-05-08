@@ -277,15 +277,18 @@ function sort_puzzles($user){
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
-                echo $item["users"]; 
+                $players=array();
+                foreach($item['users'] as $player){
+                  array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
+                }
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($hard, $array);
 		}
 	}
