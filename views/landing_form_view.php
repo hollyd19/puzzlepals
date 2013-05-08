@@ -46,7 +46,7 @@
 		<div class="span3 scrollable_div" id="easy_section">
 		<h4 class="instructions">Easy</h4>
 		<?php
-			echo sizeof($easy); 
+			echo $easy[0];
 			foreach($easy as $easy_puzzle){
 			
 				foreach($easy_puzzle as $item){
