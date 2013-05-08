@@ -65,6 +65,7 @@ $(document).ready(function () {
     /*DELETES PUZZLE CLICKED*/
     $(".start_puzzle_over").click(function(){
 	var puzzle_name= $(this).attr("name");
+	console.log(puzzle_name);
 	delete_puzzle(puzzle_name);
 	return false;
     });

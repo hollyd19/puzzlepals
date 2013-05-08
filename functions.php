@@ -185,6 +185,7 @@
 		$collection = $db->piece;
 		$collection->remove(array("puzzleID"=>$puzzle_id));
 		$collection = $db->puzzle;
+		$puzzle_id=new MongoId($puzzle_id); 
 		$collection->remove(array("_id"=>$puzzle_id));
 	}
 	
