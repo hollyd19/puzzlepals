@@ -54,7 +54,7 @@ if($_POST['in_prog_puzzle']!=""){
     
     $puzzle_id= $_POST['in_prog_puzzle'];
     $temp= explode('_', $puzzle_id);
-    $image_url= $temp[2];
+    $image_url= $temp[2].".png";
     $puzzle_id=$temp[0];
     $num_pieces= $temp[1];
     
