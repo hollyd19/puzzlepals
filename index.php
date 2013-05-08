@@ -279,7 +279,7 @@ function sort_puzzles($user){
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
                 $players=array();
-                foreach($item['users'] as $player){
+                foreach($item["users"] as $player){
                   echo 'http://graph.facebook.com/'.$player;
                   echo json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name;
                   array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
