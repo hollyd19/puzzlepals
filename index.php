@@ -261,6 +261,8 @@ $app_name = idx($app_info, 'name', '');
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
       </div>
       </header>
+      <?php }
+      ?>
       
       <?php
       
@@ -289,6 +291,7 @@ function sort_puzzles($user){
 	}
 	return array($easy, $medium, $hard);
 }
+echo $user_id; 
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 
 require("views/landing_form_view.php");
