@@ -262,7 +262,6 @@ $app_name = idx($app_info, 'name', '');
       </div>
       </header>
       <?php }
-      echo $user_id;
       ?>
       
       <?php
@@ -274,21 +273,24 @@ function sort_puzzles($user){
 	$easy=array();
 	$medium=array();
 	$hard=array();
-	foreach ($in_progress_puzzles as $in_progress_puzzle=>$level){
-		$puzzle= explode(".", $in_progress_puzzle);
+	foreach ($in_progress_puzzles as $item){
+		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
-		$puzzle_size= $level;
+		$puzzle_size= $item["level"];
+                echo $item["users"]; 
 		if ($puzzle_size=="9"){
-			array_push($easy, $images_name);
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-			array_push($medium, $images_name);
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-			array_push($hard, $images_name);
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+			array_push($hard, $array);
 		}
 	}
 	return array($easy, $medium, $hard);
 }
-
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 
 require("views/landing_form_view.php");

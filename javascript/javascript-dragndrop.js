@@ -65,6 +65,7 @@ $(document).ready(function () {
     /*DELETES PUZZLE CLICKED*/
     $(".start_puzzle_over").click(function(){
 	var puzzle_name= $(this).attr("name");
+	console.log(puzzle_name);
 	delete_puzzle(puzzle_name);
 	return false;
     });
@@ -72,10 +73,8 @@ $(document).ready(function () {
     /*LINKS TO TEST PUZZLE*/
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
-	var name_id= puzzle_name.split("--");
-	////console.log(puzzle_name); 
-	$("input[name=\"in_prog_puzzle\"]").val(name_id[0]);
-	$("input[name=\"id\"]").val(name_id[1]);
+	console.log(puzzle_name); 
+	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name)
 	return true; 
     })
 });
@@ -233,7 +232,7 @@ function get_new_location() {
 	var y=p.offset().top;
 	var info=p.attr("src");
 	var info_array=info.split("/");
-	var puzzle_name=info_array[1];
+	var puzzle_name=$("input[name=p-id]").val();
 	var piece_id_info=info_array[2];
 	piece_id_info=piece_id_info.split(".");
 	var piece_id=piece_id_info[0];
@@ -362,6 +361,9 @@ function sendRequestViaMultiFriendSelector() {
 
 function requestCallback(response){
 	//Handle callback here
+	if((response != null) &&(response != false)) {
+      alert('User Accepts');
+    }
 }
 
 

@@ -1,6 +1,7 @@
 <?php
 function make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name){
         $image_size= getimagesize($image_url);
+	
         $width_of_piece= $image_size[0]/sqrt($puzzle_size);
         $height_of_piece= $image_size[1]/sqrt($puzzle_size);
         $org_img = imagecreatefrompng($image_url);
@@ -54,13 +55,16 @@ if($_POST['in_prog_puzzle']!=""){
     
     $puzzle_id= $_POST['in_prog_puzzle'];
     $temp= explode('_', $puzzle_id);
-    $image_url= "images/puzzle-photos/".$temp[0].".png";
-    
+    $image_url= $temp[2].".png";
+    $puzzle_id=$temp[0];
     $num_pieces= $temp[1];
     
      list($images, $width, $height)= make_puzzle_from_pic($image_url, $num_pieces, $puzzle_id);
     
     require("views/old_puzzle_header.php");
+    
+    	echo '<input type="hidden" name="p-id" value="'.$puzzle_id.'"/>';
+
     
 }
 

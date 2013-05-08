@@ -142,9 +142,24 @@
 		$query= array("users"=>array('$in'=>array($user))); 
 		$cursor=$collection->find($query);
 		$results= array();
+		$a=0; 
 		foreach($cursor as $document){
-			$result[$document['imageURL']] = array($document['level'], $document['_id']); 
+			$var=$document["users"];
+			$user="";
+			for($b=0; $b<sizeof($var); $b++){
+				if($b<sizeof($var)-1){
+
+					$user+=$var[$b] . ", ";
+				}
+				else{
+					$user+=$var[$b]; 
+				}
+			}
+			
+			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL'], "users"=>$user);
+			$a++; 
 		}
+		return $results; 
 	}
 	
 	function get_puzzle($puzzle_name, $db){
@@ -172,11 +187,16 @@
 	function drop_puzzles($db){
 		$collection= $db->piece; 
 		$response = $collection->drop();
+		$collection=$db->puzzle;
+		$response=$collection->drop(); 
 	}
 	
 	function delete_puzzle($puzzle_id, $db){
 		$collection = $db->piece;
 		$collection->remove(array("puzzleID"=>$puzzle_id));
+		$collection = $db->puzzle;
+		$puzzle_id=new MongoId($puzzle_id); 
+		$collection->remove(array("_id"=>$puzzle_id));
 	}
 	
 	function update_puzzle_users($puzzle_id, $db, $new_user){
