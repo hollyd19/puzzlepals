@@ -273,25 +273,24 @@ function sort_puzzles($user){
 	$easy=array();
 	$medium=array();
 	$hard=array();
-        echo sizeof($in_progress_puzzles); 
 	foreach ($in_progress_puzzles as $item){
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
+                echo $item["users"]; 
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["user"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["user"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["user"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
 			array_push($hard, $array);
 		}
 	}
 	return array($easy, $medium, $hard);
 }
-echo $user_id; 
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 
 require("views/landing_form_view.php");
