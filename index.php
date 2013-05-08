@@ -276,6 +276,7 @@ function sort_puzzles($user){
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
                 $item["users"]= explode(", ", $item["users"]);
+                var_dump($item["users"]);
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
@@ -285,6 +286,7 @@ function sort_puzzles($user){
                     array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
                   }
                 }
+                
                 //var_dump($players);
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
