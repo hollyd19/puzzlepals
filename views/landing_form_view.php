@@ -46,28 +46,26 @@
 		<div class="span3 scrollable_div" id="easy_section">
 		<h4 class="instructions">Easy</h4>
 		<?php
-			echo "easy".$easy;
 			for($a=0; $a<sizeof($easy); $a++){
-				foreach($easy[$a] as $item=>$value){
-					echo $item . ": ". $value . "<br/>"; 
-				}
-			}
-			foreach($easy as $easy_puzzle){
-			
-				echo '<br/><img src ="images/puzzle-photos/' . $easy_puzzle.'.png " class="exist_puz_photos img-polariod" alt="' . $easy_puzzle . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Friends: Nicole, Taylor</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $easy_puzzle . '_9--'.$easy_puzzle[1].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $easy_puzzle . '_9"/><i class="icon-remove"></i> Give Up</button><br/>';
-				
+				$var= $easy[$a];
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Friends: Nicole, Taylor</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+	
 			}
 			echo '</div>';
 			
 		echo '<div class="span3 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
-			foreach($medium as $medium_puzzle){
-				echo '<br/><img src ="images/puzzle-photos/' . $medium_puzzle .'.png " class="exist_puz_photos img-polariod" alt="' . $medium_puzzle . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Friends: Nicole, Taylor</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $medium_puzzle . '_25--'.$easy_puzzle[1].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $medium_puzzle . '_25"/><i class="icon-remove"></i> Give Up</button><br/>';
+			for($a=0; $a<sizeof($medium); $a++){
+				$var= $medium[$a];
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Friends: Nicole, Taylor</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+
 			}
 		echo '</div>';
 		
 		echo '<div class="span3 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
-			foreach($hard as $hard_puzzle){
-				echo '<br/><img src ="images/puzzle-photos/' . $hard_puzzle .'.png " class="exist_puz_photos img-polariod" alt="' . $hard_puzzle. '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Friends: Nicole, Taylor</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $hard_puzzle . '_49--'.$easy_puzzle[1].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $hard_puzzle . '_49"/><i class="icon-remove"></i> Give Up</button><br/><br/>';
+			for($a=0; $a<sizeof($hard); $a++){
+				$var= $hard[$a];
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Friends: Nicole, Taylor</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+
 			}
 		echo '</div></form></div>';
 		echo '<div class="row-fluid"><div class="span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div></div>';
