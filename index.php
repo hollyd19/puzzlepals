@@ -270,6 +270,7 @@ require("functions.php");
 
 function sort_puzzles($user){
 	$in_progress_puzzles= query_puzzles($user);
+        var_dump($in_progress_puzzles);
 	$easy=array();
 	$medium=array();
 	$hard=array();
