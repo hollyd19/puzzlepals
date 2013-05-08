@@ -63,7 +63,7 @@ if($_POST['in_prog_puzzle']!=""){
     
     require("views/old_puzzle_header.php");
     
-    	echo '<input type="hidden" name="p-id" value="$puzzle_id>"/>';
+    	echo '<input type="hidden" name="p-id" value=".'$puzzle_id>.'"/>';
 
     
 }
