@@ -286,16 +286,14 @@ function sort_puzzles($user){
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
 		if ($puzzle_size=="9"){
-                        echo "<p> easy images: $images_name </p>"; 
-			array_push($easy, $images_name);
+                        $array=array("name"=>$images_name, "id"=> $item['id']); 
+			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                                          echo "<p> med images: $images_name </p>"; 
-
-			array_push($medium, $images_name);
+                        $array=array("name"=>$images_name, "id"=> $item['id']); 
+			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                                          echo "<p> hard images: $images_name </p>"; 
-
-			array_push($hard, $images_name);
+                        $array=array("name"=>$images_name, "id"=> $item['id']); 
+			array_push($hard, $array);
 		}
 	}
 	return array($easy, $medium, $hard);

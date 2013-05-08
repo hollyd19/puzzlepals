@@ -46,10 +46,14 @@
 		<div class="span3 scrollable_div" id="easy_section">
 		<h4 class="instructions">Easy</h4>
 		<?php
-			echo $easy[0];
+			echo "easy".$easy;
+			for($a=0; $a<sizeof($easy); $a++){
+				echo $easy[a];
+			}
 			foreach($easy as $easy_puzzle){
+				echo $easy_puzzle[0]. "......";
+				echo $easy_puzzle[1]; 
 			
-				
 				echo '<br/><img src ="images/puzzle-photos/' . $easy_puzzle.'.png " class="exist_puz_photos img-polariod" alt="' . $easy_puzzle . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Friends: Nicole, Taylor</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $easy_puzzle . '_9--'.$easy_puzzle[1].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $easy_puzzle . '_9"/><i class="icon-remove"></i> Give Up</button><br/>';
 				
 			}
