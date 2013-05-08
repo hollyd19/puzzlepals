@@ -270,11 +270,12 @@ require("functions.php");
 
 function sort_puzzles($user){
 	$in_progress_puzzles= query_puzzles($user);
-        var_dump($in_progress_puzzles);
+        //var_dump($in_progress_puzzles);
 	$easy=array();
 	$medium=array();
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
+          var_dump($item["users"]); 
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
