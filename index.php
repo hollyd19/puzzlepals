@@ -281,11 +281,11 @@ function sort_puzzles($user){
 		$puzzle_size= $item["level"];
                 $players=array();
                 foreach($item["users"] as $player){
-                  echo 'http://graph.facebook.com/'.$player;
-                  echo json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name;
-                  array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
+                  if ($player != $user_id){
+                    array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
+                  }
                 }
-                var_dump($players);
+                //var_dump($players);
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($easy, $array);
