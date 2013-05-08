@@ -41,14 +41,14 @@
 		<div class="row-fluid">
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
-			<input type="hidden" name="id"/>
+
 		<div class="span12">
 		<div class="span3 scrollable_div" id="easy_section">
 		<h4 class="instructions">Easy</h4>
 		<?php
 			for($a=0; $a<sizeof($easy); $a++){
 				$var= $easy[$a];
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'--9'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 	
 			}
 			echo '</div>';
@@ -56,7 +56,7 @@
 		echo '<div class="span3 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'--25--'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 
 			}
 		echo '</div>';
@@ -64,7 +64,7 @@
 		echo '<div class="span3 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
 			for($a=0; $a<sizeof($hard); $a++){
 				$var= $hard[$a];
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$var["users"].'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'--49.'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 
 			}
 		echo '</div></form></div>';

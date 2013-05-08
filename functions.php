@@ -147,13 +147,12 @@
 			$var=$document["users"];
 			$user="";
 			for($b=0; $b<sizeof($var); $b++){
-				$url="http://graph.facebook.com/".$var[$b]; 
-				$name= json_decode(file_get_contents($url))->name;
 				if($b<sizeof($var)-1){
-					$user+=$name . ", ";
+
+					$user+=$var[$b] . ", ";
 				}
 				else{
-					$user+=$name; 
+					$user+=$var[$b]; 
 				}
 			}
 			
