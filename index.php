@@ -275,7 +275,7 @@ function sort_puzzles($user){
 	$medium=array();
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
-          var_dump($item["users"]); 
+                $item["users"]= explode(", ", $item["users"]);
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
