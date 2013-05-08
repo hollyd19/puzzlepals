@@ -54,8 +54,8 @@ if($_POST['in_prog_puzzle']!=""){
     
     $puzzle_id= $_POST['in_prog_puzzle'];
     $temp= explode('_', $puzzle_id);
-    $image_url= "images/puzzle-photos/".$temp[0].".png";
-    
+    $image_url= $temp[2];
+    $puzzle_id=$temp[0];
     $num_pieces= $temp[1];
     
      list($images, $width, $height)= make_puzzle_from_pic($image_url, $num_pieces, $puzzle_id);
