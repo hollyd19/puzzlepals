@@ -144,9 +144,18 @@
 		$results= array();
 		$a=0; 
 		foreach($cursor as $document){
-			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL']);
-			$var=$results[$a];
-			echo "<p>level: ".$var['level']." </p>"; 
+			$var=$document["users"];
+			$user="";
+			for($b=0; $b<sizeof($var); $b++){
+				if($b<sizeof($var)-1){
+					$user+=$var[$b] . ", ";
+				}
+				else{
+					$user+=$var[$b]; 
+				}
+			}
+			
+			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL'], "users"=>$user);
 			$a++; 
 		}
 		return $results; 

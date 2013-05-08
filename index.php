@@ -261,9 +261,6 @@ $app_name = idx($app_info, 'name', '');
         <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
       </div>
       </header>
-      <?php }
-      echo $user_id;
-      ?>
       
       <?php
       
@@ -274,31 +271,24 @@ function sort_puzzles($user){
 	$easy=array();
 	$medium=array();
 	$hard=array();
-        echo "size: ";
         echo sizeof($in_progress_puzzles); 
 	foreach ($in_progress_puzzles as $item){
-                echo "hello"; 
-                echo $item;
-                echo "<br/>";
-                echo $item["level"];
-                echo "<br/>";
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id']); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["user"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id']); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["user"]); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id']); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["user"]); 
 			array_push($hard, $array);
 		}
 	}
 	return array($easy, $medium, $hard);
 }
-echo $user_id; 
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 
 require("views/landing_form_view.php");
