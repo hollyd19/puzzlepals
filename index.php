@@ -281,6 +281,7 @@ function sort_puzzles($user){
                 foreach($item['users'] as $player){
                   array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
                 }
+                var_dump($players);
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($easy, $array);
