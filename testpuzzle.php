@@ -1,8 +1,8 @@
 <?php
 function make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name){
         $image_size= getimagesize($image_url);
-        $width_of_piece= $image_size[0]/sqrt($puzzle_size);
-        $height_of_piece= $image_size[1]/sqrt($puzzle_size);
+        $width_of_piece= $image_size[0]/3;
+        $height_of_piece= $image_size[1]/3;
         $org_img = imagecreatefrompng($image_url);
         
         for ($i=0; $i<sqrt($puzzle_size);$i++) {
