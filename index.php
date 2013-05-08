@@ -8,6 +8,18 @@
  * to learn more about the resources available to you
  */
 
+/**
+ * TO DO:
+ * -- Make it so someone can invite their friend
+ * -- Make it so when someone is invited, they are notified and given a link to the puzzle.
+ * -- display who can view puzzle on the puzzle page itself (maybe with profile pics and online status?)
+ * -- use AJAX (every x miliseconds) to show movements made by other players
+ * -- declare the puzzle completed
+ * -- keep track of time taken to complete a puzzle
+ * -- Make a list of completed puzzles
+ * 
+ */
+
 // Provides access to app specific values such as your app id and app secret.
 // Defined in 'AppInfo.php'
 require_once('AppInfo.php');
