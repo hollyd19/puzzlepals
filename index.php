@@ -8,6 +8,18 @@
  * to learn more about the resources available to you
  */
 
+/**
+ * TO DO:
+ * -- Make it so someone can invite their friend
+ * -- Make it so when someone is invited, they are notified and given a link to the puzzle.
+ * -- display who can view puzzle on the puzzle page itself (maybe with profile pics and online status?)
+ * -- use AJAX (every x miliseconds) to show movements made by other players
+ * -- declare the puzzle completed
+ * -- keep track of time taken to complete a puzzle
+ * -- Make a list of completed puzzles
+ * 
+ */
+
 // Provides access to app specific values such as your app id and app secret.
 // Defined in 'AppInfo.php'
 require_once('AppInfo.php');
@@ -270,21 +282,34 @@ require("functions.php");
 
 function sort_puzzles($user){
 	$in_progress_puzzles= query_puzzles($user);
+        //var_dump($in_progress_puzzles);
 	$easy=array();
 	$medium=array();
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
+                $item["users"]= explode(", ", $item["users"]);
+                var_dump($item["users"]);
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
+
+                $players=array();
+                foreach($item["users"] as $player){
+                  if ($player != $user_id){
+                    array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
+                  }
+                }
+                
+                //var_dump($players);
+
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
 			array_push($hard, $array);
 		}
 	}
