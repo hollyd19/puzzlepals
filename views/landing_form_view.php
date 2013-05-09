@@ -52,7 +52,11 @@
 				foreach($var['users'] as $player1){
 					$string_of_players= $string_of_players + $player1 + "<br/>";
 				}
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_9_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				$now = time(); // or your date as well
+				$your_date = strtotime($var["time"]);
+				$datediff = $now - $your_date;
+				$datediff= floor($datediff/(60*60*24));
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: '.$datediff.' days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_9_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 	
 			}
 			echo '</div>';
@@ -64,7 +68,11 @@
 				foreach($var['users'] as $player1){
 					$string_of_players= $string_of_players + $player1 + "<br/>";
 				}
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				$now = time(); // or your date as well
+				$your_date = strtotime($var["time"]);
+				$datediff = $now - $your_date;
+				$datediff= floor($datediff/(60*60*24));
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: '.$datediff.' days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 
 			}
 		echo '</div>';
@@ -76,7 +84,11 @@
 				foreach($var['users'] as $player1){
 					$string_of_players= $string_of_players + $player1 + "<br/>";
 				}
-				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: xxx days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_49_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
+				$now = time(); // or your date as well
+				$your_date = strtotime($var["time"]);
+				$datediff = $now - $your_date;
+				$datediff= floor($datediff/(60*60*24));
+				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: '.$datediff.' days</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_49_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 
 			}
 		echo '</div></form></div>';

@@ -86,7 +86,8 @@
 
 	function add_new_puzzle($users, $imageURL, $level, $db){
 		$collection=$db->puzzle;
-		$document= array("users"=>$users, "imageURL"=>$imageURL, "level"=>$level, "completed"=>"false");
+		$time= time(); 
+		$document= array("users"=>$users, "imageURL"=>$imageURL, "level"=>$level, "completed"=>"false", "time"=> $time);
 		$collection->insert($document);
 		return $document['_id']; 
 	}
@@ -156,7 +157,7 @@
 				}
 			}
 			
-			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL'], "users"=>$user);
+			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL'], "users"=>$user, "time"=>$document["time"]);
 			$a++; 
 		}
 		return $results; 

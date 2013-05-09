@@ -303,13 +303,13 @@ function sort_puzzles($user){
                 //var_dump($players);
 
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($hard, $array);
 		}
 	}
