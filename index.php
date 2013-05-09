@@ -277,7 +277,6 @@ function sort_puzzles($user){
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
-                echo $item["users"]; 
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item["users"]); 
 			array_push($easy, $array);
