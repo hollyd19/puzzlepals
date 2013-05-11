@@ -33,7 +33,6 @@
 
 <div class="row-fluid">
 	<div class="span12 container" id="encapsulating_div">
-	<h1 id="puzzle_center_header">Puzzle Center</h1>
 	
 	<div id="frozen_div">
 	
