@@ -75,13 +75,13 @@
 					echo '</div>';
 					
 					echo '<div id="share-app" class="span5"><br/>';
-					echo '<ul>';
-					echo '<li>';
-					echo '<a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Solve play Puzzle Pals">';
-					echo '<span class="btn btn-primary apprequests">Send Requests</span>';
+					//echo '<ul>';
+					//echo '<li>';
+					echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come Play Puzzle Pals">';
+					echo '<span class="btn btn-primary apprequests">3. Invite Friends</span>';
 					echo '</a>';
-					echo '</li>';
-					echo '</ul>';
+					//echo '</li>';
+					//echo '</ul>';
 					echo '</div>';
 					
 					
