@@ -67,6 +67,7 @@ $(document).ready(function () {
 	var puzzle_name= $(this).attr("name");
 	console.log(puzzle_name);
 	delete_puzzle(puzzle_name);
+	console.log('delete puzzle');
 	return false;
     });
     
@@ -74,8 +75,9 @@ $(document).ready(function () {
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
 	console.log(puzzle_name); 
-	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name)
-	return true; 
+	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
+	console.log('resume puzzle');
+	return false; 
     })
 });
 
