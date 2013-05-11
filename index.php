@@ -302,7 +302,7 @@ function sort_puzzles($user){
                   }
                 }
                 
-                //var_dump($players);
+                var_dump($players);
 
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
