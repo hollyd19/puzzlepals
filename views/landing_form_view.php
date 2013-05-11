@@ -163,7 +163,7 @@
 </script>
 
 	<div class="span6 landing_section tab-pane" id="completed_puz_div">
-		<h3 id="completed_puzzles">Ongoing Puzzles</h3>
+		<h3 id="completed_puzzles">Completed Puzzles</h3>
 
 		<div class="row-fluid">
 		<div class="span12">
