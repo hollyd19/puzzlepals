@@ -20,7 +20,7 @@
           window.location = window.location;
         });
 
-        //FB.Canvas.setAutoGrow();
+        FB.Canvas.setAutoGrow();
       };
 
       // Load the SDK Asynchronously
