@@ -43,7 +43,7 @@
 		</ul>
 		
 		<div class="tab-content">
-		<div class="span3 landing_section" id="create_puz_div">
+		<div class="span3 landing_section tab-pane active" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
 			<div class="row-fluid">
 			<form action="testpuzzle.php" method="post">
@@ -81,11 +81,11 @@
 				?>
 		
 		</form>
-	</div>
+	
 	</div>
 	
-	<div class="tab-content">
-	<div class="span6 landing_section" id="ongoing_puz_div">
+	
+	<div class="span6 landing_section tab-pane" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
 		<div class="row-fluid">
