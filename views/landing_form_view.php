@@ -168,6 +168,7 @@
 
 		<div class="row-fluid">
 		<div class="span12">
+			<p> Filler Content </p>
 		</div>
 		</div>
 	</div>
