@@ -289,7 +289,7 @@ function sort_puzzles($user){
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
                 $item["users"]= explode(", ", $item["users"]);
-                var_dump($item["users"]);
+                //var_dump($item["users"]);
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
@@ -302,7 +302,7 @@ function sort_puzzles($user){
                   }
                 }
                 
-                var_dump($players);
+                //var_dump($players);
 
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
@@ -318,7 +318,7 @@ function sort_puzzles($user){
 	return array($easy, $medium, $hard);
 }
 list($easy, $medium, $hard)= sort_puzzles($user_id);
-
+var_dump($medium);
 require("views/landing_form_view.php");
 
 
