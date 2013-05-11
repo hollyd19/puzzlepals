@@ -118,11 +118,11 @@
 				$string_of_players="";
 				//var_dump($var['users']);
 				foreach($var['users'] as $player1){
-					echo $player1;
-					echo $string_of_players;
-					$string_of_players= $string_of_players + $player1 + "<br/>";
+					//echo $player1;
+					//echo $string_of_players;
+					$string_of_players= $string_of_players . $player1 . "<br/>";
 				}
-				echo $string_of_players;
+				//echo $string_of_players;
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
