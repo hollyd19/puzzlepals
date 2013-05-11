@@ -115,10 +115,10 @@
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
 				$string_of_players="";
-				var_dump($var);
 				foreach($var['users'] as $player1){
 					$string_of_players= $string_of_players + $player1 + "<br/>";
 				}
+				echo $string_of_players;
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
