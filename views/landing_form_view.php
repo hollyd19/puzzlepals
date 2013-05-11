@@ -20,7 +20,6 @@
           window.location = window.location;
         });
 
-        //FB.Canvas.setAutoGrow();
       };
 
       // Load the SDK Asynchronously
@@ -95,7 +94,7 @@
 					echo '<br/>';
 					echo '</div>';
 					
-					echo '<div class="span5" id="invite_friends_div"><br/>';
+					echo '<div class="span5" id="share-app"><br/>';
 					echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come play Puzzle Pals!">';
 					echo '<span class="btn btn-primary apprequests">3. Invite Friends</span></a></div>'; 
 				
