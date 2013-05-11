@@ -49,7 +49,7 @@
 			<form action="testpuzzle.php" method="post">
 
 			<script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-
+				<div calss="span1"></div>
 				<div class="span6 scrollable_div" id="pick_a_photo">
 				<h4 class="instructions">1. Pick a Photo</h4>
 					<?php
@@ -63,7 +63,7 @@
 							}
 						}
 					echo '</div>';
-					echo '<div class="span4" id="select_difficulty">';
+					echo '<div class="span5" id="select_difficulty">';
 					echo '<h4 class="instructions">2. Select Difficulty</h4>';
 					echo '<input type="radio" name="puzzle_size" value="9" checked>Easy<br/>';
 					echo '<input type="radio" name="puzzle_size" value="25">Medium<br/>';
