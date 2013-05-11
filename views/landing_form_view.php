@@ -95,7 +95,7 @@
 					echo '<br/>';
 					echo '</div>';
 					
-					echo '<div id="share-app"<ul><li><div class="span5" id="invite_friends_div"><br/>';
+					echo '<div id="share-app"><ul><li><div class="span5" id="invite_friends_div"><br/>';
 					echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come play Puzzle Pals!">';
 					echo '<span class="btn btn-primary apprequests">3. Invite Friends</span></a></li></ul></div></div>'; 
 				
