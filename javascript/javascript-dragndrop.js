@@ -32,6 +32,7 @@ $(document).ready(function () {
     });
     }
     
+    if($($box).length != 0){
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
     $box.droppable({
         accept: "#puzzle .piece",
@@ -43,6 +44,7 @@ $(document).ready(function () {
             removePiece(ui.draggable);
         }
     });
+    }
     
     // make the piece a child of the new place
     function placePiece($place, $piece) {
