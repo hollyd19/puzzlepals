@@ -168,7 +168,7 @@ $app_name = idx($app_info, 'name', '');
             function (response) {
               // If response is null the user canceled the dialog
               if (response != null) {
-                document.getElementById("#invited_users_id").val(response.to);
+                $('input.invited_users_id').val(response.to);
                 logResponse(response.to);
               }
             }
