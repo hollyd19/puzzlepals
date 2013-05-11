@@ -172,7 +172,7 @@ $app_name = idx($app_info, 'name', '');
                 alert(response.to);
                 response.to.each(function(){
                   something= something + "," + this;
-                }
+                });
                 document.getElementById("#invited_users_id").val(something);
                 logResponse(something);
               }
