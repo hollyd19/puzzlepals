@@ -312,9 +312,9 @@ function delete_puzzle(puzzle_name) {
 		global:false,
 		success: function(data){
 		    if (data=="success") {
-			////console.log("wooooo");
-                        document.location.reload(true);
-			//Nicole's function to remove puzzle
+				document.location.reload(true);
+				$('#ongoing_puz_div li:eq(1) a').tab('show');
+			
 		    }
 		} 
      
@@ -331,6 +331,7 @@ function drop_puzzle_collection() {
 		    if (data=="success") {
 			////console.log("wooooo");
                         document.location.reload(true);
+						
                     }
                 }
 	});  
