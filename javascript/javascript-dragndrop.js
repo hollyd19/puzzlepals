@@ -335,6 +335,7 @@ function drop_puzzle_collection() {
 }
 
 function enable_scrollbar() {
+    if ($('.scrollable_div').length != 0){
 	$('.scrollable_div').slimScroll({
 		color: '#00f',
 		size: '8px',
@@ -353,6 +354,7 @@ function enable_scrollbar() {
 		alwaysVisible: true,
 		railVisible: true
 	});
+    }
 }
 
 function sendRequestToRecipients() {
