@@ -32,7 +32,7 @@
    </script>
 
 <div class="row-fluid">
-	<div class="span9 container" id="encapsulating_div">
+	<div class="span6 container" id="encapsulating_div">
 	
 	<div id="frozen_div">
 	
