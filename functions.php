@@ -135,7 +135,6 @@
 		$cursor=$collection->find(array("_id"=>$puzzle_id));
 		$result=array();
 		foreach($cursor as $document){
-			echo "found a puzzle with the right id";
 			array_push($result, $document["users"]);
 		}
 		return $result;

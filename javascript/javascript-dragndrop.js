@@ -70,9 +70,9 @@ $(document).ready(function () {
     /*DELETES PUZZLE CLICKED*/
     $(".start_puzzle_over").click(function(){
 	var puzzle_name= $(this).attr("name");
-	console.log(puzzle_name);
+	//console.log(puzzle_name);
 	delete_puzzle(puzzle_name);
-	console.log('delete puzzle');
+	//console.log('delete puzzle');
 	return false;
     });
     
