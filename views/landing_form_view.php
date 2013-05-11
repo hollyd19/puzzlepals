@@ -44,14 +44,14 @@
 		</ul>
 		
 		<div class="tab-content">
-		<div class="span3 landing_section tab-pane active" id="create_puz_div">
+		<div class="span6 landing_section tab-pane active" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
 			<div class="row-fluid">
 			<form action="testpuzzle.php" method="post">
 
 			<script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
 
-				<div class="span4" id="pick_a_photo">
+				<div class="span5 scrollable_div" id="pick_a_photo">
 				<h4 class="instructions">1. Pick a Photo</h4>
 					<?php
 						$img = null; 
