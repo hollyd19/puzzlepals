@@ -237,7 +237,7 @@ $app_name = idx($app_info, 'name', '');
       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
 
       <div>
-        <h1>Welcome, <strong><?php echo he(idx($basic, 'name')); ?></strong></h1>
+        <h1>Welcome, <?php echo he(idx($basic, 'name')); ?></h1>
       </div>
       </header>
       
