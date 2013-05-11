@@ -160,17 +160,6 @@
 			?>
 </div>
 
-<script>
-	$('#create_puz_div').click(function (e) {
-	  e.preventDefault();
-	  $(this).tab('show');
-	})
-
-	$('#ongoing_puz_div').click(function (e) {
-	  e.preventDefault();
-	  $(this).tab('show');
-})
-</script>
 </div>
 
 <div class="span6 landing_section tab-pane" id="completed_puz_div">
