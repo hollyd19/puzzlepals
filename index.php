@@ -98,7 +98,8 @@ $app_name = idx($app_info, 'name', '');
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
 
     <title><?php echo he($app_name); ?></title>
-    <link rel="stylesheet" href="stylesheets/screen.css" media="Screen" type="text/css" />
+    <!--<link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="Screen" type="text/css" />-->
+	<script type="text/javascript" src="javascript/bootstrap.min.js"></script>
     <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" type="text/css" />
 
     <!--[if IEMobile]>
@@ -237,7 +238,7 @@ $app_name = idx($app_info, 'name', '');
       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
 
       <div>
-        <h1>Welcome, <?php echo he(idx($basic, 'name')); ?></h1>
+        <h1 id="welcome_header">Welcome, <?php echo he(idx($basic, 'name')); ?></h1>
       </div>
       </header>
       
