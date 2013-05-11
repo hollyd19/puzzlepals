@@ -146,17 +146,12 @@
 		$a=0; 
 		foreach($cursor as $document){
 			$var=$document["users"];
+			//var_dump($var);
 			$user="";
 			for($b=0; $b<sizeof($var); $b++){
-				if($b<sizeof($var)-1){
-
-					$user+=$var[$b] . ", ";
-				}
-				else{
-					$user+=$var[$b]; 
-				}
+				$user+=$var[$b] . ", ";
 			}
-			
+			echo $user;
 			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL'], "users"=>$user, "time"=>$document["time"]);
 			$a++; 
 		}
