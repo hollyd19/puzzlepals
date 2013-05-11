@@ -71,7 +71,7 @@ if($_POST['in_prog_puzzle']!=""){
 }
 
     
-    
+    var_dump($users);
     require("views/view.php");
     require("views/footer.php");
     
