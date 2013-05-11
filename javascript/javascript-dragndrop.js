@@ -367,4 +367,14 @@ function requestCallback(response){
     }
 }
 
+$('#create_puz_div').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
+$('#ongoing_puz_div').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
 
