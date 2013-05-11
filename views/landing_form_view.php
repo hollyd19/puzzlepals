@@ -38,7 +38,7 @@
 	<div id="frozen_div">
 	
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#create_puz_div">Create Puzzle</a></li>
+			<li><a href="#create_puz_div">Create Puzzle</a></li>
 			<li class="active"><a href="#ongoing_puz_div">Ongoing Puzzles</a></li>
 		</ul>
 		
