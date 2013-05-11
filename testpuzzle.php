@@ -58,6 +58,7 @@ if($_POST['in_prog_puzzle']!=""){
     $temp= explode('_', $puzzle_id);
     $image_url= $temp[2].".png";
     $puzzle_id=$temp[0];
+    echo $puzzle_id;
     $users= query_users($puzzle_id);
     $num_pieces= $temp[1];
     
