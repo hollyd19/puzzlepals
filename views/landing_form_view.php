@@ -74,9 +74,21 @@
 					echo '<br/>';
 					echo '</div>';
 					
-					echo '<div class="span5" id="invite_friends_div"><br/>';
-					echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come play Puzzle Pals!">';
-					echo '<span class="btn btn-primary apprequests">3. Invite Friends</span></a></div>'; 
+					echo '<div id="share-app" class="span5"><br/>';
+					echo '<ul>';
+					echo '<li>';
+					echo '<a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Solve play Puzzle Pals">';
+					echo '<span class="btn btn-primary apprequests">Send Requests</span>';
+					echo '</a>';
+					echo '</li>';
+					echo '</ul>';
+					echo '</div>';
+					
+					
+					
+					//echo '<div class="span5" id="invite_friends_div"><br/>';
+					//echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come play Puzzle Pals!">';
+					//echo '<span class="btn btn-primary apprequests">3. Invite Friends</span></a></div>'; 
 				
 				echo '<div class="span5" id="create_button_div"><br/><input class="btn btn-primary" type="submit" value="4. Create & Go!" name="create"></div></div>';
 				?>
