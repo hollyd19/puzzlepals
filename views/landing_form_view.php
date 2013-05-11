@@ -36,6 +36,13 @@
 	<h1 id="puzzle_center_header">Puzzle Center</h1>
 	
 	<div id="frozen_div">
+	
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#create_puz_div">Create Puzzle</a></li>
+			<li><a href="#ongoing_puz_div">Ongoing Puzzles</a></li>
+		</ul>
+		
+		<div class="tab-content">
 		<div class="span3 landing_section" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
 			<div class="row-fluid">
@@ -75,6 +82,8 @@
 		
 		</form>
 	</div>
+	
+	
 	
 	<div class="span6 landing_section" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
@@ -135,6 +144,14 @@
 		echo '</div></form></div>';
 		echo '<div class="row-fluid"><div class="span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div></div>';
 			?>
+</div>
+
+<script>
+$(function () {
+    $('#create_puz_div a:first').tab('show');
+  })
+</script>
+
 </div>
 </div>	
 </div>
