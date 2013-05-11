@@ -377,4 +377,9 @@ $('#ongoing_puz_div').click(function (e) {
   $(this).tab('show');
 })
 
+$('#completed_puz_div').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
 
