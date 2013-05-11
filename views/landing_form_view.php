@@ -1,6 +1,7 @@
 <div class="row-fluid">
 	<div class="span12 container" id="encapsulating_div">
 	<h1 id="puzzle_center_header">Puzzle Center</h1>
+	
 	<div id="frozen_div">
 		<div class="span3 landing_section" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
