@@ -29,8 +29,11 @@
 					echo '<input type="hidden" name="id" value="'.$user_id.'"/>';
 					echo '<br/>';
 					echo '</div>';
+					
+					echo '<a href="#" class="btn btn-primary apprequests" id="sendRequest" data-message="Test this awesome app">';
+					echo '<span class="apprequests">Send Requests</span>'; 
 				
-				echo '<div class="span5" id="create_button_div"></br><input class="btn btn-primary" type="submit" value="3. Create" name="create"></div></div>';
+				echo '<div class="span5" id="create_button_div"></br><input class="btn btn-primary" type="submit" value="4. Create & Go!" name="create"></div></div>';
 				?>
 		
 		</form>

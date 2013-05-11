@@ -5,9 +5,9 @@
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
 	
-	<p>
+	<!--<p>
 		<input type="button" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Invite Friends to Collaborate"/>
-	</p>
+	</p>-->
 	 
     <div id="box">
      <?php
