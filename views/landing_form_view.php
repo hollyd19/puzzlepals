@@ -30,8 +30,8 @@
 					echo '<br/>';
 					echo '</div>';
 					
-					echo '<a href="#" class="btn btn-primary apprequests" id="sendRequest" data-message="Test this awesome app">';
-					echo '<span class="apprequests">Send Requests</span></a>'; 
+					echo '</br><a href="#" class="btn btn-primary apprequests" id="sendRequest" data-message="Come play Puzzle Pals!">';
+					echo '<span class="apprequests">3. Invite Friends</span></a>'; 
 				
 				echo '<div class="span5" id="create_button_div"></br><input class="btn btn-primary" type="submit" value="4. Create & Go!" name="create"></div></div>';
 				?>
