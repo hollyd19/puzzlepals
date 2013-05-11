@@ -352,6 +352,7 @@ function enable_scrollbar() {
 
 function sendRequestToRecipients() {
 	var user_ids = document.getElementsByName("user_ids")[0].value;
+	alert(user_ids);
 	FB.ui({method: 'apprequests', message: 'Request message goes here', to: user_ids}, requestCallback);
 }
 
