@@ -173,7 +173,7 @@ $app_name = idx($app_info, 'name', '');
                 response.to.each(function(){
                   something= something + "," + this;
                 }
-                $("#invited_users_id").val(something);
+                document.getElementById("#invited_users_id").val(something);
                 logResponse(something);
               }
             }
