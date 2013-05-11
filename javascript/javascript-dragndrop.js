@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
     }
     
-    
+    if($(".place", $puzzle).length != 0){
     $(".place", $puzzle).droppable({
         accept: ".piece",
         activeClass: "active",
@@ -30,7 +30,9 @@ $(document).ready(function () {
             // TODO check to see if i've won!
         }
     });
+    }
     
+    if($($box).length != 0){
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
     $box.droppable({
         accept: "#puzzle .piece",
@@ -42,6 +44,7 @@ $(document).ready(function () {
             removePiece(ui.draggable);
         }
     });
+    }
     
     // make the piece a child of the new place
     function placePiece($place, $piece) {
@@ -79,7 +82,7 @@ $(document).ready(function () {
 	console.log(puzzle_name); 
 	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
 	console.log('resume puzzle');
-	return false; 
+	return true; 
     })
 });
 
@@ -334,6 +337,7 @@ function drop_puzzle_collection() {
 }
 
 function enable_scrollbar() {
+    if ($('.scrollable_div').length != 0){
 	$('.scrollable_div').slimScroll({
 		color: '#00f',
 		size: '8px',
@@ -352,6 +356,7 @@ function enable_scrollbar() {
 		alwaysVisible: true,
 		railVisible: true
 	});
+    }
 }
 
 function sendRequestToRecipients() {
