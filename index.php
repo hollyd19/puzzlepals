@@ -99,7 +99,7 @@ $app_name = idx($app_info, 'name', '');
 
     <title><?php echo he($app_name); ?></title>
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="Screen" type="text/css" />
-	<script type="text/javascript" src="javascript/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="javascript/bootstrap.min.js"></script>--> 
     <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" type="text/css" />
 
     <!--[if IEMobile]>
