@@ -51,7 +51,7 @@
 
 			<script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
 
-				<div class="span4" id="pick_a_photo">
+				<div class="span4 scrollable_div" id="pick_a_photo">
 				<h4 class="instructions">1. Pick a Photo</h4>
 					<?php
 						$img = null; 
