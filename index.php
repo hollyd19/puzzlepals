@@ -191,8 +191,10 @@ $app_name = idx($app_info, 'name', '');
     <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="javascript/jquery-ui.js"></script>
-    <script type="text/javascript" src="javascript/jquery.slimscroll.min.js"></script>
-    <script type="text/javascript" src="javascript/javascript-dragndrop.js"></script>
+    
+	<script type="text/javascript" src="javascript/jquery.slimscroll.min.js"></script>
+
+	<script type="text/javascript" src="javascript/javascript-dragndrop.js"></script>
   </head>
   <body onload="enable_scrollbar();">
     <div id="fb-root"></div>
