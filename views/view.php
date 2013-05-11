@@ -8,6 +8,16 @@
 	<!--<p>
 		<input type="button" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Invite Friends to Collaborate"/>
 	</p>-->
+        <div id="other_players">
+          <?php
+               foreach($users as $user){
+                    $user_name=json_decode(file_get_contents("http://graph.facebook.com/".$player))->name;
+                    echo "<div class='other_user'><img src='http://graph.facebook.com/".$player."/picture?type=normal' alt='picture'/><br/>";
+                    echo "<p>".$user_name."</p></div>";
+               }
+          ?>
+        </div>
+        
 	 
     <div id="box">
      <?php

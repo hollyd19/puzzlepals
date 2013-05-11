@@ -15,7 +15,6 @@ function make_puzzle_from_pic($image_url, $puzzle_size, $puzzle_name){
                 imagepng($img,$dest_image);
                 imagedestroy($img);
                 $images[$i][$k]= $dest_image;
-                //need to send info to database to save puzzle pieces and their destinations
             }
         }
         $return= array($images, $width_of_piece, $height_of_piece);
@@ -59,6 +58,7 @@ if($_POST['in_prog_puzzle']!=""){
     $temp= explode('_', $puzzle_id);
     $image_url= $temp[2].".png";
     $puzzle_id=$temp[0];
+    $users= query_users($puzzle_id);
     $num_pieces= $temp[1];
     
      list($images, $width, $height)= make_puzzle_from_pic($image_url, $num_pieces, $puzzle_id);

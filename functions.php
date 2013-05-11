@@ -128,6 +128,18 @@
 		echo "changed to ". $correct_location; 
 	}
 	
+	function query_users($puzzle_id){
+		$db_info=connect_to_db();
+		$db=$db_info['db_name'];
+		$collection=$db->puzzle;
+		$cursor=$collection->find(array("_id"=>$puzzle_id));
+		$result=array();
+		foreach($cursor as $document){
+			array_push($result, $document["users"]);
+		}
+		return $result;
+	}
+	
 	function query_correct_location($puzzle_name, $db){
 		$collection= $db->piece;
 		$cursor=$collection->find(array("puzzleID"=>$puzzle_name));
