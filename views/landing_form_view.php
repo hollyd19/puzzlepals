@@ -1,6 +1,7 @@
 <div class="row-fluid">
 	<div class="span12 container" id="encapsulating_div">
 	<h1 id="puzzle_center_header">Puzzle Center</h1>
+	
 	<div id="frozen_div">
 		<div class="span3 landing_section" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
@@ -29,8 +30,11 @@
 					echo '<input type="hidden" name="invited_users_id" id="invited_users_id"/>';
 					echo '<br/>';
 					echo '</div>';
+					
+					echo '<a href="#" class="btn btn-primary apprequests" id="sendRequest" data-message="Test this awesome app">';
+					echo '<span class="apprequests">Send Requests</span></a>'; 
 				
-				echo '<div class="span5" id="create_button_div"></br><input class="btn btn-primary" type="submit" value="3. Create" name="create"></div></div>';
+				echo '<div class="span5" id="create_button_div"></br><input class="btn btn-primary" type="submit" value="4. Create & Go!" name="create"></div></div>';
 				?>
 		
 		</form>
