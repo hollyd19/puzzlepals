@@ -82,7 +82,7 @@ $(document).ready(function () {
 	console.log(puzzle_name); 
 	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
 	console.log('resume puzzle');
-	return false; 
+	return true; 
     })
 });
 
