@@ -297,7 +297,7 @@ function sort_puzzles($user){
                 $players=array();
                 foreach($item["users"] as $player){
                   if ($player != $user_id){
-                    //echo $player;
+                    echo '<a href="'.'http://graph.facebook.com/'.$player.'>link</a><br/>';
                     array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
                   }
                 }
