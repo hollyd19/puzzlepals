@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
     }
     
-    
+    if($(".place", $puzzle).length != 0){
     $(".place", $puzzle).droppable({
         accept: ".piece",
         activeClass: "active",
@@ -30,6 +30,7 @@ $(document).ready(function () {
             // TODO check to see if i've won!
         }
     });
+    }
     
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
     $box.droppable({
