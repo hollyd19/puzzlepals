@@ -82,9 +82,9 @@
 		
 		</form>
 	</div>
+	</div>
 	
-	
-	
+	<div class="tab-content">
 	<div class="span6 landing_section" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
@@ -145,12 +145,6 @@
 		echo '<div class="row-fluid"><div class="span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div></div>';
 			?>
 </div>
-
-<script>
-$(function () {
-    $('#create_puz_div a:first').tab('show');
-  })
-</script>
 
 </div>
 </div>	
