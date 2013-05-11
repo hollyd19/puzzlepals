@@ -170,6 +170,7 @@ $app_name = idx($app_info, 'name', '');
               if (response != null) {
                 $('input.invited_users_id').val(response.to);
                 logResponse(response.to);
+                alert($('input.invited_users_id').val());
               }
             }
           );
