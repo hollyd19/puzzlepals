@@ -38,12 +38,12 @@
 	<div id="frozen_div">
 	
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#create_puz_div">Create Puzzle</a></li>
-			<li><a href="#ongoing_puz_div">Ongoing Puzzles</a></li>
+			<li><a href="#create_puz_div">Create Puzzle</a></li>
+			<li class="active"><a href="#ongoing_puz_div">Ongoing Puzzles</a></li>
 		</ul>
 		
 		<div class="tab-content">
-		<div class="span3 landing_section tab-pane active" id="create_puz_div">
+		<div class="span3 landing_section tab-pane" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
 			<div class="row-fluid">
 			<form action="testpuzzle.php" method="post">
@@ -85,7 +85,7 @@
 	</div>
 	
 	
-	<div class="span6 landing_section tab-pane" id="ongoing_puz_div">
+	<div class="span6 landing_section tab-pane  active" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
 		<div class="row-fluid">
@@ -147,6 +147,18 @@
 		echo '<div class="row-fluid"><div class="span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div></div>';
 			?>
 </div>
+
+<script>
+	$('#create_puz_div').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	})
+
+	$('#ongoing_puz_div').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+})
+</script>
 
 </div>
 </div>	
