@@ -42,7 +42,6 @@ if (isset($_POST['create'])){
 	create_collection("puzzle", $db);
 	$users = explode (',', $_POST['invited_users_id']);
 	array_push($users, $_POST['id']);
-	var_dump($users);
 	$puzzle_id=add_new_puzzle($users, $image_url, $puzzle_size, $db);
 	$puzzle_string=$puzzle_id."";
 	?>

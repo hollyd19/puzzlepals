@@ -168,10 +168,8 @@ $app_name = idx($app_info, 'name', '');
             function (response) {
               // If response is null the user canceled the dialog
               if (response != null) {
-                alert(response.to + "");
                 $('input#invited_users_id').val(response.to + "");
                 logResponse(response.to + "");
-                alert($('input#invited_users_id').val());
               }
             }
           );
@@ -291,7 +289,7 @@ function sort_puzzles($user){
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
                 $item["users"]= explode(", ", $item["users"]);
-                var_dump($item["users"]);
+                //var_dump($item["users"]);
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
@@ -299,6 +297,7 @@ function sort_puzzles($user){
                 $players=array();
                 foreach($item["users"] as $player){
                   if ($player != $user_id){
+                    echo $player;
                     array_push($players, json_decode(file_get_contents('http://graph.facebook.com/'.$player))->name);
                   }
                 }
