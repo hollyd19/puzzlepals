@@ -168,7 +168,12 @@ $app_name = idx($app_info, 'name', '');
             function (response) {
               // If response is null the user canceled the dialog
               if (response != null) {
-                logResponse(response);
+                var string="";
+                response.to.each(function(){
+                  string= string + "," + this;
+                }
+                $("#invited_users_id").val(string);
+                logResponse(string);
               }
             }
           );
@@ -254,7 +259,7 @@ $app_name = idx($app_info, 'name', '');
               </a>
             </li>
             <li>
-              <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Test this awesome app">
+              <a href="#" class="facebook-button apprequests" id="sendRequest" data-message="Solve a puzzle with me!">
                 <span class="apprequests">Send Requests</span>
               </a>
             </li>
