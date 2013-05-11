@@ -20,8 +20,6 @@
           window.location = window.location;
         });
 
-      };
-
       // Load the SDK Asynchronously
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -30,6 +28,7 @@
         js.src = "//connect.facebook.net/en_US/all.js";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
+      }
    </script>
 
 <div class="row-fluid">
