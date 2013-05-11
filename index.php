@@ -296,6 +296,7 @@ function sort_puzzles($user){
 
                 $players=array();
                 foreach($item["users"] as $player){
+                  $user_id = $facebook->getUser();
                   echo $player . " = " . $user_id ."<br/>";
                   if ($player != $user_id){
                     //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
