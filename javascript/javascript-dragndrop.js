@@ -2,12 +2,14 @@ $(document).ready(function () {
     var $box = $("#box"),
         $puzzle = $("#puzzle");
         
+    if ($("element").length == 0){
     // let the box items be draggable
     $(".piece", $box).draggable({
         cursor: "move",
         snap: ".place",
         snapMode: "corner"
     });
+    }
     
     
     $(".place", $puzzle).droppable({
