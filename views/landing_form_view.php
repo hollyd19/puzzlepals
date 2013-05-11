@@ -39,7 +39,7 @@
 	
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#create_puz_div">Create Puzzle</a></li>
-			<li><a href="#ongoing_puz_div">Ongoing Puzzles</a></li>
+			<li class="active"><a href="#ongoing_puz_div">Ongoing Puzzles</a></li>
 		</ul>
 		
 		<div class="tab-content">
