@@ -208,7 +208,6 @@
 		'd' => $secs / 86400 % 7,
 		'h' => $secs / 3600 % 24,
 		'm' => $secs / 60 % 60,
-		's' => $secs % 60
 		);
         
 		foreach($bit as $k => $v)
