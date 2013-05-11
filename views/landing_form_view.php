@@ -45,7 +45,7 @@
 		<div class="tab-content span9">
 		<div class="span12 landing_section tab-pane active" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
-			<div class="row-fluid">
+			<div class="row-fluid span11">
 			<form action="testpuzzle.php" method="post">
 
 			<script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
@@ -63,7 +63,7 @@
 							}
 						}
 					echo '</div>';
-					echo '<div class="span4" id="select_difficulty">';
+					echo '<div class="span5" id="select_difficulty">';
 					echo '<h4 class="instructions">2. Select Difficulty</h4>';
 					echo '<input type="radio" name="puzzle_size" value="9" checked>Easy<br/>';
 					echo '<input type="radio" name="puzzle_size" value="25">Medium<br/>';
