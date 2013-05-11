@@ -43,33 +43,6 @@
 
 			<script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
 
-			<script type="text/javascript">
-			  function logResponse(response) {
-				if (console && console.log) {
-				  console.log('The response was', response);
-				}
-			  }
-
-			  $(function(){
-				// Set up so we handle click on the buttons
-
-				$('#sendRequest').click(function() {
-				  FB.ui(
-					{
-					  method  : 'apprequests',
-					  message : $(this).attr('data-message')
-					},
-					function (response) {
-					  // If response is null the user canceled the dialog
-					  if (response != null) {
-						$('input.invited_users_id').val(response.to);
-						logResponse(response.to);
-					  }
-					}
-				  );
-				});
-			  });
-			</script>
 				<div class="span4" id="pick_a_photo">
 				<h4 class="instructions">1. Pick a Photo</h4>
 					<?php
