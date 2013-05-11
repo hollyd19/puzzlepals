@@ -32,8 +32,7 @@
    </script>
 
 <div class="row-fluid">
-	<div class="span12 container" id="encapsulating_div">
-	<h1 id="puzzle_center_header">Puzzle Center</h1>
+	<div class="span6 container" id="encapsulating_div">
 	
 	<div id="frozen_div">
 	
@@ -43,8 +42,8 @@
 			<li><a href="#completed_puz_div" data-toggle="tab">Completed Puzzles</a></li>
 		</ul>
 		
-		<div class="tab-content">
-		<div class="span6 landing_section tab-pane active" id="create_puz_div">
+		<div class="tab-content span7">
+		<div class="span9 landing_section tab-pane active" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
 			<div class="row-fluid">
 			<form action="testpuzzle.php" method="post">
@@ -98,7 +97,7 @@
 	</div>
 	
 	
-	<div class="span6 landing_section tab-pane" id="ongoing_puz_div">
+	<div class="span11 landing_section tab-pane" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
 		<div class="row-fluid">
