@@ -189,6 +189,7 @@ $app_name = idx($app_info, 'name', '');
     <link href="../stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
 	
 	<link href="stylesheets/basic-css.css" rel="stylesheet" type="text/css"/>
+	
     <script type="text/javascript" src="javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="javascript/jquery-ui.js"></script>
@@ -238,7 +239,7 @@ $app_name = idx($app_info, 'name', '');
       <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
 
       <div>
-        <h1 id="welcome_header">Welcome to Puzzle Pals, <?php echo he(idx($basic, 'name')); ?></h1>
+        <h3 id="welcome_header">Welcome to Puzzle Pals, <?php echo he(idx($basic, 'name')); ?></h3>
       </div>
       </header>
       
