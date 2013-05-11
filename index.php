@@ -171,7 +171,7 @@ $app_name = idx($app_info, 'name', '');
                 alert(response.to + "");
                 $('input#invited_users_id').val(response.to + "");
                 logResponse(response.to + "");
-                alert($('input.invited_users_id').val());
+                alert($('input#invited_users_id').val());
               }
             }
           );
