@@ -1,11 +1,12 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div class="content">
-     <h5><a href= "index.php">Return to Puzzle Center</a></h5>
+     <h5 id="back_home"><a href= "index.php">Return to Puzzle Center</a></h5>
 
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
 	
         <div id="other_players">
+		<h4>Puzzle Collaborators</h4>
           <?php
                foreach($users as $user){
                     $user_name=json_decode(file_get_contents("http://graph.facebook.com/".$user))->name;
