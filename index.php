@@ -264,7 +264,7 @@ function sort_puzzles($user){
                 foreach($array as $player){
                   $player=trim($player); 
                   if($player==$user){
-                    array_push($players, "Me")
+                    array_push($players, "Me");
                   }
                  else if ($player!=""){
                     //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
