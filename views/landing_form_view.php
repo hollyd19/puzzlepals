@@ -127,7 +127,7 @@
 			}
 			echo '</div>';
 			
-		echo '<div class="span4 scrollable_div ong_container" id="medium_section"><h4 class="instructions">Medium</h4>';
+		echo '<div class="span4 scrollable_div ong_container" id="medium_section"><h3 class="instructions">Medium</h3>';
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
 				$string_of_players="";
@@ -144,7 +144,7 @@
 			}
 		echo '</div>';
 		
-		echo '<div class="span4 scrollable_div ong_container" id="hard_section"><h4 class="instructions">Hard</h4>';
+		echo '<div class="span4 scrollable_div ong_container" id="hard_section"><h3 class="instructions">Hard</h3>';
 			for($a=0; $a<sizeof($hard); $a++){
 				$var= $hard[$a];
 				$string_of_players="";
