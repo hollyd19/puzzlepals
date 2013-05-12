@@ -49,7 +49,7 @@
 			<form action="testpuzzle.php" method="post">
 
 			<script type="text/javascript" src="/javascript/jquery-1.7.1.min.js"></script>
-				<div calss="span1"></div>
+				
 				<div class="span6 scrollable_div" id="pick_a_photo">
 				<h4 class="instructions">1. Pick a Photo</h4>
 					
@@ -99,15 +99,16 @@
 	</div>
 	
 	
-	<div class="span11 landing_section tab-pane" id="ongoing_puz_div">
+	<div class="span12 landing_section tab-pane" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
-		<div class="row-fluid">
+		<div class="row-fluid span11">
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
+		
+			
+		<div class="span4 scrollable_div ong_container" id="easy_section">
 
-		<div class="span12">
-		<div class="span3 scrollable_div" id="easy_section">
 		<h4 class="instructions">Easy</h4>
 		<?php
 			for($a=0; $a<sizeof($easy); $a++){
@@ -126,7 +127,7 @@
 			}
 			echo '</div>';
 			
-		echo '<div class="span3 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
+		echo '<div class="span4 scrollable_div ong_container" id="medium_section"><h4 class="instructions">Medium</h4>';
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
 				$string_of_players="";
@@ -143,7 +144,7 @@
 			}
 		echo '</div>';
 		
-		echo '<div class="span3 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
+		echo '<div class="span4 scrollable_div ong_container" id="hard_section"><h4 class="instructions">Hard</h4>';
 			for($a=0; $a<sizeof($hard); $a++){
 				$var= $hard[$a];
 				$string_of_players="";
@@ -157,8 +158,8 @@
 				echo '<br/><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><p class="time_elapsed">Time Elapsed: '.$datediff.'</p><p class="participating_friends">Puzzle Players: '.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_49_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button><br/>';
 
 			}
-		echo '</div></form></div>';
-		echo '<div class="row-fluid"><div class="span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div></div>';
+		echo '</form></div>';
+		echo '<div class="row-fluid span11"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div>';
 			?>
 </div>
 
