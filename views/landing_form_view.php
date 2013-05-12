@@ -102,7 +102,7 @@
 	<div class="span11 landing_section tab-pane" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
-		<div class="row-fluid span12">
+		<div class="row-fluid span11">
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
 
