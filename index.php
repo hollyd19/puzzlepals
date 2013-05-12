@@ -259,7 +259,7 @@ function sort_puzzles($user){
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
-                echo sizeof($array); 
+                //echo sizeof($array); 
                 $players=array(); 
                 foreach($array as $player){
                   $player=trim($player); 

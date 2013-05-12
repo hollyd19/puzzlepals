@@ -129,6 +129,7 @@
 	}
 	
 	function query_users($puzzle_id){
+		$puzzle_id=new MongoId($puzzle_id);
 		$db_info=connect_to_db();
 		$db=$db_info['db_name'];
 		$collection=$db->puzzle;
