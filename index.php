@@ -264,7 +264,8 @@ function sort_puzzles($user){
                 foreach($item["users"] as $player){
                   //echo $player . " = " . $user ."<br/>";
                   if (/*$player != $user*/true){
-                      $friends = idx($facebook->api('/$player?fields=name'), 'data', array());
+                    $var="/".$player."/?fields=name";
+                      $friends = idx($facebook->api($var), 'data', array());
                                   foreach ($friends as $friend) {
                                     $players+=idx($friend, 'name'). ", ";
                                   }
