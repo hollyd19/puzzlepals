@@ -265,8 +265,8 @@ function sort_puzzles($user){
                   //echo $player . " = " . $user ."<br/>";
                   if ($player != $user){
                     //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
-                    echo json_decode(file_get_contents("http://graph.facebook.com/".$player))->name; 
-                    array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
+                    $players= json_decode(file_get_contents("http://graph.facebook.com/".$player))->name; 
+                   // array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
                   }
                 }
                 
