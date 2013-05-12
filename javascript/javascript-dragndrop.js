@@ -392,3 +392,8 @@ $('#completed_puz_div').click(function (e) {
 })
 
 
+function check_pieces(){
+    console.log("check_pieces");
+    
+}
+
