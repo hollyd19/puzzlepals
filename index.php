@@ -263,16 +263,21 @@ function sort_puzzles($user){
                 $players=""; 
                 foreach($item["users"] as $player){
                   //echo $player . " = " . $user ."<br/>";
-                  if ($player != $user){
+                  if (/*$player != $user*/true){
+                      $friends = idx($facebook->api('/$player?fields=name'), 'data', array());
+                                  foreach ($friends as $friend) {
+                                    $players+=idx($friend, 'name'). ", ";
+                                  }
+
                     //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
-                    array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
+                   // array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
                   }
                 }
                 
                 //var_dump($players);
 
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
