@@ -159,7 +159,7 @@
 
 			}
 		echo '</form></div>';
-		echo '<div class="row-fluid span11"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div>';
+		echo '<div class="row-fluid span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div>';
 			?>
 </div>
 
