@@ -29,3 +29,12 @@
   #frozen_div {
     min-width: 1200px;
   }
+  
+  .other_user{
+	width: 200px;
+	float: left;
+  }
+  
+  #other_players{
+	max-height: 150px;
+  }
