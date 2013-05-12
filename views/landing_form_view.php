@@ -42,7 +42,7 @@
 			<li><a href="#completed_puz_div" data-toggle="tab">Completed Puzzles</a></li>
 		</ul>
 		
-		<div class="tab-content span9">
+		<div class="tab-content span6">
 		<div class="span12 landing_section tab-pane active" id="create_puz_div">
 		<h3 id="new_puzzle_header">Create A New Puzzle</h3>
 			<div class="row-fluid span11">
