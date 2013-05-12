@@ -265,9 +265,7 @@ function in_correct_location(piece_id, x, y) {
     if(place_y<=y+20 && place_y >= y+15){
 	correct_y=true; 
     }
-    if (place_x<x+2 && place_x > x-2) {
-	correct_x=true;
-    }
+  
     if (correct_x  && correct_y) {
 	return true;
     }
