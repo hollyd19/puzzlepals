@@ -102,12 +102,12 @@
 	<div class="span12 landing_section tab-pane" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
-		<div class="row-fluid span11" id="ong_container">
+		<div class="row-fluid span11">
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
 		
 			
-		<div class="span4 scrollable_div" id="easy_section">
+		<div class="span4 scrollable_div ong_container" id="easy_section">
 
 		<h4 class="instructions">Easy</h4>
 		<?php
@@ -127,7 +127,7 @@
 			}
 			echo '</div>';
 			
-		echo '<div class="span4 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
+		echo '<div class="span4 scrollable_div ong_container" id="medium_section"><h4 class="instructions">Medium</h4>';
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
 				$string_of_players="";
@@ -144,7 +144,7 @@
 			}
 		echo '</div>';
 		
-		echo '<div class="span4 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
+		echo '<div class="span4 scrollable_div ong_container" id="hard_section"><h4 class="instructions">Hard</h4>';
 			for($a=0; $a<sizeof($hard); $a++){
 				$var= $hard[$a];
 				$string_of_players="";
