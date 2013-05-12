@@ -1,3 +1,21 @@
+   body {
+	margin:0;
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size:14px;
+	line-height:20px;
+	color:#333;
+	background-color:#fff;
+	} 
+
+   a{
+	color:#08c;
+	text-decoration:none
+	}
+	
+	a:hover,a:focus{
+		color:#005580;text-decoration:underline
+	}
+  
   #box {
       width: 1100px;
       min-height: 250px;
@@ -30,11 +48,39 @@
     min-width: 1200px;
   }
   
+  .location{
+    visibility: hidden;
+  }
+  
   .other_user{
-	width: 200px;
+	width: 120px;
 	float: left;
   }
   
   #other_players{
+	padding-left:10px;
 	height: 150px;
+	
+  }
+  
+  #other_players p{
+	font-size:12px;
+  }
+  
+  #other_players h4{
+	margin:0;
+  }
+  
+  .player_name{
+	margin: 0;
+  }
+  
+  #back_home{
+	padding-left:5px;
+	margin:0px;
+  }
+  
+  img {
+	max-height: 100px;
+	max-width: 100px;
   }
