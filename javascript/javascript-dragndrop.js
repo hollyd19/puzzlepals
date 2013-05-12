@@ -312,7 +312,7 @@ function delete_puzzle(puzzle_name) {
 		global:false,
 		success: function(data){
 		    if (data=="success") {
-				$('"#' + puzzlename + '"').fadeOut(100);
+				$('"#' + puzzle_name + '"').fadeOut(100);
 			
 		    }
 		} 
