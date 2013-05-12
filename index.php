@@ -254,31 +254,38 @@ function sort_puzzles($user){
 	$medium=array();
 	$hard=array();
 	foreach ($in_progress_puzzles as $item){
-                $item["users"]= explode(", ", $item["users"]);
+                $array= explode(",", $item["users"]);
                 //var_dump($item["users"]);
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
-
-                $players=""; 
-                foreach($item["users"] as $player){
-                  //echo $player . " = " . $user ."<br/>";
-                  if ($player != $user){
-                    //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
-                    array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
+                echo sizeof($array); 
+                $players=array(); 
+                foreach($array as $player){
+                  $player=trim($player); 
+                  if($player==$user){
+                    array_push($players, "Me")
                   }
+                 else if ($player!=""){
+                    //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
+                    $facebook_url="http://graph.facebook.com/".$player;
+                    $fa= json_decode(file_get_contents($facebook_url))->name; 
+                    array_push($players, $fa);
+
+                 }
+                 
                 }
                 
                 //var_dump($players);
 
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($hard, $array);
 		}
 	}
