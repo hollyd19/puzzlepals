@@ -61,6 +61,10 @@
 	height: 150px;
   }
   
+  #other_players p{
+	font-size:12px;
+  }
+  
   .player_name{
 	margin: 0;
   }
