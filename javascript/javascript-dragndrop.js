@@ -262,7 +262,7 @@ function in_correct_location(piece_id, x, y) {
     place_x=$(name).offset().left;
     console.log(place_x);
     console.log(x); 
-    if(place_y<=y+25 && place_y > y+20){
+    if(place_y<=y+32 && place_y > y+25){
 	correct_y=true; 
     }
     if (place_x<x+2 && place_x > x-2) {
