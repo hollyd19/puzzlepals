@@ -106,7 +106,8 @@
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
 
-		<div class="span4 scrollable_div" id="easy_section">
+			
+		<div class="span4 offset1 scrollable_div" id="easy_section">
 
 		<h4 class="instructions">Easy</h4>
 		<?php
@@ -158,7 +159,7 @@
 
 			}
 		echo '</form></div>';
-		echo '<div class="row-fluid span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div>';
+		echo '<div class="row-fluid span11"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div>';
 			?>
 </div>
 
