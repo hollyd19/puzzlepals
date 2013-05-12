@@ -126,7 +126,7 @@
 			}
 			echo '</div>';
 			
-		echo '<div class="span3 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
+		echo '<div class="span4 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
 				$string_of_players="";
@@ -143,7 +143,7 @@
 			}
 		echo '</div>';
 		
-		echo '<div class="span3 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
+		echo '<div class="span4 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
 			for($a=0; $a<sizeof($hard); $a++){
 				$var= $hard[$a];
 				$string_of_players="";
@@ -158,7 +158,7 @@
 
 			}
 		echo '</form></div>';
-		echo '<div class="row-fluid"><div class="span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div></div>';
+		echo '<div class="row-fluid span12"><input id="delete_button" class="btn btn-danger" type="submit" name="delete_all" value="Delete All Puzzles"/></div>';
 			?>
 </div>
 
