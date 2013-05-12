@@ -107,16 +107,15 @@
 			<input type="hidden" name="in_prog_puzzle"/>
 
 		<div class="span12">
-		<div class="span4 scrollable_div" id="easy_section">
+		<div class="span3 scrollable_div" id="easy_section">
 		<h4 class="instructions">Easy</h4>
 		<?php
 			for($a=0; $a<sizeof($easy); $a++){
 				$var= $easy[$a];
 				$string_of_players="";
 				foreach($var['users'] as $player1){
-					$string_of_players= $string_of_players . $player1 . ", ";
+					$string_of_players= $string_of_players . $player1 . "<br/>";
 				}
-				$string_of_players=substr($string_of_players, 0, sizeof($string_of_players)-1); 
 				
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
@@ -127,13 +126,13 @@
 			}
 			echo '</div>';
 			
-		echo '<div class="span4 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
+		echo '<div class="span3 scrollable_div" id="medium_section"><h4 class="instructions">Medium</h4>';
 			for($a=0; $a<sizeof($medium); $a++){
 				$var= $medium[$a];
 				$string_of_players="";
 				//var_dump($var['users']);
 				foreach($var['users'] as $player1){
-					$string_of_players= $string_of_players . $player1 . ", ";
+					$string_of_players= $string_of_players . $player1 . "<br/>";
 				}
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
@@ -144,7 +143,7 @@
 			}
 		echo '</div>';
 		
-		echo '<div class="span4 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
+		echo '<div class="span3 scrollable_div" id="hard_section"><h4 class="instructions">Hard</h4>';
 			for($a=0; $a<sizeof($hard); $a++){
 				$var= $hard[$a];
 				$string_of_players="";
