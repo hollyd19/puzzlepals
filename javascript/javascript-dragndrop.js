@@ -312,8 +312,7 @@ function delete_puzzle(puzzle_name) {
 		global:false,
 		success: function(data){
 		    if (data=="success") {
-				document.location.reload(true);
-				$('#ongoing_puz_div li:eq(1) a').tab('show');
+				$("#puzzlename").fadeOut(100);
 			
 		    }
 		} 
