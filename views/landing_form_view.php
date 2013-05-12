@@ -103,7 +103,7 @@
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
 		<div class="row-fluid">
-		<form action="testpuzzle.php" method="post">
+		<form class="span12" action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
 
 		<div class="span4 scrollable_div" id="easy_section">
