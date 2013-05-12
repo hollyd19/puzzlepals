@@ -227,5 +227,12 @@
         
 		return join(' ', $ret);
 	}
+	
+	function get_location($puzzle_id, $peice_num, $db){
+		$collection=$db->piece;
+		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "pieceNUMBER"=>$peice_num));
+		$location= $cursor["x"]."!@#$%".$cursor["y"];
+		return $location; 
+	}
 
 ?>
