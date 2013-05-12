@@ -263,15 +263,10 @@ function sort_puzzles($user){
                 $players=""; 
                 foreach($item["users"] as $player){
                   //echo $player . " = " . $user ."<br/>";
-                  if (/*$player != $user*/true){
-                    $var="/".$player."/?fields=name";
-                      $friends = idx($facebook->api($var), 'data', array());
-                                  foreach ($friends as $friend) {
-                                    $players+=idx($friend, 'name'). ", ";
-                                  }
-
+                  if ($player != $user){
                     //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
-                   // array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
+                    echo json_decode(file_get_contents("http://graph.facebook.com/".$player))->name; 
+                    array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
                   }
                 }
                 
@@ -281,10 +276,10 @@ function sort_puzzles($user){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($hard, $array);
 		}
 	}
