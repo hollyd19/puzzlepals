@@ -48,6 +48,10 @@
     min-width: 1200px;
   }
   
+  .location{
+    visibility: hidden;
+  }
+  
   .other_user{
 	width: 120px;
 	float: left;
