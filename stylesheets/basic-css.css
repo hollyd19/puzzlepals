@@ -58,7 +58,7 @@
   }
   
   #other_players{
-	padding:10px;
+	padding-left:10px;
 	height: 150px;
 	
   }
@@ -73,4 +73,5 @@
   
   #back_home{
 	padding-left:5px;
+	margin:0px;
   }
