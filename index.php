@@ -260,7 +260,7 @@ function sort_puzzles($user){
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
 
-                $players=array();
+                $players=""; 
                 foreach($item["users"] as $player){
                   //echo $player . " = " . $user ."<br/>";
                   if ($player != $user){
@@ -272,13 +272,13 @@ function sort_puzzles($user){
                 //var_dump($players);
 
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$item['users'], "time"=>$item["time"]); 
 			array_push($hard, $array);
 		}
 	}
