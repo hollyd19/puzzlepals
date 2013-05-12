@@ -253,19 +253,22 @@ function get_new_location() {
 
 function in_correct_location(piece_id, x, y) {
     console.log(piece_id);
-    correct_x=true;
+    correct_x=false;
     correct_y=false;
     name="#"+piece_id+""; 
     place_y=$(name).offset().top;
-    console.log(y+20>place_y);
     place_x=$(name).offset().left;
     console.log(place_x);
     console.log(x); 
     if(place_y<=y+20 && place_y >= y+15){
 	correct_y=true; 
     }
+    if (place_x<=x+2 && place_x>x-2) {
+	correct_x=true;
+    }
     
-    
+    console.log(correct_x);
+    console.log(x+2); 
   
     if (correct_x  && correct_y) {
 	return true;
