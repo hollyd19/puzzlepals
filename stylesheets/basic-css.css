@@ -31,10 +31,14 @@
   }
   
   .other_user{
-	width: 200px;
+	width: 120px;
 	float: left;
   }
   
   #other_players{
 	height: 150px;
+  }
+  
+  .player_name{
+	margin: 0;
   }
