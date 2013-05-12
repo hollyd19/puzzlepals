@@ -115,7 +115,7 @@
 		$collection=$db->piece;
 		$p_id=$piece_info["puzzle_id"]."";
 		$p_num=$piece_info["piece_num"]."";
-		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location));
+		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location, "updatedLOCATION"=>time()));
 		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
 		echo $correct_location; 
 	}
