@@ -15,4 +15,4 @@
 	
 	
   </head>
-  <body onload="get_pieces('<?php echo $puzzle_id; ?>'); size_places(<?php echo $width.", ". $height.", ".sqrt($num_pieces);?>);">
+  <body onload="get_pieces('<?php echo $puzzle_id; ?>'); size_places(<?php echo $width.", ". $height.", ".sqrt($num_pieces);?>); setInterval(check_pieces(), 500);">

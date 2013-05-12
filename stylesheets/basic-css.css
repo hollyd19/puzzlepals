@@ -33,3 +33,12 @@
   .location{
     visibility: hidden;
   }
+  
+  .other_user{
+	width: 200px;
+	float: left;
+  }
+  
+  #other_players{
+	height: 150px;
+  }

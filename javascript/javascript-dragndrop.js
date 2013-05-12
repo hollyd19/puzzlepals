@@ -375,22 +375,22 @@ function enable_scrollbar() {
     }
 }
 
-function sendRequestToRecipients() {
-	var user_ids = document.getElementsByName("user_ids")[0].value;
-	alert(user_ids);
-	FB.ui({method: 'apprequests', message: 'Request message goes here', to: user_ids}, requestCallback);
-}
+//function sendRequestToRecipients() {
+	//var user_ids = document.getElementsByName("user_ids")[0].value;
+	//alert(user_ids);
+	//FB.ui({method: 'apprequests', message: 'Request message goes here', to: user_ids}, requestCallback);
+//}
 
-function sendRequestViaMultiFriendSelector() {
-	FB.ui({method: 'apprequests', message: 'MFS message goes here'}, requestCallback);
-}
+//function sendRequestViaMultiFriendSelector() {
+	//FB.ui({method: 'apprequests', message: 'MFS message goes here'}, requestCallback);
+//}
 
-function requestCallback(response){
+//function requestCallback(response){
 	//Handle callback here
-	if((response != null) &&(response != false)) {
-      alert('User Accepts');
-    }
-}
+	//if((response != null) &&(response != false)) {
+      //alert('User Accepts');
+    //}
+//}
 
 $('#create_puz_div').click(function (e) {
   e.preventDefault();
