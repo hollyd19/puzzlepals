@@ -1,13 +1,10 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div class="content">
-     <h5><a href= "index.php">Go back to home</a></h5>
+     <h5><a href= "index.php">Return to Puzzle Center</a></h5>
 
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
 	
-	<!--<p>
-		<input type="button" onclick="sendRequestViaMultiFriendSelector(); return false;" value="Invite Friends to Collaborate"/>
-	</p>-->
         <div id="other_players">
           <?php
                foreach($users as $user){
