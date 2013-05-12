@@ -423,7 +423,7 @@ function check_pieces(){
 		data: {function_name: "check_pieces", pID: puzzle_id},
 		global:false,
                 success: function(data){
-		    console.log("data");
+		    console.log(data);
 		}
     });
     
