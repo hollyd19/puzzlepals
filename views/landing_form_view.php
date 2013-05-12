@@ -102,12 +102,12 @@
 	<div class="span11 landing_section tab-pane" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
-		<div class="row-fluid span11">
+		<div class="row-fluid span12">
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
 
 			
-		<div class="span4 offset1 scrollable_div" id="easy_section">
+		<div class="span4 scrollable_div" id="easy_section">
 
 		<h4 class="instructions">Easy</h4>
 		<?php
