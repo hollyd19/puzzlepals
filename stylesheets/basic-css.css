@@ -29,3 +29,7 @@
   #frozen_div {
     min-width: 1200px;
   }
+  
+  .location{
+    visibility: hidden;
+  }

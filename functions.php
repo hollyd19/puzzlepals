@@ -24,7 +24,8 @@
 				$piece_info=array("puzzle_id"=>$puzzle_id, "piece_num"=>$piece_num); 
 				$x= $_POST['x'];
 				$y=$_POST['y'];
-				update_piece_location($piece_info, $db, $x, $y); 
+				$correct_location=$_POST['correct_location']; 
+				update_piece_location($piece_info, $db, $x, $y, $correct_location); 
 				break;
 			
 			case "return_puzzle":
@@ -44,13 +45,13 @@
 				echo "success";
 				break;
 			
-			case "update_correct_location":
+			/*case "update_correct_location":
 				$puzzle_id=$_POST['puzzle_name'];
 				$piece_num=$_POST['piece_id'];
 				$piece_info=array("puzzle_id"=>$puzzle_id, "piece_num"=>$piece_num); 
 				$correct_location= $_POST['correct_location']; 
 				update_correct_location($piece_info, $db, $correct_location);
-				break;
+				break;*/
 			
 			case "query_correct_location":
 				$puzzle_id=$_POST['puzzle_name'];
@@ -114,11 +115,12 @@
 		$collection=$db->piece;
 		$p_id=$piece_info["puzzle_id"]."";
 		$p_num=$piece_info["piece_num"]."";
-		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y));
+		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location));
 		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
-		echo "<p> x: $new_x, y: $new_y </p>"; 
+		echo $correct_location; 
 	}
 	
+	/*
 	function update_correct_location($piece_info, $db, $correct_location){
 		$collection=$db->piece;
 		$p_id=$piece_info["puzzle_id"]."";
@@ -126,7 +128,7 @@
 		$new_data = array('$set' => array("correctLOCATION"=>$correct_location));
 		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
 		echo "changed to ". $correct_location; 
-	}
+	}*/
 	
 	function query_users($puzzle_id){
 		$puzzle_id=new MongoId($puzzle_id);

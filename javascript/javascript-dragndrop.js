@@ -26,7 +26,7 @@ $(document).ready(function () {
             $(this).droppable("disable");
             // TODO send this data to the server so it can keep state about the game
             ////console.log("Piece " + $(ui.draggable).data("number") + " placed at position " + $(this).data("position"));
-            check_pieces_in_correct_location($(ui.draggable).data("number"), $(this).data("position"));
+            //check_pieces_in_correct_location($(ui.draggable).data("number"), $(this).data("position"));
             // TODO check to see if i've won!
         }
     });
@@ -86,11 +86,10 @@ $(document).ready(function () {
     })
 });
 
-var dropped=false;
 
 var array_of_place_locations= [];
 
-function check_pieces_in_correct_location(piece_data_number, location_data_number){
+f/*unction check_pieces_in_correct_location(piece_data_number, location_data_number){
     var add_it=false;
     var temp_piece_img='';
     var temp_piece='';
@@ -153,6 +152,7 @@ function check_pieces_in_correct_location(piece_data_number, location_data_numbe
 	});
     }
 }
+*/
 
 function size_places(width, height, num_pieces){
     $(".place").css("width", width);
@@ -243,29 +243,46 @@ function get_new_location() {
 	var piece_id_info=info_array[2];
 	piece_id_info=piece_id_info.split(".");
 	var piece_id=piece_id_info[0];
-	/**get the correct_location variable here and mark as true or false*/
-	update_location(puzzle_name, piece_id, x, y);
-	//console.log(dropped);
-	if (!dropped) {
-	    update_location_false(puzzle_name, piece_id);
+	if (in_correct_location(piece_id, x, y)) {
+	    update_location(puzzle_name, piece_id, x, y, true);
 	}
-	else if (dropped) {
-	    dropped= false; 
+	else{
+	    update_location(puzzle_name, piece_id, x, y, false);
 	}
 }
 
-function update_location(puzzle_name, piece_id, x, y) {
+function in_correct_location(piece_id, x, y) {
+    correct_x=false;
+    correct_y=false;
+    name="#"+piece_id+""; 
+    place_y=$(name).offset().top;
+    place_x=$(name).offset().left;
+    if(place_y<=y+25 && place_y > y+20){
+	correct_y=true; 
+    }
+    if (place_x<x+2 && place_x > x-2) {
+	correct_x=true;
+    }
+    if (correct_x  && correct_y) {
+	return true;
+    }
+    else return false; 
+}
+
+function update_location(puzzle_name, piece_id, x, y, correct_location) {
     var ajaxquery= $.ajax({
 		url : "functions.php",
 		type: "POST",
-		data: {function_name: "update_location", puzzle_name: puzzle_name, piece_id: piece_id, x: x, y: y},
+		data: {function_name: "update_location", puzzle_name: puzzle_name, piece_id: piece_id, x: x, y: y, correct_location: correct_location},
 		global:false,
 		success: function(data){
-                //console.log(data);
+                console.log(data);
             } 
 	});
     $('#piece_moved').removeAttr("id");
 }
+
+
 
 function update_location_false(puzzle_name, piece_id) {
     var ajaxquery= $.ajax({
@@ -275,7 +292,6 @@ function update_location_false(puzzle_name, piece_id) {
 		global:false,
 		success: function(data){
                 //console.log(data);
-
             } 
 	});
 }

@@ -51,11 +51,9 @@
      
      <div id="puzzle">
      <?php
-	  $i=0;
           foreach($images as $index=>$array){
                foreach($array as $first=>$second){
-                    echo '<div id="place-'.$index.$first.'" class="place" data-position="'.$index.$first.'"><p class="location" id="'.$i.'">'.$i.'</p></div>';
-		    $i++; 
+                    echo '<div id="place-'.$index.$first.'" class="place" data-position="'.$index.$first.'"><p id="'.$index.$first.'">'.$index.$first.'</p></div>';
 	       }
           }
      }
