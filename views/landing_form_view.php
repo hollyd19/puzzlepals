@@ -99,7 +99,7 @@
 	</div>
 	
 	
-	<div class="container landing_section tab-pane" id="ongoing_puz_div">
+	<div class="span12 landing_section tab-pane" id="ongoing_puz_div">
 	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
 		<div class="row-fluid span11">
