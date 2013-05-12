@@ -57,6 +57,12 @@
 				$array= query_correct_location($puzzle_id, $db);
 				echo json_encode($array);
 				break;
+			
+			case "check_pieces":
+				$puzzle_id=$_POST['puzzle_name'];
+				$array= get_updated_pieces($puzzle_id, $db);
+				echo json_encode($array);
+				break;
 		}
 	}
 
@@ -235,5 +241,22 @@
 		$location= $cursor["x"]."!@#$%".$cursor["y"];
 		return $location; 
 	}
+	
+	function get_updated_pieces($puzzle_id, $db){
+		$collection=$db->piece;
+		$time= time();
+		$time= $time - 1;
+		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "updatedLocation"=>array("\$gt"=>$time)));
+		$result= array();
+		foreach($cursor as $document){
+			$doc_info= array();
+			$doc_info['x']=$document['x'];
+			$doc_info['y']=$document['y'];
+			$doc_info['imgURL']=$document['imgURL'];
+			array_push($result, $doc_info);
+		}
+		return $result;
+	}
+	
 
 ?>
