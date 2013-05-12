@@ -95,7 +95,7 @@
 	
 	function add_new_piece($puzzle_id, $piece_num, $img_url, $current_x, $current_y, $db){
 		$collection_created= $db->piece;
-		$puzzle_piece= array("puzzleID"=>$puzzle_id, "pieceNUMBER"=>$piece_num, "imgURL"=>$img_url, "x"=>$current_x, "y"=>$current_y, "correctLOCATION"=>"false", "status"=>"ready");
+		$puzzle_piece= array("puzzleID"=>$puzzle_id, "pieceNUMBER"=>$piece_num, "imgURL"=>$img_url, "x"=>$current_x, "y"=>$current_y, "correctLOCATION"=>"false", "status"=>"ready", "lastUPDATED"=>time());
 		$collection_created->insert($puzzle_piece);
 		$piece_info=array("puzzle_id"=>$puzzle_id, "piece_num"=>$piece_num); 
 		return $piece_info;
