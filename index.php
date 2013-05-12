@@ -263,13 +263,13 @@ function sort_puzzles($user){
                 $players=""; 
                 foreach($item["users"] as $player){
                   //echo $player . " = " . $user ."<br/>";
-                  if (true){
+                 // if (true){
                     //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
                     $facebook_url="http://graph.facebook.com/".$player;
                     $players= $facebook_url;
                    // $players= json_decode(file_get_contents($facebook_url))->name; 
                    //        array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
-                  }
+                 // }
                 }
                 
                 //var_dump($players);
