@@ -114,8 +114,10 @@
 				$var= $easy[$a];
 				$string_of_players="";
 				foreach($var['users'] as $player1){
-					$string_of_players= $string_of_players . $player1 . "<br/>";
+					$string_of_players= $string_of_players . $player1 . ", ";
 				}
+				$string_of_players=substr($string_of_players, 0, sizeof($string_of_players)-1); 
+				
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
@@ -131,7 +133,7 @@
 				$string_of_players="";
 				//var_dump($var['users']);
 				foreach($var['users'] as $player1){
-					$string_of_players= $string_of_players . $player1 . "<br/>";
+					$string_of_players= $string_of_players . $player1 . ", ";
 				}
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
