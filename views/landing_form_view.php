@@ -60,9 +60,10 @@
 							$temp_img= explode("/", $img);
 							$name= explode(".", $temp_img[2]);
 							if (!in_array($name[0], $easy) && !in_array($name[0], $medium) && !in_array($name[0], $hard)){
-								echo '<input type="radio" name="picture" value="' . $img . '" checked><img src ="' . $img .' " class="puz_photo_choices img-polaroid" alt="' . $img . '" />';
+								echo '<div class="span6"><input type="radio" name="picture" value="' . $img . '" checked><img src ="' . $img .' " class="puz_photo_choices img-polaroid" alt="' . $img . '" /></div><br/>';
 							}
 						}
+					echo '</div>';
 					echo '</div>';
 					echo '<div class="span5" id="select_difficulty">';
 					echo '<h4 class="instructions">2. Select Difficulty</h4>';
