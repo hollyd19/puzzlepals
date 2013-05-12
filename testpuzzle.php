@@ -58,7 +58,7 @@ if($_POST['in_prog_puzzle']!=""){
     $temp= explode('_', $puzzle_id);
     $image_url= $temp[2].".png";
     $puzzle_id=$temp[0];
-    echo $puzzle_id;
+    //echo $puzzle_id;
     $users= query_users($puzzle_id);
     $users=$users[0];
     $num_pieces= $temp[1];
@@ -73,7 +73,7 @@ if($_POST['in_prog_puzzle']!=""){
 }
 
     
-    var_dump($users);
+    //var_dump($users);
     require("views/view.php");
     require("views/footer.php");
     
