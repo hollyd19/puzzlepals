@@ -259,15 +259,17 @@ function sort_puzzles($user){
 		$puzzle= explode(".", $item["name"]);
 		$images_name= $puzzle[0];
 		$puzzle_size= $item["level"];
-
-                $players="".sizeof($array); 
+                echo sizeof($array); 
+                $players=array(); 
                 foreach($array as $player){
                   $player=trim($player); 
                   //echo $player . " = " . $user ."<br/>";
                  // if (true){
                     //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
                     $facebook_url="http://graph.facebook.com/".$player;
-                    $players+= $facebook_url;
+                    //$players+= $facebook_url;
+                    array_push($players, $facebook_url);
+
                    // $players= json_decode(file_get_contents($facebook_url))->name; 
                    //        array_push($players, json_decode(file_get_contents("http://graph.facebook.com/".$player))->name);
                  // }
