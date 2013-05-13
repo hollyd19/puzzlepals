@@ -170,7 +170,25 @@
 
 	<div class="row-fluid">
 	<div class="span12">
-		<p> Filler Content </p>
+		<ul>
+		<?php
+			foreach($completed_puzzle_list as $var){
+				$string_of_players="";
+				foreach($var['users'] as $player1){
+					$string_of_players= $string_of_players . $player1 . " and";
+				}
+				$now = time(); // or your date as well
+				$your_date = $var["time"];
+				$datediff = $now - $your_date;
+				$datediff= time_elapsed($datediff);
+				echo '<li><ul><li><img src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" /></li>';
+				echo '<li>'.$datediff.'</li>';
+				echo  '<li>'.$string_of_users.'</li></ul></li>';
+				
+				
+			}
+		?>
+		</ul>
 	</div>
 	</div>
 </div>
