@@ -268,6 +268,9 @@ function sort_puzzles($user){
                 if(in_array($user, $array)){
                   $viewed=true;
                 }
+                else{
+                  $number_new++; 
+                }
                 
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
@@ -313,7 +316,7 @@ function get_completed_puzzles($user_id){
   }
   return $list; 
 }
-
+$number_new=0;
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 $completed_puzzle_list= get_completed_puzzles($user_id);
 //var_dump($medium);
