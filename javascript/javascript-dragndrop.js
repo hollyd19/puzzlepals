@@ -32,14 +32,6 @@ $(document).ready(function () {
     });
     }
     
-    if($("#other_players").length != 0){
-	$("#other_players .player_name").closest('p').css('width', "0");
-	$("#other_players .other_user").hover(
-	    function(){$(this).closest('p').css('width', "200px");}, function(){$(this).closest('p').css('width', "0");}
-	)
-    }
-    
-    
     
     if($($box).length != 0){
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
@@ -115,7 +107,7 @@ var array_of_place_locations= [];
 function size_places(width, height, num_pieces){
     $(".place").css("width", width);
     $(".place").css("height", height);
-    $("#puzzle").css("width", width*(num_pieces+1));
+    $("#puzzle").css("width", width*(num_pieces)+1);
     $("#puzzle").css("height", height*num_pieces+10);
     $("#box").css("height", height*num_pieces+50);
     var puzzle_top_left= $("#puzzle").offset();

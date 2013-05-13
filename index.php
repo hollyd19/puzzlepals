@@ -241,6 +241,7 @@ function sort_puzzles($user){
 	$easy=array();
 	$medium=array();
 	$hard=array();
+        $number_new=0; 
 	foreach ($in_progress_puzzles as $item){
                 $array= explode(",", $item["users"]);
                 //var_dump($item["users"]);
@@ -283,7 +284,8 @@ function sort_puzzles($user){
 			array_push($hard, $array);
 		}
 	}
-	return array($easy, $medium, $hard);
+        $sorted= array(array($easy, $medium, $hard), $number_new);
+	return $sorted;
 }
 
 function get_completed_puzzles($user_id){
@@ -316,8 +318,9 @@ function get_completed_puzzles($user_id){
   }
   return $list; 
 }
-$number_new=0;
-list($easy, $medium, $hard)= sort_puzzles($user_id);
+$sorted_array=sort_puzzles($user_id);
+list($easy, $medium, $hard)= $sorted_array[0];
+$number_new=$sorted_array[1]; 
 $completed_puzzle_list= get_completed_puzzles($user_id);
 //var_dump($medium);
 require("views/landing_form_view.php");
