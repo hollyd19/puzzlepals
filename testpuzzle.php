@@ -43,6 +43,7 @@ if (isset($_POST['create'])){
 	array_push($users, $_POST['id']);
 	//var_dump($users);
 	$puzzle_id=add_new_puzzle($users, $image_url, $puzzle_size, $db);
+	user_played($puzzle_id, $db, $_POST['id']);
 	$puzzle_string=$puzzle_id."";
 	?>
 	
@@ -53,7 +54,8 @@ if (isset($_POST['create'])){
 
 if($_POST['in_prog_puzzle']!=""){
     require("functions.php");
-    
+    $uid = $facebook->getUser();
+    echo $uid; 
     $puzzle_id= $_POST['in_prog_puzzle'];
     $temp= explode('_', $puzzle_id);
     $image_url= $temp[2].".png";

@@ -94,7 +94,7 @@
 	function add_new_puzzle($users, $imageURL, $level, $db){
 		$collection=$db->puzzle;
 		$time= time(); 
-		$document= array("users"=>$users, "imageURL"=>$imageURL, "level"=>$level, "completed"=>"false", "time"=> $time);
+		$document= array("users"=>$users, "imageURL"=>$imageURL, "level"=>$level, "completed"=>"false", "time"=> $time, "havePLAYED"=>array());
 		$collection->insert($document);
 		return $document['_id']; 
 	}
@@ -179,7 +179,7 @@
 				$user= $user . $var[$b] . ", ";
 			}
 			//echo $user;
-			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL'], "users"=>$user, "time"=>$document["time"]);
+			$results[$a] = array("level"=>$document['level'], "id"=> $document['_id'], "name"=>$document['imageURL'], "users"=>$user, "time"=>$document["time"], "havePLAYED"=>$document["havePLAYED"]);
 			$a++; 
 		}
 		return $results; 
@@ -270,6 +270,13 @@
 		}
 		//$return = $time . " " . $new_time;
 		return $result;
+	}
+	
+	function user_played($puzzle_id, $db, $user_id){
+		$collection=$db->puzzle;
+		$new_data = array('$addToSet' => array("havePLAYED" => $user_id));
+		$puzzle_id=new MongoId($puzzle_id); 
+		$cursor= $collection->update(array("_id"=>$puzzle_id), $new_data);
 	}
 	
 

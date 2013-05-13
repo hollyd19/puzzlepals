@@ -174,8 +174,9 @@
 		<?php
 			echo sizeof($completed_puzzle_list); 
 			foreach($completed_puzzle_list as $var){
-				$string_of_players="";
-				foreach($var['users'] as $player1){
+				$string_of_players="hwllo ";
+				$item= $var['users'];
+				foreach($item as $player1){
 					$string_of_players= $string_of_players . $player1 . " and";
 				}
 				$now = time(); // or your date as well
