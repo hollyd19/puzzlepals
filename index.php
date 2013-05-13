@@ -141,6 +141,7 @@ $app_name = idx($app_info, 'name', '');
                 
 				logResponse(response.to + "");
 				
+<<<<<<< HEAD
 				var arr = response.to;
 				var url = "http://graph.facebook.com/";
 				
