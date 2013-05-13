@@ -54,33 +54,10 @@ if (isset($_POST['create'])){
 
 if($_POST['in_prog_puzzle']!=""){
     require("functions.php");
-    require('AppInfo.php');
-    require('utils.php')
-  require_once('sdk/src/facebook.php');
-
-$facebook = new Facebook(array(
-  'appId'  => AppInfo::appID(),
-  'secret' => AppInfo::appSecret(),
-  'sharedSession' => true,
-  'trustForwarded' => true,
-));
-
-$user_id = $facebook->getUser();
-if ($user_id) {
-  try {
-    // Fetch the viewer's basic information
-    $basic = $facebook->api('/me');
-  } catch (FacebookApiException $e) {
-    // If the call fails we check if we still have a user. The user will be
-    // cleared if the error is because of an invalid accesstoken
-    if (!$facebook->getUser()) {
-      header('Location: '. AppInfo::getUrl($_SERVER['REQUEST_URI']));
-      exit();
-    }
-  }
-
-    echo $uid; 
+    $user_id=$_POST['user_id'];
     $puzzle_id= $_POST['in_prog_puzzle'];
+	user_played($puzzle_id, $db, $user_id);
+
     $temp= explode('_', $puzzle_id);
     $image_url= $temp[2].".png";
     $puzzle_id=$temp[0];
