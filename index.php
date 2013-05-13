@@ -216,7 +216,7 @@ $app_name = idx($app_info, 'name', '');
 require("functions.php");
 
 function sort_puzzles($user){
-	$in_progress_puzzles= query_puzzles($user);
+	$in_progress_puzzles= query_puzzles($user, "false");
         //var_dump($in_progress_puzzles);
 	$easy=array();
 	$medium=array();
