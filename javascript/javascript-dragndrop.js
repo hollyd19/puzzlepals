@@ -347,6 +347,7 @@ function check_pieces(){
 		global:false,
                 success: function(data){
 		    if (data != '[]'){
+			console.log(data);
 			console.log($("img[src='" + data.imgURL + "']").parent());
 			//for(var i=0; i<data.length; i++){
 			//    console.log($("img[src='" + data[i].imgURL + "']").parent());
