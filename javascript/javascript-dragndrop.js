@@ -36,9 +36,9 @@ $(document).ready(function () {
 	$("#other_players .other_user").hover(
 	    function(){
 		if($(this).closest('p').is(":visible")){
-		    $(this).toggle('slide', {direction:'right'}, 1000);
+		    $(this).closest('p').toggle('slide', {direction:'right'}, 1000);
 		} else {
-		    $(this).toggle('slide', {direction:'left'}, 1000);
+		    $(this).closest('p').toggle('slide', {direction:'left'}, 1000);
 		}
 	    });
     }
