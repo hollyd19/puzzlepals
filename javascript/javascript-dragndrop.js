@@ -211,6 +211,9 @@ function in_correct_location(piece_id, x, y) {
     correct_y=false;
     name="#"+piece_id+""; 
     place_y=$(name).offset().top;
+    console.log(place_y+" real y "+y );
+    console.log(place_x+" real x "+x );
+
     place_x=$(name).offset().left;
     if(place_y<=y+25 && place_y >= y+12){
 	correct_y=true; 
