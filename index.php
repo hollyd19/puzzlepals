@@ -141,7 +141,6 @@ $app_name = idx($app_info, 'name', '');
                 
 				logResponse(response.to + "");
 				
-<<<<<<< HEAD
 				var arr = response.to;
 				var url = "http://graph.facebook.com/";
 				
@@ -150,23 +149,23 @@ $app_name = idx($app_info, 'name', '');
 				p_name = "";
 				invited_list = "";
 				
-				// for (var i = 0; i < length; i++) {
-					// p_id = arr[i];
-					// url = url + p_id;
-		
-					//p_name = <?php echo json_decode(file_get_contents(?>url<?php))->name;?>
-					// if (invited_list == "") {
-						// invited_list = invited_list + p_name;
-					// } else {
-						// invited_list = invited_list + ", " + p_name;
-					// }
-				// }
-				 //$( '#who_you_invited' ).html("<p>You Invited:" + invited_list + "</p>);
+				 for (var i = 0; i < length; i++) {
+					 p_id = arr[i];
+					 url = url + p_id;
+               
+					 p_name = <?php echo json_decode(file_get_contents(?>url<?php))->name;?>
+					 if (invited_list == "") {
+						 invited_list = invited_list + p_name;
+					 } else {
+						 invited_list = invited_list + ", " + p_name;
+					 }
+				 }
+				 $( '#who_you_invited' ).html("<p>You Invited:" + invited_list + "</p>);
               }
             }
           );
         });
-
+      });
     </script>
 	
 	
@@ -283,42 +282,7 @@ function sort_puzzles($user){
 	}
 	return array($easy, $medium, $hard);
 }
-<<<<<<< HEAD
-function get_completed_puzzles($user_id){
-  $list= array(); 
-  $completed_puzzles= query_puzzles($user_id, "true");
-  foreach ($completed_puzzles as $item){
-                  $array= explode(",", $item["users"]);
-                  //var_dump($item["users"]);
-                  $puzzle= explode(".", $item["name"]);
-                  $images_name= $puzzle[0];
-                  $puzzle_size= $item["level"];
-                  //echo sizeof($array); 
-                  $players=array(); 
-                  foreach($array as $player){
-                    $player=trim($player); 
-                    if($player==$user){
-                      array_push($players, "Me");
-                    }
-                   else if ($player!=""){
-                      //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
-                      $facebook_url="http://graph.facebook.com/".$player;
-                      $fa= json_decode(file_get_contents($facebook_url))->name; 
-                      array_push($players, $fa);
-  
-                   }
-                   
-                  }
-                  $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
-                  array_push($list, $array);
-  }
-  return $list; 
-}
-
 list($easy, $medium, $hard)= sort_puzzles($user_id);
-
-$completed_puzzle_list=get_completed_puzzles($user_id); 
-
 //var_dump($medium);
 require("views/landing_form_view.php");
 
