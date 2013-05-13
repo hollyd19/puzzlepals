@@ -202,7 +202,7 @@
 				echo '<div class="row-fluid">';
 				echo '<img class="span6" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
 				echo '<div class="span5">';
-				echo '<p><strong>Time Of Completion: </strong>' . strtotime($your_date) . '</p>';
+				echo '<p><strong>Time Of Completion: </strong>' . date('m/d/Y', $your_date) . '</p>';
 				echo '<p><strong>Time Since Completion: </strong>' . $datediff . '</p>';
 				if($item != "") {
 					echo  '<p><strong>Participants</strong><p>'.$item.'</p>';
