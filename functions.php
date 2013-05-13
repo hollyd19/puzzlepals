@@ -121,7 +121,7 @@
 		$collection=$db->piece;
 		$p_id=$piece_info["puzzle_id"]."";
 		$p_num=$piece_info["piece_num"]."";
-		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location, "updatedLOCATION"=>time()));
+		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location, "lastUPDATED"=>time()));
 		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
 		echo is_puzzle_completed($db, $p_id); 
 	}
@@ -263,7 +263,7 @@
 			$doc_info['x']=$document['x'];
 			$doc_info['y']=$document['y'];
 			$doc_info['imgURL']=$document['imgURL'];
-			$doc_info['updatedLOCATION']=$document['updatedLOCATION'];
+			$doc_info['lastUPDATED']=$document['lastUPDATED'];
 			array_push($result, $doc_info);
 		}
 		//$return = $time . " " . $new_time;
