@@ -54,7 +54,8 @@ if (isset($_POST['create'])){
 
 if($_POST['in_prog_puzzle']!=""){
     require("functions.php");
-    require('AppInfo.php'); 
+    require('AppInfo.php');
+    require('utils.php')
     require_once('sdk/src/facebook.php');
 $facebook = new Facebook(array(
   'appId'  => AppInfo::appID(),
