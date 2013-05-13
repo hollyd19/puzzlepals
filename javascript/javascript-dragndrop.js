@@ -237,7 +237,7 @@ function update_location(puzzle_name, piece_id, x, y, correct_location) {
 		success: function(data){
 		    console.log(data);
                 if (data==true) {
-		    alert("YOU WON!!!!!!")
+		    loadPopupBox();
 		}
             } 
 	});
@@ -380,4 +380,26 @@ function check_pieces(){
     });
     
 }
+
+
+ // When site loaded, load the Popupbox First
+        
+    
+        $('#popupBoxClose').click( function() {            
+            unloadPopupBox();
+        });
+
+        function unloadPopupBox() {    // TO Unload the Popupbox
+            $('#popup_box').fadeOut("slow");
+            $("#container").css({ // this is just for style        
+                "opacity": "1"  
+            }); 
+        }    
+        
+        function loadPopupBox() {    // To Load the Popupbox
+            $('#popup_box').fadeIn();
+            $("#container").css({ // this is just for style
+                "opacity": "0.3"  
+            });         
+        }        
 

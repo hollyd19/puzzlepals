@@ -1,7 +1,10 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div class="content">
      <h5 id="back_home"><a class="btn btn-medium" href= "index.php">Return to Puzzle Center</a></h5>
-
+     <div id="popup_box">
+          <h1>CONGRATULATIONS! YOU WON THE GAME!</h1>
+          <a id="popupBoxClose">Close</a>    
+     </div>
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
 	
