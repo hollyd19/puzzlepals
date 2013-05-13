@@ -140,21 +140,6 @@ $app_name = idx($app_info, 'name', '');
                 $('input#invited_users_id').val(response.to + "");
                 
 				logResponse(response.to + "");
-<<<<<<< HEAD
-<<<<<<< HEAD
-				
-=======
->>>>>>> 7418de495d7ca644caa89d0201002d2c26fd46a8
-				var arr = response.to;
-				var url = "http://graph.facebook.com/";
-				
-				var length = arr.length
-				p_id = null;
-				p_name = "";
-				invited_list = "";
-				
-=======
->>>>>>> bc3dcc59f125efa8d8db9f4fa149180a9b86629f
 
               }
             }
