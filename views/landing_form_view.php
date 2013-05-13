@@ -187,7 +187,7 @@
 	?>
 	
 	<div class="row-fluid">
-	<div class="span9">
+	<div class="span11">
 				
 		<?php
 			
@@ -201,6 +201,7 @@
 				}
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
+				echo $your_date;
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
 				echo '<div class="row-fluid">';
