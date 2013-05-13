@@ -141,15 +141,15 @@ $app_name = idx($app_info, 'name', '');
                 
 				logResponse(response.to + "");
 				
-				var acc_tok = response.authResponse.accessToken;
+				//var acc_tok = response.authResponse.accessToken;
 				
-				var arr = response.to;
-				var url = "http://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + response.to + "'')&access_token=" + acc_tok;
+				var arr = response.to + "";
+				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")";
 
 				
 				$.getJSON(url, function(data){
 					var names = [];
-					$each(data["data"], function (user) {
+					$.each(data["data"], function(user) {
                         names.push(user["name"]);
                     });
                     if (names.length) {
@@ -267,8 +267,9 @@ function sort_puzzles($user){
                 $viewed=true; 
                 //var_dump($players);
                 $array=$item["havePLAYED"];
+                echo "Puzzle: <br/>"; 
                 foreach($array as $item){
-                  echo $item;
+                  echo $item. "<br/>";
                 }
                 if(!in_array($user, $array)){
                   $number_unviewed++;
