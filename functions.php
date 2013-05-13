@@ -123,14 +123,14 @@
 		$p_num=$piece_info["piece_num"]."";
 		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location, "updatedLOCATION"=>time()));
 		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
-		echo is_puzzle_completed($db, $p_num); 
+		echo is_puzzle_completed($db, $p_id); 
 	}
 	
-	function is_puzzle_completed($db, $p_num){
+	function is_puzzle_completed($db, $puzzle_id){
 		$collection=$db->piece;
-		$number_right=$collection->find(array("puzzleID"=>$p_num, "correctLOCATION"=>"true"));
-		$total_number=$collection->find(array("puzzleID"=>$p_num));
-		return $number_right->count(). " right out of ". $total_number->count; 
+		$number_right=$collection->find(array("puzzleID"=>$puzzle_id, "correctLOCATION"=>"true"));
+		$total_number=$collection->find(array("puzzleID"=>$puzzle_id));
+		return $number_right->count(). " right out of ". $total_number->count(); 
 	}
 	
 	
