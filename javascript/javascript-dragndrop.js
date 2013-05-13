@@ -109,8 +109,8 @@ var array_of_place_locations= [];
 function size_places(width, height, num_pieces){
     $(".place").css("width", width);
     $(".place").css("height", height);
-    $("#puzzle").css("width", width*(num_pieces)+1);
-    $("#puzzle").css("height", height*num_pieces+12);
+    $("#puzzle").css("width", width*(num_pieces)+10);
+    $("#puzzle").css("height", height*num_pieces+10);
     $("#box").css("height", height*num_pieces+50);
     var puzzle_top_left= $("#puzzle").offset();
     
