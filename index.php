@@ -301,7 +301,6 @@ function get_completed_puzzles($user_id){
                   $players=array(); 
                   foreach($array as $player){
                     $player=trim($player);
-                    echo $player; 
                     if ($player!=""){
                       //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
                       $facebook_url="http://graph.facebook.com/".$player;

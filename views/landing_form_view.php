@@ -193,6 +193,8 @@
 			
 			foreach($completed_puzzle_list as $var){
 				$string_of_players="";
+				echo $var['users'];
+				echo sizeof($var['user']);
 				$item= $var['users'];
 				foreach($item as $player1){
 					$string_of_players= $string_of_players . $player1 . " and";
@@ -204,12 +206,14 @@
 				echo '<div class="row-fluid">';
 				echo '<img class="span6" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
 				echo '<div class="span5">';
-				echo '<h6>Time Taken:</h6><p>' . $datediff . '</p>';
+				echo '<p><strong>Time Of Completion: </strong>' . time_elapsed($your_date) . '</p>';
+				echo '<p><strong>Time Since Completion: </strong>' . $datediff . '</p>';
 				if($string_of_users != "") {
-					echo  '<h6>Participants</h6><p>'.$string_of_users.'</p>';
+					echo  '<p><strong>Participants</strong><p>'.$string_of_users.'</p>';
 				}
 				echo '</div>';
 				echo '</div>';
+				echo '<br/>';
 			}
 		?>
 		
