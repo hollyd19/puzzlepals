@@ -156,7 +156,7 @@ $app_name = idx($app_info, 'name', '');
 					console.log(data);
 					$.each(data["data"], function(user, info) {
 						console.log(info);
-                        names.push(info.name);
+                        names.push(info["name"]);
 						console.log(names);
                     });
                     if (names.length) {
