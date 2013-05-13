@@ -34,7 +34,7 @@
      <?php
           foreach($images as $index=>$array){
                foreach($array as $first=>$second){
-                    echo '<div id="place-'.$index.$first.'" class="place" data-position="'.$index.$first.'"></div>';
+                    echo '<div id="place-'.$index.$first.'" class="place" data-position="'.$index.$first.'"><p class="location" id="'.$index.$first.'">'.$index.$first.'</p></div>';
                }
           }
      }
