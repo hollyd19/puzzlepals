@@ -60,7 +60,7 @@
 				break;
 			
 			case "check_pieces":
-				$puzzle_id=$_POST['puzzle_name'];
+				$puzzle_id=$_POST['pID'];
 				$array= get_updated_pieces($puzzle_id, $db);
 				echo json_encode($array);
 				break;
