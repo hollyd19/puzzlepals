@@ -87,3 +87,8 @@
 	height: 80px;
 	width: 80px;
   }
+  
+  .player_name {
+    display:none;
+    width:200px;
+  }
