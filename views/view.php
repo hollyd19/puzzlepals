@@ -10,8 +10,8 @@
           <?php
                foreach($users as $index=>$user){
                     $user_name=json_decode(file_get_contents("http://graph.facebook.com/".$user))->name;
-                    echo "<div class='other_user'><img src='http://graph.facebook.com/".$user."/picture?type=normal' alt='" . $user_name . "' title='" . $user_name . "'/><br/>";
-                    //echo "<p class='player_name'>".$user_name."</p>";
+                    echo "<div class='other_user'><img src='http://graph.facebook.com/".$user."/picture?type=normal' alt='" . $user_name . "' title='" . $user_name . "'/>";
+                    echo "<p class='player_name'>".$user_name."</p>";
 					echo"</div>";
                }
           ?>

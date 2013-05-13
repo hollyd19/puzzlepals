@@ -32,6 +32,15 @@ $(document).ready(function () {
     });
     }
     
+    if($("#other_players").length != 0){
+	$("#other_players .player_name").closest('p').css('width', "0");
+	$("#other_players .other_user").hover(
+	    function(){$(this).closest('p').css('width', "200px");}, function(){$(this).closest('p').css('width', "0");}
+	)
+    }
+    
+    
+    
     if($($box).length != 0){
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
     $box.droppable({
@@ -80,8 +89,6 @@ $(document).ready(function () {
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
 	var user_id= $("input[name=id]").val();
-	console.log(user_id);
-	console.log("hello");
 	user_viewed(user_id, puzzle_name); 
 	//console.log(puzzle_name); 
 	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
@@ -91,6 +98,8 @@ $(document).ready(function () {
 });
 
 function user_viewed(user_id, puzzle_name) {
+    console.log(puzzle_name);
+    console.log(user_id);
     var ajaxquery= $.ajax({
 		url : "functions.php",
 		type: "POST",
