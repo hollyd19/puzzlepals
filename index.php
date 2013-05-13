@@ -306,7 +306,7 @@ function get_completed_puzzles($user_id){
                       $facebook_url="http://graph.facebook.com/".$player;
                       $fa= json_decode(file_get_contents($facebook_url))->name;
                       echo $fa;
-                      $players.=$fa. "<br/>"; 
+                      $players.=$fa. ", "; 
                    }
                    
                   }

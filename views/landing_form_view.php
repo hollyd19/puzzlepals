@@ -192,13 +192,9 @@
 		<?php
 			
 			foreach($completed_puzzle_list as $var){
-				$string_of_players="";
-				echo $var['users'];
-				echo sizeof($var['user']);
 				$item= $var['users'];
-				foreach($item as $player1){
-					$string_of_players= $string_of_players . $player1 . " and";
-				}
+				$a=sizeof($item);
+				$item=substr($item, 0, $a-3); 
 				$now = time(); // or your date as well
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
@@ -208,8 +204,8 @@
 				echo '<div class="span5">';
 				echo '<p><strong>Time Of Completion: </strong>' . date($your_date) . '</p>';
 				echo '<p><strong>Time Since Completion: </strong>' . $datediff . '</p>';
-				if($string_of_users != "") {
-					echo  '<p><strong>Participants</strong><p>'.$string_of_users.'</p>';
+				if($item != "") {
+					echo  '<p><strong>Participants</strong><p>'.$item.'</p>';
 				}
 				echo '</div>';
 				echo '</div>';
