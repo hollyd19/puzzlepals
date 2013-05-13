@@ -60,6 +60,7 @@ if($_POST['in_prog_puzzle']!=""){
  $db_info=connect_to_db();
     if($db_info['connected']){
 	$db=$db_info['db_name'];
+	echo $user_id; 
 	user_played($puzzle_id, $db, $user_id);
     }
     $temp= explode('_', $puzzle_id);
