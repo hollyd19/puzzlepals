@@ -347,10 +347,10 @@ function check_pieces(){
 		global:false,
                 success: function(data){
 		    if (data != '[]'){
-			$.each(data, function(item){
-			    console.log(item);
+			for(var i=0; i<data.length; i++){
+			    $("img[src='" + data[i].imgURL + "']").parent().animate({"left": data[i].x, "top": data[i].y}, "slow");
+		        }
 			    //$("img[src='" + item.imgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
-			});
 		    }
 		}
     });
