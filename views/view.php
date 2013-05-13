@@ -6,7 +6,7 @@
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
 	
         <div id="other_players">
-		<h4>Puzzle Collaborators</h4>
+		<h3>Puzzle Collaborators</h3>
           <?php
                foreach($users as $user){
                     $user_name=json_decode(file_get_contents("http://graph.facebook.com/".$user))->name;

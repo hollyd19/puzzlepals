@@ -400,7 +400,16 @@ $('#completed_puz_div').click(function (e) {
 
 
 function check_pieces(){
-    console.log("check_pieces");
+    var puzzle_id=$("input[name=p-id]").val();
+    var ajaxquery= $.ajax({
+		url : "functions.php",
+		type: "POST",
+		data: {function_name: "check_pieces", pID: puzzle_id},
+		global:false,
+                success: function(data){
+		    console.log(data);
+		}
+    });
     
 }
 
