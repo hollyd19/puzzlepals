@@ -141,13 +141,13 @@ $app_name = idx($app_info, 'name', '');
                 
 				logResponse(response.to + "");
 				
-				var arr = response.to;
-				var url = "http://graph.facebook.com/";
+				//var arr = response.to;
+				//var url = "http://graph.facebook.com/";
 				
-				var length = arr.length
-				p_id = null;
-				p_name = "";
-				invited_list = "";
+				//var length = arr.length
+				//p_id = null;
+				//p_name = "";
+				//invited_list = "";
 				
 				// for (var i = 0; i < length; i++) {
 					// p_id = arr[i];
