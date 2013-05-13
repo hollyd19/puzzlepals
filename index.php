@@ -149,7 +149,7 @@ $app_name = idx($app_info, 'name', '');
 				
 				$.getJSON(url, function(data){
 					var names = [];
-					$each(data["data"], function (user) {
+					$.each(data["data"], function (user) {
                         names.push(user["name"]);
                     });
                     if (names.length) {
