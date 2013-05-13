@@ -264,6 +264,7 @@
 			$doc_info['y']=$document['y'];
 			$doc_info['imgURL']=$document['imgURL'];
 			$doc_info['lastUPDATED']=$document['lastUPDATED'];
+			$doc_info['time now']=time();
 			array_push($result, $doc_info);
 		}
 		//$return = $time . " " . $new_time;
