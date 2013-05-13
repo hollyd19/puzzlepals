@@ -46,13 +46,11 @@
 				break;
 			
 			case "user_viewed":
-				echo "pizza"; 
 				$puzzle_id=$_POST['puzzle_name'];
 				$puzzle_id=explode("_", $puzzle_id);
 				$puzzle_id=$puzzle_id[0];
 				$user_id=$_POST['user_viewed'];
-				echo $puzzle_id;
-				echo $user_id;
+
 				user_played($puzzle_id, $db, $user_id);
 				break; 
 			
@@ -280,7 +278,6 @@
 		$new_data = array('$addToSet' => array("havePLAYED" => $user_id));
 		$puzzle_id=new MongoId($puzzle_id); 
 		$collection->update(array("_id"=>$puzzle_id), $new_data);
-		echo "this is to test its called"; 
 	}
 	
 
