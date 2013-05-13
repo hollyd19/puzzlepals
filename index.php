@@ -141,32 +141,21 @@ $app_name = idx($app_info, 'name', '');
                 
 				logResponse(response.to + "");
 				
-				//var acc_tok = response.authResponse.accessToken;
-				
 				var arr = response.to;
 				
 				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")"; 
 				
 				url = url.replace(/\s/, "");
 				
-				console.log(url);
-				
 				$.getJSON(url, function(data){
 					var names = [];
-					console.log(data);
+					
 					$.each(data["data"], function(user, info) {
-						console.log(info);
-						console.log(info["name"]);
-						console.log(info.name);
-                        names.push(info["name"]);
-						
-						console.log(names);
+				        names.push(info["name"]);
                     });
                     if (names.length) {
                         $('#who_you_invited').html("<p>You Invited:" + names.join(",") + "</p>");
                      }		
-				
-				//$( '#who_you_invited' ).html("<p>You Invited:" + names.join(",") + "</p>");
 
               });
 			  }
