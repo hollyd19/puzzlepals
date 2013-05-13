@@ -297,7 +297,7 @@ function get_completed_puzzles($user_id){
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 //var_dump($medium);
 require("views/landing_form_view.php");
-$completed_puzzle_list=get_completed_puzzles(); 
+$completed_puzzle_list=get_completed_puzzles($user_id); 
 
 ?>
       
