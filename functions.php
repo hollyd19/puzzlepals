@@ -169,7 +169,8 @@
 		$query= array("users"=>array('$in'=>array($user)), "completed"=>$state); 
 		$cursor=$collection->find($query);
 		$results= array();
-		$a=0; 
+		$a=0;
+		$cursor->sort(array("time"=>-1));
 		foreach($cursor as $document){
 			$var=$document["users"];
 			//var_dump($var);
