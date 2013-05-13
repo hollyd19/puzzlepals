@@ -172,6 +172,7 @@
 	<div class="span12">
 		<ul>
 		<?php
+		
 			foreach($completed_puzzle_list as $var){
 				$string_of_players="";
 				foreach($var['users'] as $player1){

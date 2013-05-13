@@ -138,13 +138,37 @@ $app_name = idx($app_info, 'name', '');
               // If response is null the user canceled the dialog
               if (response != null) {
                 $('input#invited_users_id').val(response.to + "");
-                logResponse(response.to + "");
+                
+				logResponse(response.to + "");
+				
+				var arr = response.to;
+				var url = "http://graph.facebook.com/";
+				
+				var length = arr.length
+				p_id = null;
+				p_name = "";
+				invited_list = "";
+				
+				// for (var i = 0; i < length; i++) {
+					// p_id = arr[i];
+					// url = url + p_id;
+		
+					//p_name = <?php echo json_decode(file_get_contents(?>url<?php))->name;?>
+					// if (invited_list == "") {
+						// invited_list = invited_list + p_name;
+					// } else {
+						// invited_list = invited_list + ", " + p_name;
+					// }
+				// }
+				 //$( '#who_you_invited' ).html("<p>You Invited:" + invited_list + "</p>);
               }
             }
           );
         });
+      });
     </script>
-
+	
+	
     <!--[if IE]>
       <script type="text/javascript">
         var tags = ['header', 'section'];
@@ -215,7 +239,7 @@ $app_name = idx($app_info, 'name', '');
 require("functions.php");
 
 function sort_puzzles($user){
-	$in_progress_puzzles= query_puzzles($user, "false");
+	$in_progress_puzzles= query_puzzles($user);
         //var_dump($in_progress_puzzles);
 	$easy=array();
 	$medium=array();
@@ -258,6 +282,7 @@ function sort_puzzles($user){
 	}
 	return array($easy, $medium, $hard);
 }
+<<<<<<< HEAD
 function get_completed_puzzles($user_id){
   $list= array(); 
   $completed_puzzles= query_puzzles($user_id, "true");
@@ -293,15 +318,11 @@ list($easy, $medium, $hard)= sort_puzzles($user_id);
 
 $completed_puzzle_list=get_completed_puzzles($user_id); 
 
-                
-
 //var_dump($medium);
 require("views/landing_form_view.php");
 
 
 ?>
-
-
       
     
 <?php } else { ?>
