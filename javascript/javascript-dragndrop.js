@@ -89,7 +89,7 @@ $(document).ready(function () {
 
 var array_of_place_locations= [];
 
-f/*unction check_pieces_in_correct_location(piece_data_number, location_data_number){
+/*function check_pieces_in_correct_location(piece_data_number, location_data_number){
     var add_it=false;
     var temp_piece_img='';
     var temp_piece='';
