@@ -104,7 +104,7 @@
 	
 	
 	<div class="span12 landing_section tab-pane" id="ongoing_puz_div">
-	<h3 id="existing_puzzles">Ongoing Puzzles <span class="red notification"><?php if($number_unviewed>0){echo $number_unviewed;} ?></span></h3>
+	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
 
 		<div class="row-fluid span11">
 		<form action="testpuzzle.php" method="post">
@@ -126,10 +126,7 @@
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
-				if($var["viewed"]){
-					echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
-				}
-				else echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header red">New Puzzle!</h6><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
+				echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_9_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
 	
 			}
 			echo '</div>';
@@ -146,10 +143,7 @@
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
-				if($var["viewed"]){
 				echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
-				}
-				else echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header red">New Puzzle!</h6><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
 
 			}
 		echo '</div>';
@@ -165,10 +159,7 @@
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
-				if($var["viewed"]){
-				echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
-				}
-				else echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header red">New Puzzle!</h6><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_25_'.$var["name"].'""><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
+				echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_49_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
 
 			}
 		echo '</form></div>';
