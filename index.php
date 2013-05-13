@@ -264,11 +264,7 @@ function sort_puzzles($user){
                  }
                  
                 }
-               
-                if(!in_array($user, $array)){
-                  $number_unviewed++;
-                  $viewed=false;
-                }
+              
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($easy, $array);
