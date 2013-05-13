@@ -109,7 +109,7 @@
 		<div class="row-fluid span11">
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
-		
+			<input type="user" name="user_id" value="<?php echo $user_id; ?>"/>
 			
 		<div class="span4 scrollable_div ong_container" id="easy_section">
 
@@ -178,8 +178,9 @@
 		<?php
 			echo sizeof($completed_puzzle_list); 
 			foreach($completed_puzzle_list as $var){
-				$string_of_players="";
-				foreach($var['users'] as $player1){
+				$string_of_players="hwllo ";
+				$item= $var['users'];
+				foreach($item as $player1){
 					$string_of_players= $string_of_players . $player1 . " and";
 				}
 				$now = time(); // or your date as well

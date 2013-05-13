@@ -79,80 +79,15 @@ $(document).ready(function () {
     /*LINKS TO TEST PUZZLE*/
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
-	console.log(puzzle_name); 
+	//console.log(puzzle_name); 
 	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
-	console.log('resume puzzle');
+	//console.log('resume puzzle');
 	return true; 
     })
 });
 
 
 var array_of_place_locations= [];
-
-/*function check_pieces_in_correct_location(piece_data_number, location_data_number){
-    var add_it=false;
-    var temp_piece_img='';
-    var temp_piece='';
-    $(".piece").each(function() {
-        var temp_piece_location= $(this).offset();
-        temp_piece= $(this);
-        $.each(array_of_place_locations, function(index, value){
-            if ((temp_piece_location.left < value[1]+5)
-                &&(temp_piece_location.left < value[1]-5)
-                &&(temp_piece_location.top < value[0]+5)
-                &&(temp_piece_location.top < value[0]-5)
-                &&(piece_data_number==location_data_number)){
-                add_it=true;
-                temp_piece_img= temp_piece.find('img');
-            }
-        });
-    });
-    if (add_it){
-	dropped=true;
-        var info=temp_piece_img.attr("src");
-	var info_array=info.split("/");
-	var puzzle_name=info_array[1];
-	var piece_id=piece_data_number
-        var ajaxquery= $.ajax({
-		url : "functions.php",
-		type: "POST",
-		data: {function_name: "update_correct_location", puzzle_name: puzzle_name, piece_id: piece_id, correct_location: "true"},
-		global:false,
-		success: function(data){
-                ////console.log(data);
-            } 
-	});
-        
-        var ajaxquery2= $.ajax({
-		url : "functions.php",
-		type: "POST",
-		data: {function_name: "query_correct_location", puzzle_name: puzzle_name},
-		global:false,
-		success: function(data){
-                ////console.log(data);
-                //if (data.indexOf('false') == -1) alert("Congrats! You have successfully completed the puzzle!");
-            } 
-	});
-    } else {
-	dropped= false;
-        var info=temp_piece.find('img').attr("src");
-        ////console.log(info);
-        ////console.log(piece_data_number);
-	var info_array=info.split("/");
-	var puzzle_name=info_array[1];
-	var piece_id=piece_data_number;
-        var ajaxquery= $.ajax({
-		url : "functions.php",
-		type: "POST",
-		data: {function_name: "update_correct_location", puzzle_name: puzzle_name, piece_id: piece_id, correct_location: "false"},
-		global:false,
-		success: function(data){
-                ////console.log(data);
-            } 
-	});
-    }
-}
-*/
 
 function size_places(width, height, num_pieces){
     $(".place").css("width", width);
