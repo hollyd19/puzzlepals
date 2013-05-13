@@ -154,7 +154,7 @@ $app_name = idx($app_info, 'name', '');
 				        names.push(info["name"]);
                     });
                     if (names.length) {
-                        $('#who_you_invited').html("<p>You Invited:" + names.join(", ") + "</p>");
+                        $('#who_you_invited').html("<h6 class='info_header'>You Invited:</h6><p>" + names.join(", ") + "</p>");
                      }		
 
               });
