@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
 				
 				var arr = response.to;
 				var url = "http://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + response.to + "'')&access_token=" + acc_tok;
-				
+
 				
 				$.getJSON(url, function(data){
 					var names = [];
@@ -155,7 +155,6 @@ $app_name = idx($app_info, 'name', '');
                     if (names.length) {
                         $('#who_you_invited').html("<p>You Invited:" + names.join(",") + "</p>");
                      }		
-					});
 				
 				//$( '#who_you_invited' ).html("<p>You Invited:" + names.join(",") + "</p>");
 

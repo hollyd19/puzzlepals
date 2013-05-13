@@ -109,7 +109,7 @@
 		<div class="row-fluid span11">
 		<form action="testpuzzle.php" method="post">
 			<input type="hidden" name="in_prog_puzzle"/>
-		
+			<input type="user" name="user_id" value="<?php echo $user_id; ?>"/>
 			
 		<div class="span4 scrollable_div ong_container" id="easy_section">
 
