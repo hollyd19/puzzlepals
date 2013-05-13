@@ -262,8 +262,6 @@ function sort_puzzles($user){
 	}
 	return array($easy, $medium, $hard);
 }
-<<<<<<< HEAD
-=======
 
 function get_completed_puzzles($user_id){
   $list= array(); 
@@ -296,7 +294,6 @@ function get_completed_puzzles($user_id){
   return $list; 
 }
 
->>>>>>> bc3dcc59f125efa8d8db9f4fa149180a9b86629f
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 //var_dump($medium);
 require("views/landing_form_view.php");
