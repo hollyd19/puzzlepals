@@ -350,8 +350,8 @@ function check_pieces(){
 		    if (data != '[]'){
 			data= JSON.parse(data);
 			for(var i=0; i<data.length; i++){
-			    console.log($("img[src='" + data[i].imgURL + "']").parent());
-			    $("img[src='" + data[i].imgURL + "']").parent().animate({"left": data[i].x, "top": data[i].y}, "slow");
+			    console.log($("#" + data[i].pieceNUMBER));
+			    $($("#" + data[i].pieceNUMBER)).parent().animate({"left": data[i].x, "top": data[i].y}, "slow");
 		        }
 			    //$("img[src='" + item.imgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
 		    }

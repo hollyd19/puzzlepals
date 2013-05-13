@@ -262,7 +262,7 @@
 			$doc_info= array();
 			$doc_info['x']=$document['x'];
 			$doc_info['y']=$document['y'];
-			$doc_info['imgURL']=$document['imgURL'];
+			$doc_info['pieceNUMBER']=$document['pieceNUMBER'];
 			$doc_info['lastUPDATED']=$document['lastUPDATED'];
 			$doc_info['time']=$new_time;
 
