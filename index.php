@@ -141,32 +141,21 @@ $app_name = idx($app_info, 'name', '');
                 
 				logResponse(response.to + "");
 				
-				//var acc_tok = response.authResponse.accessToken;
-				
 				var arr = response.to;
 				
 				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")"; 
 				
 				url = url.replace(/\s/, "");
 				
-				console.log(url);
-				
 				$.getJSON(url, function(data){
 					var names = [];
-					console.log(data);
+					
 					$.each(data["data"], function(user, info) {
-						console.log(info);
-						console.log(info["name"]);
-						console.log(info.name);
-                        names.push(info["name"]);
-						
-						console.log(names);
+				        names.push(info["name"]);
                     });
                     if (names.length) {
-                        $('#who_you_invited').html("<p>You Invited:" + names.join(",") + "</p>");
+                        $('#who_you_invited').html("<h6 class='info_header'>You Invited:</h6><p>" + names.join(", ") + "</p>");
                      }		
-				
-				//$( '#who_you_invited' ).html("<p>You Invited:" + names.join(",") + "</p>");
 
               });
 			  }
@@ -252,6 +241,7 @@ function sort_puzzles($user){
 	$easy=array();
 	$medium=array();
 	$hard=array();
+        $number_new=0; 
 	foreach ($in_progress_puzzles as $item){
                 $array= explode(",", $item["users"]);
                 //var_dump($item["users"]);
@@ -279,6 +269,9 @@ function sort_puzzles($user){
                 if(in_array($user, $array)){
                   $viewed=true;
                 }
+                else{
+                  $number_new++; 
+                }
                 
 		if ($puzzle_size=="9"){
                         $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
@@ -291,7 +284,8 @@ function sort_puzzles($user){
 			array_push($hard, $array);
 		}
 	}
-	return array($easy, $medium, $hard);
+        $sorted= array(array($easy, $medium, $hard), $number_new);
+	return $sorted;
 }
 
 function get_completed_puzzles($user_id){
@@ -324,8 +318,9 @@ function get_completed_puzzles($user_id){
   }
   return $list; 
 }
-
-list($easy, $medium, $hard)= sort_puzzles($user_id);
+$sorted_array=sort_puzzles($user_id);
+list($easy, $medium, $hard)= $sorted_array[0];
+$number_new=$sorted_array[1]; 
 $completed_puzzle_list= get_completed_puzzles($user_id);
 //var_dump($medium);
 require("views/landing_form_view.php");
