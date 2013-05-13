@@ -126,5 +126,6 @@
     top:5px;  
     position:absolute;  
     color:#6fa5e2;  
-    font-weight:500;      
+    font-weight:500;
+    cursor:pointer;
 }
