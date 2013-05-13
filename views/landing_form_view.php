@@ -87,7 +87,7 @@
 					//echo '</ul>';
 					echo '</div>';
 					
-					echo '<div id="who_you_invited" class="span2"></div>';
+					echo '<div id="who_you_invited" class="span3"></div>';
 					
 					
 					
