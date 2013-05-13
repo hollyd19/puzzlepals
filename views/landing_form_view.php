@@ -199,7 +199,7 @@
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
-				echo '<div class="row-fluid">';
+				echo '<div>';
 				echo '<img class="span5" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
 				echo '<div class="span6">';
 				echo '<p><strong>Time Of Completion: </strong>' . date('m/d/Y', $your_date) . '</p>';
