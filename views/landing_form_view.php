@@ -180,7 +180,7 @@
 <div class="span12 landing_section tab-pane" id="completed_puz_div">
 	<h3 id="completed_puzzles">Completed Puzzles</h3>
 	
-	<div class="scrollable_div" id="list_of_completed">
+	<div class="scrollable_div span11" id="list_of_completed">
 	
 	<?php 
 		echo '<h4>Total Completed:' . sizeof($completed_puzzle_list) . '</h4>'; 
@@ -200,12 +200,12 @@
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
 				echo '<div class="row-fluid">';
-				echo '<img class="span6" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
-				echo '<div class="span5">';
+				echo '<img class="span5" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
+				echo '<div class="span6">';
 				echo '<p><strong>Time Of Completion: </strong>' . date('m/d/Y', $your_date) . '</p>';
 				echo '<p><strong>Time Since Completion: </strong>' . $datediff . '</p>';
 				if($item != "") {
-					echo  '<p><strong>Participants</strong><p>'.$item.'</p>';
+					echo  '<p><strong>Participants:</strong>'.$item.'</p>';
 				}
 				echo '</div>';
 				echo '</div>';
