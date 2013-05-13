@@ -412,7 +412,8 @@ function check_pieces(){
 		global:false,
                 success: function(data){
 		    $.each(data, function(item){
-			$("img[src='" + item.mgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
+			console.log(item);
+			$("img[src='" + item.imgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
 		    });
 		}
     });
