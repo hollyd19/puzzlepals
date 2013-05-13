@@ -126,7 +126,11 @@
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
-				echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/><h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_9_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
+				echo '<br/><div class="ongoing_puzzle" id="' . $var["id"] . '"><img src ="'.$var["name"].'.png " class="exist_puz_photos img-polariod" alt="' . $var["name"] . '" /><br/>';
+				if(!$var["viewed"]){
+					echo '<h6 class="info_header red">New Puzzle!</h6>';
+				}
+				echo '<h6 class="info_header">Time Elapsed:</h6><p class="time_elapsed">'.$datediff.'</p><h6 class="info_header">Puzzle Players:</h6><p class="participating_friends">'.$string_of_players.'</p><button class="resume_puzzle btn btn-mini" type="submit" name="' . $var["id"] .'_9_'.$var["name"].'"><i class="icon-repeat"></i> Resume</button><button class="start_puzzle_over btn btn-mini" type="submit" name="' . $var["id"] . '"/><i class="icon-remove"></i> Give Up</button></div>';
 	
 			}
 			echo '</div>';
