@@ -279,8 +279,8 @@
 		$collection=$db->puzzle;
 		$new_data = array('$addToSet' => array("havePLAYED" => $user_id));
 		$puzzle_id=new MongoId($puzzle_id); 
-		$collection->update(array("_id"=>$puzzle_id), $new_data);
-		echo $user_id; 
+		//$collection->update(array("_id"=>$puzzle_id), $new_data);
+		echo "this is to test its called"; 
 	}
 	
 
