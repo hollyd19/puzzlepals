@@ -360,12 +360,10 @@ function check_pieces(){
                 success: function(data){
 		    if (data != '[]'){
 			data= JSON.parse(data);
-			console.log(data);
-			console.log($("img[src='" + data.imgURL + "']").parent());
-			//for(var i=0; i<data.length; i++){
-			//    console.log($("img[src='" + data[i].imgURL + "']").parent());
-			//    $("img[src='" + data[i].imgURL + "']").parent().animate({"left": data[i].x, "top": data[i].y}, "slow");
-		        //}
+			for(var i=0; i<data.length; i++){
+			    console.log($("#" + data[i].pieceNUMBER));
+			    $($("#" + data[i].pieceNUMBER)).parent().animate({"left": data[i].x, "top": data[i].y}, "slow");
+		        }
 			    //$("img[src='" + item.imgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
 		    }
 		}

@@ -24,7 +24,7 @@
           foreach($images as $index=>$array){
                foreach($array as $first=>$second){
                     echo '<div class="piece" data-number="'.$first.$index.'">';
-                    echo '<img src="'.$second.'" alt="Puzzle Piece '.$first.$index.'"/>';
+                    echo '<img src="'.$second.'" alt="Puzzle Piece '.$first.$index.'" id="'.$first.$index.'"/>';
                     echo '</div>';
                }
           }
@@ -42,7 +42,7 @@
           foreach($images as $index=>$array){
                foreach($array as $first=>$second){
                     echo '<div class="piece" data-number="'.$first.$index.'">';
-                    echo '<img src="'.$second.'" alt="Puzzle Piece '.$first.$index.'"/>';
+                    echo '<img src="'.$second.'" alt="Puzzle Piece '.$first.$index.'" id="'.$first.$index.'"/>';
                     echo '</div>';
                }
           }

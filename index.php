@@ -143,14 +143,20 @@ $app_name = idx($app_info, 'name', '');
 				
 				//var acc_tok = response.authResponse.accessToken;
 				
-				var arr = response.to + "";
-				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")";
-
+				var arr = response.to;
+				
+				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")"; 
+				
+				url = url.replace(/\s/, "");
+				
+				console.log(url);
 				
 				$.getJSON(url, function(data){
 					var names = [];
+					console.log(data);
 					$.each(data["data"], function(user) {
-                        names.push(user["name"]);
+						console.log(user.name);
+                        names.push(user.name);
 						console.log(names);
                     });
                     if (names.length) {
