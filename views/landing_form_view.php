@@ -204,7 +204,8 @@
 				echo '<div class="row-fluid">';
 				echo '<img class="span6" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
 				echo '<div class="span5">';
-				echo '<p><strong>Time Taken: </strong>' . $datediff . '</p>';
+				echo '<p><strong>Time Of Completion: </strong>' . time_elapsed($your_date) . '</p>';
+				echo '<p><strong>Time Since Completion: </strong>' . $datediff . '</p>';
 				if($string_of_users != "") {
 					echo  '<p><strong>Participants</strong><p>'.$string_of_users.'</p>';
 				}
