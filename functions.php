@@ -246,7 +246,7 @@
 		$collection=$db->piece;
 		$time= time();
 		$time= $time - 1;
-		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "lastUPDATED"=>array("\$gt"=>$time)));
+		$cursor= $collection->find(array("puzzleID"=>$puzzle_id));
 		$result= array();
 		foreach($cursor as $document){
 			$doc_info= array();
