@@ -94,7 +94,10 @@ function user_viewed(user_id, puzzle_name) {
 		url : "functions.php",
 		type: "POST",
 		data: {function_name: "user_viewed", puzzle_name: puzzle_name, user_viewed: user_id},
-		global:false
+		global:false,
+		success: function(data){
+		    console.log(data);
+		}
 	});
 }
 var array_of_place_locations= [];
@@ -205,10 +208,10 @@ function in_correct_location(piece_id, x, y) {
     name="#"+piece_id+""; 
     place_y=$(name).offset().top;
     place_x=$(name).offset().left;
-    if(place_y<=y+22 && place_y >= y+15){
+    if(place_y<=y+25 && place_y >= y+12){
 	correct_y=true; 
     }
-    if (place_x<=x+4 && place_x>x-4) {
+    if (place_x<=x+6 && place_x>x-6) {
 	correct_x=true;
     }
   
