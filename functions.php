@@ -253,7 +253,7 @@
 	function get_updated_pieces($puzzle_id, $db){
 		$collection=$db->piece;
 		//$time= time();
-		$new_time= time() - 5;
+		$new_time= time() - 2;
 		//echo $puzzle_id;
 		//echo " ". $new_time;
 		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "lastUPDATED"=>array("\$gt"=>$new_time)));
