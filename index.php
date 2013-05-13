@@ -154,7 +154,7 @@ $app_name = idx($app_info, 'name', '');
 					url = url + p_id;
 		
 					$.getJSON(url, function(data){
-                    names.push(data["name"]);
+                                          names.push(data["name"]);
 					});
 					
 				}

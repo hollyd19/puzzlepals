@@ -414,6 +414,9 @@ function check_pieces(){
 		    if (data != '[]'){
 			$.each(data, function(item){
 			    console.log(item);
+			    for(var i=0; i<item.length; i++){
+				$("img[src='" + item[i].imgURL + "']").parent().animate({"left": item[i].x, "top": item[i].y}, "slow");
+			    }
 			    //$("img[src='" + item.imgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
 			});
 		    }
