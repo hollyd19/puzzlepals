@@ -130,8 +130,9 @@
 		$collection=$db->piece;
 		$number_right=$collection->find(array("puzzleID"=>$puzzle_id, "correctLOCATION"=>"true"));
 		$total_number=$collection->find(array("puzzleID"=>$puzzle_id));
-		$new_data=array('$set'=>array("completed"=>"true")); 
+
 		if($number_right->count()==$total_number->count()){
+			$new_data=array('$set'=>array("completed"=>"true", "time"=>time())); 
 			$collection2=$db->puzzle;
 			$puzzle_id=new MongoId($puzzle_id);
 			$collection2->update(array("_id"=>$puzzle_id), $new_data);
