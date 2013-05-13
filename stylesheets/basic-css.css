@@ -84,5 +84,6 @@
 	-webkit-border-radius:50px;
 	-moz-border-radius:50px;
 	border-radius:50px;
-	
+	height: 100px;
+	width: 100px;
   }
