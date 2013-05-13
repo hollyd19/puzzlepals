@@ -75,6 +75,8 @@
 					echo '<br/>';
 					echo '</div>';
 					
+					echo '<div class="row-fluid">';
+					
 					echo '<div id="share-app" class="span5"><br/>';
 					//echo '<ul>';
 					//echo '<li>';
@@ -85,7 +87,9 @@
 					//echo '</ul>';
 					echo '</div>';
 					
+					echo '<div class="span5" id="who_you_invited"></div>';
 					
+					echo '</div>';
 					
 					//echo '<div class="span5" id="invite_friends_div"><br/>';
 					//echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come play Puzzle Pals!">';
