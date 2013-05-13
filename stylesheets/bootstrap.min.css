@@ -1178,7 +1178,7 @@
  padding:5px;margin-left:1.2%;}#hard_section{background-color: #f96;
  padding:5px;margin-left:1.2%;}#delete_button{float:right;
  margin-top:10px;}.scrollable_div{height: 200px; overflow:
- auto;}#completed_puz_div{height:320px;}.slimScrollDiv{margin: 0 10px 0 10px;
+ auto;}#completed_puz_div{height:320px;padding-left:15px;}.slimScrollDiv{margin: 0 10px 0 10px;
  float:left;}#encapsulating_div{/*min-width: 1060px;*/ padding:
  10px;}#frozen_div{/*min-width:1060px;*/ max-height:
  500px;}/*#create_puz_div{min-width:430px;}*/header #picture
