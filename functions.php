@@ -262,8 +262,8 @@
 			$doc_info['imgURL']=$document['imgURL'];
 			array_push($result, $doc_info);
 		}
-		$return = $time . " " . $new_time;
-		return $return;
+		//$return = $time . " " . $new_time;
+		return $result;
 	}
 	
 
