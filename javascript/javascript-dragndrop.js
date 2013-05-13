@@ -11,6 +11,8 @@ $(document).ready(function () {
     });
     }
     
+    $("img[alt=]").css("display", "none");
+    
     if($(".place", $puzzle).length != 0){
     $(".place", $puzzle).droppable({
         accept: ".piece",
