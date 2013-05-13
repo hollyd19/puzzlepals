@@ -278,7 +278,11 @@ function update_location(puzzle_name, piece_id, x, y, correct_location) {
 		data: {function_name: "update_location", puzzle_name: puzzle_name, piece_id: piece_id, x: x, y: y, correct_location: correct_location},
 		global:false,
 		success: function(data){
-                console.log(data);
+		    console.log(data);
+                if (data==true) {
+		    $(".piece").removeClass("ui-draggable");
+		    alert("YOU WON!!!!!!")
+		}
             } 
 	});
     $('#piece_moved').removeAttr("id");
