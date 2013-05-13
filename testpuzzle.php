@@ -54,7 +54,17 @@ if (isset($_POST['create'])){
 
 if($_POST['in_prog_puzzle']!=""){
     require("functions.php");
-    $uid = $facebook->getUser();
+    require('AppInfo.php'); 
+    require_once('sdk/src/facebook.php');
+$facebook = new Facebook(array(
+  'appId'  => AppInfo::appID(),
+  'secret' => AppInfo::appSecret(),
+  'sharedSession' => true,
+  'trustForwarded' => true,
+));
+
+$user_id = $facebook->getUser();
+
     echo $uid; 
     $puzzle_id= $_POST['in_prog_puzzle'];
     $temp= explode('_', $puzzle_id);
