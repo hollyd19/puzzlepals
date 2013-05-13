@@ -33,10 +33,14 @@ $(document).ready(function () {
     }
     
     if($("#other_players").length != 0){
-	$("#other_players .player_name").closest('p').css('width', "0");
 	$("#other_players .other_user").hover(
-	    function(){$(this).closest('p').css('width', "200px");}, function(){$(this).closest('p').css('width', "0");}
-	)
+	    function(){
+		if($(this).closest('p').is(":visible")){
+		    $(this).toggle('slide', {direction:'right'}, 1000);
+		} else {
+		    $(this).toggle('slide', {direction:'left'}, 1000);
+		}
+	    });
     }
     
     
