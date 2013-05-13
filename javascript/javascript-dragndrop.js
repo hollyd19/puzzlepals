@@ -109,7 +109,7 @@ var array_of_place_locations= [];
 function size_places(width, height, num_pieces){
     $(".place").css("width", width);
     $(".place").css("height", height);
-    $("#puzzle").css("width", width*(num_pieces)+1);
+    $("#puzzle").css("width", width*(num_pieces)+10);
     $("#puzzle").css("height", height*num_pieces+10);
     $("#box").css("height", height*num_pieces+50);
     var puzzle_top_left= $("#puzzle").offset();
@@ -209,9 +209,13 @@ function get_new_location() {
 function in_correct_location(piece_id, x, y) {
     correct_x=false;
     correct_y=false;
-    name="#"+piece_id+""; 
+    name="#place"+piece_id+""; 
     place_y=$(name).offset().top;
+  
+
     place_x=$(name).offset().left;
+      console.log(place_y+" real y "+y );
+    console.log(place_x+" real x "+x );
     if(place_y<=y+25 && place_y >= y+12){
 	correct_y=true; 
     }
