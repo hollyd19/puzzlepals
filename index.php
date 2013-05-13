@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
 				
 				var arr = response.to;
 				
-				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")";
+				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")/";
 				
 				console.log(url);
 				
