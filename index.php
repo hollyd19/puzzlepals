@@ -151,6 +151,7 @@ $app_name = idx($app_info, 'name', '');
 					var names = [];
 					$.each(data["data"], function(user) {
                         names.push(user["name"]);
+						console.log(names);
                     });
                     if (names.length) {
                         $('#who_you_invited').html("<p>You Invited:" + names.join(",") + "</p>");
@@ -264,25 +265,15 @@ function sort_puzzles($user){
                  }
                  
                 }
-                $viewed=true; 
-                //var_dump($players);
-                $array=$item["havePLAYED"];
-                echo "Puzzle: <br/>"; 
-                foreach($array as $item){
-                  echo $item. "<br/>";
-                }
-                if(!in_array($user, $array)){
-                  $number_unviewed++;
-                  $viewed=false;
-                }
+              
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed);  
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]);  
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
 			array_push($hard, $array);
 		}
 	}
