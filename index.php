@@ -271,7 +271,7 @@ function sort_puzzles($user){
 	return array($easy, $medium, $hard);
 }
 
-function get_completed_puzzles($user_id){
+/*function get_completed_puzzles($user_id){
   $list= array(); 
   $completed_puzzles= query_puzzles($user_id, "true");
   foreach ($completed_puzzles as $item){
@@ -300,7 +300,7 @@ function get_completed_puzzles($user_id){
                   array_push($list, $array);
   }
   return $list; 
-}
+}*/
 
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 
