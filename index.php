@@ -140,6 +140,25 @@ $app_name = idx($app_info, 'name', '');
                 $('input#invited_users_id').val(response.to + "");
                 
 				logResponse(response.to + "");
+				
+								var arr = response.to;
+				var url = "http://graph.facebook.com/";
+				
+				var length = arr.length
+				p_id = null;
+				p_name = "";
+				invited_list = "";
+				
+				for (var i = 0; i < length; i++) {
+					p_id = arr[i];
+					url = url + p_id;
+		
+					$.getJSON(url, function(data){
+                    names.push(data["name"]);
+					});
+					
+				}
+				$( '#who_you_invited' ).html("<p>You Invited:" + invited_list + "</p>);
 
               }
             }
