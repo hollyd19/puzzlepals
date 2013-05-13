@@ -219,7 +219,7 @@ $app_name = idx($app_info, 'name', '');
 require("functions.php");
 
 function sort_puzzles($user){
-	$in_progress_puzzles= query_puzzles($user);
+	$in_progress_puzzles= query_puzzles($user, "false");
         //var_dump($in_progress_puzzles);
 	$easy=array();
 	$medium=array();
@@ -263,7 +263,7 @@ function sort_puzzles($user){
 	return array($easy, $medium, $hard);
 }
 
-/*function get_completed_puzzles($user_id){
+function get_completed_puzzles($user_id){
   $list= array(); 
   $completed_puzzles= query_puzzles($user_id, "true");
   foreach ($completed_puzzles as $item){
@@ -292,7 +292,7 @@ function sort_puzzles($user){
                   array_push($list, $array);
   }
   return $list; 
-}*/
+}
 
 list($easy, $medium, $hard)= sort_puzzles($user_id);
 

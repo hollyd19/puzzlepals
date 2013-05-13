@@ -171,7 +171,7 @@
 	<div class="row-fluid">
 	<div class="span12">
 		<ul>
-		<?php/*
+		<?php
 		
 			foreach($completed_puzzle_list as $var){
 				$string_of_players="";
@@ -187,7 +187,7 @@
 				echo  '<li>'.$string_of_users.'</li></ul></li>';
 				
 				
-			}*/
+			}
 		?>
 		</ul>
 	</div>
