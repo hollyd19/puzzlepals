@@ -254,9 +254,9 @@
 		$collection=$db->piece;
 		//$time= time();
 		$new_time= time(); - 5;
-		echo $puzzle_id;
-		echo " ". $new_time;
-		$cursor= $collection->find(array("puzzleID"=>$puzzle_id));
+		//echo $puzzle_id;
+		//echo " ". $new_time;
+		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "lastUPDATED"=>array('$gt'=>$new_time)));
 		$result= array();
 		foreach($cursor as $document){
 			$doc_info= array();
