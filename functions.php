@@ -46,6 +46,7 @@
 				break;
 			
 			case "user_viewed":
+				echo "hello"; 
 				$puzzle_id=$_POST['puzzle_name'];
 				$user_id=$_POST['user_id'];
 				user_played($puzzle_id, $db, $user_id);
