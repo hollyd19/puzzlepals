@@ -276,7 +276,7 @@
 		$collection=$db->puzzle;
 		$new_data = array('$addToSet' => array("havePLAYED" => $user_id));
 		$puzzle_id=new MongoId($puzzle_id); 
-		$cursor= $collection->update(array("_id"=>$puzzle_id), $new_data);
+		$collection->update(array("_id"=>$puzzle_id), $new_data);
 	}
 	
 
