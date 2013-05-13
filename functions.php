@@ -164,9 +164,9 @@
 		return $result;
 	}
 	
-	function get_users_puzzle($user, $db){
+	function get_users_puzzle($user, $db, $state){
 		$collection=$db->puzzle;
-		$query= array("users"=>array('$in'=>array($user))); 
+		$query= array("users"=>array('$in'=>array($user)), "completed"=>$state); 
 		$cursor=$collection->find($query);
 		$results= array();
 		$a=0; 
@@ -199,10 +199,10 @@
 		}
 	}
 	
-	function query_puzzles($user){
+	function query_puzzles($user, $state){
 		$db_info=connect_to_db();
 		$db=$db_info['db_name'];
-		$result= get_users_puzzle($user, $db);
+		$result= get_users_puzzle($user, $db, $state);
 		return $result;
 	}
 	
