@@ -263,6 +263,7 @@
 			$doc_info['x']=$document['x'];
 			$doc_info['y']=$document['y'];
 			$doc_info['imgURL']=$document['imgURL'];
+			$doc_info['updatedLOCATION']=$document['updatedLOCATION'];
 			array_push($result, $doc_info);
 		}
 		//$return = $time . " " . $new_time;
