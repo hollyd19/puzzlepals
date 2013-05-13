@@ -35,6 +35,15 @@ $(document).ready(function () {
     }
     
     
+    $('#popupBoxClose').click( function() {            
+            unloadPopupBox();
+        });
+        
+        $('#content').click( function() {
+            unloadPopupBox();
+        });
+    
+    
     if($($box).length != 0){
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
     $box.droppable({
@@ -383,13 +392,7 @@ function check_pieces(){
  // When site loaded, load the Popupbox First
         
     
-        $('#popupBoxClose').click( function() {            
-            unloadPopupBox();
-        });
         
-        $('#content').click( function() {
-            unloadPopupBox();
-        });
 
         function unloadPopupBox() {    // TO Unload the Popupbox
             $('#popup_box').fadeOut("slow");
