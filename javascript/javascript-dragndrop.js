@@ -178,6 +178,7 @@ function get_new_location() {
 	var piece_id_info=info_array[2];
 	piece_id_info=piece_id_info.split(".");
 	var piece_id=piece_id_info[0];
+	console.log(in_correct_location(piece_id, x, y)); 
 	if (in_correct_location(piece_id, x, y)) {
 	    update_location(puzzle_name, piece_id, x, y, true);
 	}
