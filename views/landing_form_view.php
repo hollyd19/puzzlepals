@@ -75,7 +75,7 @@
 					echo '<br/>';
 					echo '</div>';
 					
-					echo '<div class="row-fluid span11">';
+					echo '<div class="row-fluid">';
 					
 					echo '<div id="share-app" class="span5"><br/>';
 					//echo '<ul>';
