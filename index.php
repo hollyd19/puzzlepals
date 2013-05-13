@@ -271,15 +271,20 @@ function sort_puzzles($user){
                  }
                  
                 }
-              
+                $viewed=false;
+                $array=$item["havePLAYED"];
+                if(in_array($user, $array)){
+                  $viewed=true;
+                }
+                
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]);  
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed);  
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
 			array_push($hard, $array);
 		}
 	}

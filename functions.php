@@ -45,13 +45,11 @@
 				echo "success";
 				break;
 			
-			/*case "update_correct_location":
+			case "user_viewed":
 				$puzzle_id=$_POST['puzzle_name'];
-				$piece_num=$_POST['piece_id'];
-				$piece_info=array("puzzle_id"=>$puzzle_id, "piece_num"=>$piece_num); 
-				$correct_location= $_POST['correct_location']; 
-				update_correct_location($piece_info, $db, $correct_location);
-				break;*/
+				$user_id=$_POST['user_id'];
+				user_played($puzzle_id, $db, $user_id);
+				break; 
 			
 			case "query_correct_location":
 				$puzzle_id=$_POST['puzzle_name'];
