@@ -280,8 +280,6 @@ function update_location(puzzle_name, piece_id, x, y, correct_location) {
 		success: function(data){
 		    console.log(data);
                 if (data==true) {
-		    $(".piece").removeClass("ui-draggable");
-		    $("#box").removeClass("ui-droppable"); 
 		    alert("YOU WON!!!!!!")
 		}
             } 
@@ -406,6 +404,7 @@ $('#completed_puz_div').click(function (e) {
 
 function check_pieces(){
     var puzzle_id=$("input[name=p-id]").val();
+    //console.log("puzzle_id" + puzzle_id);
     var ajaxquery= $.ajax({
 		url : "functions.php",
 		type: "POST",

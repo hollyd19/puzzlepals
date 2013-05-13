@@ -165,7 +165,6 @@ $app_name = idx($app_info, 'name', '');
             }
           );
         });
-      });
     </script>
 	
 	
@@ -239,7 +238,7 @@ $app_name = idx($app_info, 'name', '');
 require("functions.php");
 
 function sort_puzzles($user){
-	$in_progress_puzzles= query_puzzles($user);
+	$in_progress_puzzles= query_puzzles($user, "false");
         //var_dump($in_progress_puzzles);
 	$easy=array();
 	$medium=array();
@@ -282,12 +281,45 @@ function sort_puzzles($user){
 	}
 	return array($easy, $medium, $hard);
 }
+
 list($easy, $medium, $hard)= sort_puzzles($user_id);
+
+$completed_puzzle_list=array(); 
+$completed_puzzles= query_puzzles($user, "true");
+foreach ($completed_puzzles as $item){
+                $array= explode(",", $item["users"]);
+                //var_dump($item["users"]);
+		$puzzle= explode(".", $item["name"]);
+		$images_name= $puzzle[0];
+		$puzzle_size= $item["level"];
+                //echo sizeof($array); 
+                $players=array(); 
+                foreach($array as $player){
+                  $player=trim($player); 
+                  if($player==$user){
+                    array_push($players, "Me");
+                  }
+                 else if ($player!=""){
+                    //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
+                    $facebook_url="http://graph.facebook.com/".$player;
+                    $fa= json_decode(file_get_contents($facebook_url))->name; 
+                    array_push($players, $fa);
+
+                 }
+                 
+                }
+                $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                array_push($completed_puzzle_list, $array);
+}
+                
+
 //var_dump($medium);
 require("views/landing_form_view.php");
 
 
 ?>
+
+
       
     
 <?php } else { ?>

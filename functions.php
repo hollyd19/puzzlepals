@@ -60,7 +60,7 @@
 				break;
 			
 			case "check_pieces":
-				$puzzle_id=$_POST['puzzle_name'];
+				$puzzle_id=$_POST['pID'];
 				$array= get_updated_pieces($puzzle_id, $db);
 				echo json_encode($array);
 				break;
@@ -121,7 +121,7 @@
 		$collection=$db->piece;
 		$p_id=$piece_info["puzzle_id"]."";
 		$p_num=$piece_info["piece_num"]."";
-		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location, "updatedLOCATION"=>time()));
+		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location, "lastUPDATED"=>time()));
 		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
 		echo is_puzzle_completed($db, $p_id); 
 	}
@@ -164,12 +164,13 @@
 		return $result;
 	}
 	
-	function get_users_puzzle($user, $db){
+	function get_users_puzzle($user, $db, $state){
 		$collection=$db->puzzle;
-		$query= array("users"=>array('$in'=>array($user))); 
+		$query= array("users"=>array('$in'=>array($user)), "completed"=>$state); 
 		$cursor=$collection->find($query);
 		$results= array();
-		$a=0; 
+		$a=0;
+		$cursor->sort(array("time"=>-1));
 		foreach($cursor as $document){
 			$var=$document["users"];
 			//var_dump($var);
@@ -199,10 +200,10 @@
 		}
 	}
 	
-	function query_puzzles($user){
+	function query_puzzles($user, $state){
 		$db_info=connect_to_db();
 		$db=$db_info['db_name'];
-		$result= get_users_puzzle($user, $db);
+		$result= get_users_puzzle($user, $db, $state);
 		return $result;
 	}
 	
@@ -251,17 +252,21 @@
 	
 	function get_updated_pieces($puzzle_id, $db){
 		$collection=$db->piece;
-		$time= time();
-		$time= $time - 5;
-		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "lastUPDATED"=>array('$gt'=>$time)));
+		//$time= time();
+		$new_time= time(); - 5;
+		//echo $puzzle_id;
+		//echo " ". $new_time;
+		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "lastUPDATED"=>array('$gt'=>$new_time)));
 		$result= array();
 		foreach($cursor as $document){
 			$doc_info= array();
 			$doc_info['x']=$document['x'];
 			$doc_info['y']=$document['y'];
 			$doc_info['imgURL']=$document['imgURL'];
+			$doc_info['lastUPDATED']=$document['lastUPDATED'];
 			array_push($result, $doc_info);
 		}
+		//$return = $time . " " . $new_time;
 		return $result;
 	}
 	
