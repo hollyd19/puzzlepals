@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
 				
 				var arr = response.to;
 				
-				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")";
+				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")"; 
 				
 				url = url.replace(/\s/, "");
 				
@@ -153,6 +153,7 @@ $app_name = idx($app_info, 'name', '');
 				
 				$.getJSON(url, function(data){
 					var names = [];
+					console.log(data);
 					$.each(data["data"], function(user) {
                         names.push(user["name"]);
 						console.log(names);
