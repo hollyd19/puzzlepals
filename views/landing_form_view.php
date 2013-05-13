@@ -77,7 +77,12 @@
 					
 					
 					
+<<<<<<< HEAD
 					echo '<div id="share-app" class="span3"><br/>';
+=======
+					echo '<br/><div class="span3">';
+					echo '<div id="share-app">';
+>>>>>>> e6af1e5f962d394a596abd8cad9fc4a6649d1b84
 					//echo '<ul>';
 					//echo '<li>';
 					echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come Play Puzzle Pals">';
@@ -86,6 +91,13 @@
 					//echo '</li>';
 					//echo '</ul>';
 					echo '</div>';
+<<<<<<< HEAD
+=======
+					echo '<br/>';
+					echo '<div id="create_button_div"><br/><input class="btn btn-primary" type="submit" value="4. Create & Go!" name="create"></div>';
+					
+					echo '</div>';
+>>>>>>> e6af1e5f962d394a596abd8cad9fc4a6649d1b84
 					
 					//echo '<div class="span5" id="invite_friends_div"><br/>';
 					//echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come play Puzzle Pals!">';
