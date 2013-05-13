@@ -58,6 +58,7 @@
   }
   
   #other_players{
+    padding-top:15px;
 	padding-left:10px;
 	height: 150px;
 	
@@ -82,7 +83,7 @@
   }
   
   #other_players img {
-    padding:15px;
+    
 	-webkit-border-radius:40px;
 	-moz-border-radius:40px;
 	border-radius:40px;
