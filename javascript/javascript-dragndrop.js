@@ -178,6 +178,7 @@ function get_new_location() {
 	var piece_id_info=info_array[2];
 	piece_id_info=piece_id_info.split(".");
 	var piece_id=piece_id_info[0];
+	console.log(in_correct_location(piece_id, x, y)); 
 	if (in_correct_location(piece_id, x, y)) {
 	    update_location(puzzle_name, piece_id, x, y, true);
 	}
@@ -193,10 +194,10 @@ function in_correct_location(piece_id, x, y) {
     name="#"+piece_id+""; 
     place_y=$(name).offset().top;
     place_x=$(name).offset().left;
-    if(place_y<=y+20 && place_y >= y+15){
+    if(place_y<=y+22 && place_y >= y+15){
 	correct_y=true; 
     }
-    if (place_x<=x+2 && place_x>x-2) {
+    if (place_x<=x+4 && place_x>x-4) {
 	correct_x=true;
     }
   
@@ -347,7 +348,7 @@ function check_pieces(){
 		global:false,
                 success: function(data){
 		    if (data != '[]'){
-			console.log($("img[src='" + data.imgURL + "']").parent());
+			data= JSON.parse(data);
 			for(var i=0; i<data.length; i++){
 			    console.log($("img[src='" + data[i].imgURL + "']").parent());
 			    $("img[src='" + data[i].imgURL + "']").parent().animate({"left": data[i].x, "top": data[i].y}, "slow");
