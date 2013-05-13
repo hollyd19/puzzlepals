@@ -1,7 +1,7 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div id="popup_box">
           <h1>CONGRATULATIONS!<br/><br/><br/>YOU WON THE GAME!</h1>
-          <a id="popupBoxClose">[X]</a>    
+          <a id="popupBoxClose" href="index.php">Return Home</a>    
      </div>
 <div class="content">
      <h5 id="back_home"><a class="btn btn-medium" href= "index.php">Return to Puzzle Center</a></h5>

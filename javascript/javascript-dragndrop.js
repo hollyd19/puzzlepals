@@ -34,16 +34,6 @@ $(document).ready(function () {
     });
     }
     
-    
-    $('#popupBoxClose').click( function() {            
-            unloadPopupBox();
-        });
-        
-        $('#content').click( function() {
-            unloadPopupBox();
-        });
-    
-    
     if($($box).length != 0){
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
     $box.droppable({
@@ -388,19 +378,6 @@ function check_pieces(){
     
 }
 
-
- // When site loaded, load the Popupbox First
-        
-    
-        
-
-        function unloadPopupBox() {    // TO Unload the Popupbox
-            $('#popup_box').fadeOut("slow");
-            $("#content").css({ // this is just for style        
-                "opacity": "1"  
-            }); 
-        }    
-        
         function loadPopupBox() {    // To Load the Popupbox
             $('#popup_box').fadeIn("slow");
             $("#content").css({ // this is just for style
