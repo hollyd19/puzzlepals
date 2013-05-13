@@ -172,7 +172,7 @@
 	<div class="span12">
 		<ul>
 		<?php
-		
+			echo sizeof($completed_puzzle_list); 
 			foreach($completed_puzzle_list as $var){
 				$string_of_players="";
 				foreach($var['users'] as $player1){
