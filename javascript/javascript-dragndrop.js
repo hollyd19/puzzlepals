@@ -209,13 +209,12 @@ function get_new_location() {
 function in_correct_location(piece_id, x, y) {
     correct_x=false;
     correct_y=false;
-    name="#place"+piece_id+""; 
+    name="#"+piece_id+""; 
     place_y=$(name).offset().top;
-  
+    console.log(place_y+" real y "+y );
+    console.log(place_x+" real x "+x );
 
     place_x=$(name).offset().left;
-      console.log(place_y+" real y "+y );
-    console.log(place_x+" real x "+x );
     if(place_y<=y+25 && place_y >= y+12){
 	correct_y=true; 
     }
@@ -389,17 +388,21 @@ function check_pieces(){
         $('#popupBoxClose').click( function() {            
             unloadPopupBox();
         });
+        
+        $('#content').click( function() {
+            unloadPopupBox();
+        });
 
         function unloadPopupBox() {    // TO Unload the Popupbox
             $('#popup_box').fadeOut("slow");
-            $("#container").css({ // this is just for style        
+            $("#content").css({ // this is just for style        
                 "opacity": "1"  
             }); 
         }    
         
         function loadPopupBox() {    // To Load the Popupbox
-            $('#popup_box').fadeIn();
-            $("#container").css({ // this is just for style
+            $('#popup_box').fadeIn("slow");
+            $("#content").css({ // this is just for style
                 "opacity": "0.3"  
             });         
         }        
