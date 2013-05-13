@@ -75,7 +75,9 @@
 					echo '<br/>';
 					echo '</div>';
 					
-					echo '<div id="share-app" class="span5"><br/>';
+					
+					
+					echo '<div id="share-app" class="span3"><br/>';
 					//echo '<ul>';
 					//echo '<li>';
 					echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come Play Puzzle Pals">';
@@ -84,6 +86,8 @@
 					//echo '</li>';
 					//echo '</ul>';
 					echo '</div>';
+					
+					echo '<div id="who_you_invited" class="span3"></div>';
 					
 					
 					

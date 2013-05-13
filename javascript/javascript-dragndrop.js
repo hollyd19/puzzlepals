@@ -346,7 +346,12 @@ function check_pieces(){
 		data: {function_name: "check_pieces", pID: puzzle_id},
 		global:false,
                 success: function(data){
-		    console.log(data);
+		    if (data != '[]'){
+			$.each(data, function(item){
+			    console.log(item);
+			    //$("img[src='" + item.imgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
+			});
+		    }
 		}
     });
     
