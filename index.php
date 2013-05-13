@@ -141,10 +141,10 @@ $app_name = idx($app_info, 'name', '');
                 
 				logResponse(response.to + "");
 				
-				var acc_tok = response.authResponse.accessToken;
+				//var acc_tok = response.authResponse.accessToken;
 				
 				var arr = response.to;
-				var url = "http://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + response.to + "'')&access_token=" + acc_tok;
+				var url = "http://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + response.to + "'')";
 
 				
 				$.getJSON(url, function(data){
