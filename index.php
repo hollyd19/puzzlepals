@@ -298,16 +298,15 @@ function get_completed_puzzles($user_id){
                   $images_name= $puzzle[0];
                   $puzzle_size= $item["level"];
                   //echo sizeof($array); 
-                  $players=array(); 
+                  $players=""; 
                   foreach($array as $player){
                     $player=trim($player);
                     if ($player!=""){
                       //echo '<a href="'.'http://graph.facebook.com/'.$player.'">link</a><br/>';
                       $facebook_url="http://graph.facebook.com/".$player;
                       $fa= json_decode(file_get_contents($facebook_url))->name;
-                      echo $fa; 
-                      array_push($players, $fa);
-  
+                      echo $fa;
+                      $players.=$fa. "<br/>"; 
                    }
                    
                   }
