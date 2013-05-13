@@ -80,7 +80,8 @@ $(document).ready(function () {
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
 	var user_id= $("input[name=id]").val();
-	console.log(user_id); 
+	console.log(user_id);
+	console.log("hello");
 	user_viewed(user_id, puzzle_name); 
 	//console.log(puzzle_name); 
 	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
