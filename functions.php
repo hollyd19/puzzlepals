@@ -45,13 +45,16 @@
 				echo "success";
 				break;
 			
-			/*case "update_correct_location":
+			case "user_viewed":
+				echo "pizza"; 
 				$puzzle_id=$_POST['puzzle_name'];
-				$piece_num=$_POST['piece_id'];
-				$piece_info=array("puzzle_id"=>$puzzle_id, "piece_num"=>$piece_num); 
-				$correct_location= $_POST['correct_location']; 
-				update_correct_location($piece_info, $db, $correct_location);
-				break;*/
+				$puzzle_id=explode("_", $puzzle_id);
+				$puzzle_id=$puzzle_id[0];
+				$user_id=$_POST['user_id'];
+				echo $puzzle_id;
+				echo $user_id;
+				user_played($puzzle_id, $db, $user_id);
+				break; 
 			
 			case "query_correct_location":
 				$puzzle_id=$_POST['puzzle_name'];
@@ -277,6 +280,7 @@
 		$new_data = array('$addToSet' => array("havePLAYED" => $user_id));
 		$puzzle_id=new MongoId($puzzle_id); 
 		$collection->update(array("_id"=>$puzzle_id), $new_data);
+		echo $user_id; 
 	}
 	
 

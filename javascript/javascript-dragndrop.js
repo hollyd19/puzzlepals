@@ -88,6 +88,10 @@ $(document).ready(function () {
     /*LINKS TO TEST PUZZLE*/
     $(".resume_puzzle").click(function(){
 	var puzzle_name= $(this).attr("name");
+	var user_id= $("input[name=id]").val();
+	console.log(user_id);
+	console.log("hello");
+	user_viewed(user_id, puzzle_name); 
 	//console.log(puzzle_name); 
 	$("input[name=\"in_prog_puzzle\"]").val(puzzle_name);
 	//console.log('resume puzzle');
@@ -95,7 +99,19 @@ $(document).ready(function () {
     })
 });
 
-
+function user_viewed(user_id, puzzle_name) {
+    console.log(puzzle_name);
+    console.log(user_id);
+    var ajaxquery= $.ajax({
+		url : "functions.php",
+		type: "POST",
+		data: {function_name: "user_viewed", puzzle_name: puzzle_name, user_viewed: user_id},
+		global:false,
+		success: function(data){
+		    console.log(data);
+		}
+	});
+}
 var array_of_place_locations= [];
 
 function size_places(width, height, num_pieces){
@@ -164,7 +180,8 @@ function get_all_piece_info(){
 		var piece_id_info=info_array[2];
 		piece_id_info=piece_id_info.split(".");
 		var piece_id=piece_id_info[0];
-		add_to_database(puzzle_name, piece_id, x, y);		
+		add_to_database(puzzle_name, piece_id, x, y);
+		
 	});
 }
 
@@ -203,10 +220,10 @@ function in_correct_location(piece_id, x, y) {
     name="#"+piece_id+""; 
     place_y=$(name).offset().top;
     place_x=$(name).offset().left;
-    if(place_y<=y+22 && place_y >= y+15){
+    if(place_y<=y+25 && place_y >= y+12){
 	correct_y=true; 
     }
-    if (place_x<=x+4 && place_x>x-4) {
+    if (place_x<=x+6 && place_x>x-6) {
 	correct_x=true;
     }
   

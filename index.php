@@ -145,14 +145,21 @@ $app_name = idx($app_info, 'name', '');
 				
 				var arr = response.to;
 				
-				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")";
+				var url = "https://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")"; 
+				
+				url = url.replace(/\s/, "");
 				
 				console.log(url);
 				
 				$.getJSON(url, function(data){
 					var names = [];
-					$.each(data["data"], function(user) {
-                        names.push(user["name"]);
+					console.log(data);
+					$.each(data["data"], function(user, info) {
+						console.log(info);
+						console.log(info["name"]);
+						console.log(info.name);
+                        names.push(info["name"]);
+						
 						console.log(names);
                     });
                     if (names.length) {
@@ -267,15 +274,20 @@ function sort_puzzles($user){
                  }
                  
                 }
-              
+                $viewed=false;
+                $array=$item["havePLAYED"];
+                if(in_array($user, $array)){
+                  $viewed=true;
+                }
+                
 		if ($puzzle_size=="9"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
 			array_push($easy, $array);
 		} elseif($puzzle_size=="25"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]);  
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed);  
 			array_push($medium, $array);
 		} elseif($puzzle_size=="49"){
-                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"]); 
+                        $array=array("name"=>$images_name, "id"=> $item['id'], "users"=>$players, "time"=>$item["time"], "viewed"=>$viewed); 
 			array_push($hard, $array);
 		}
 	}
