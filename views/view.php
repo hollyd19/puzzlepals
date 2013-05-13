@@ -1,6 +1,6 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div class="content">
-     <h5 id="back_home"><a href= "index.php">Return to Puzzle Center</a></h5>
+     <h5 id="back_home"><a class="btn btn-large" href= "index.php">Return to Puzzle Center</a></h5>
 
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
