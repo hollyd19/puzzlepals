@@ -130,7 +130,7 @@
 		$collection=$db->piece;
 		$number_right=$collection->find(array("puzzleID"=>$p_num, "correctLOCATION"=>"true"));
 		$total_number=$collection->find(array("puzzleID"=>$p_num));
-		return sizeof($number_right). "right out of". sizeof($total_number); 
+		return $number_right->count(). " right out of ". $total_number->count; 
 	}
 	
 	
