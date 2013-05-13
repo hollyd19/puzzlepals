@@ -123,18 +123,16 @@
 		$p_num=$piece_info["piece_num"]."";
 		$new_data = array('$set' => array("x" => $new_x, "y"=>$new_y, "correctLOCATION"=>$correct_location, "updatedLOCATION"=>time()));
 		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
-		echo $correct_location; 
+		echo is_puzzle_completed($db, $p_id); 
 	}
 	
-	/*
-	function update_correct_location($piece_info, $db, $correct_location){
+	function is_puzzle_completed($db, $puzzle_id){
 		$collection=$db->piece;
-		$p_id=$piece_info["puzzle_id"]."";
-		$p_num=$piece_info["piece_num"]."";
-		$new_data = array('$set' => array("correctLOCATION"=>$correct_location));
-		$cursor= $collection->update(array("puzzleID"=>$p_id, "pieceNUMBER"=>$p_num), $new_data);
-		echo "changed to ". $correct_location; 
-	}*/
+		$number_right=$collection->find(array("puzzleID"=>$puzzle_id, "correctLOCATION"=>"true"));
+		$total_number=$collection->find(array("puzzleID"=>$puzzle_id));
+		return $number_right->count(). " right out of ". $total_number->count(); 
+	}
+	
 	
 	function query_users($puzzle_id){
 		$puzzle_id=new MongoId($puzzle_id);
@@ -248,7 +246,7 @@
 		$collection=$db->piece;
 		$time= time();
 		$time= $time - 1;
-		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "updatedLocation"=>array("\$gt"=>$time)));
+		$cursor= $collection->find(array("puzzleID"=>$puzzle_id, "lastUPDATED"=>array("\$gt"=>$time)));
 		$result= array();
 		foreach($cursor as $document){
 			$doc_info= array();
