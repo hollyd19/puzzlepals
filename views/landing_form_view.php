@@ -203,8 +203,8 @@
 				$datediff= time_elapsed($datediff);
 				echo '<div class="row-fluid">';
 				echo '<img class="span6" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
-				echo '<div class=span5">';
-				echo '<h6>Time Taken:</h6><p?' . $datediff . '</p>';
+				echo '<div class="span5">';
+				echo '<h6>Time Taken:</h6><p>' . $datediff . '</p>';
 				if(!is_null($string_of_users)) {
 					echo  '<h6>Participants</h6><p>'.$string_of_users.'</p>';
 				}
