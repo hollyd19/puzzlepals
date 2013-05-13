@@ -1,6 +1,6 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div class="content">
-     <h5 id="back_home"><a class="btn btn-large" href= "index.php">Return to Puzzle Center</a></h5>
+     <h5 id="back_home"><a class="btn btn-medium" href= "index.php">Return to Puzzle Center</a></h5>
 
 	<div id="fb-root"></div>
 	<script src="http://connect.facebook.net/en_US/all.js"></script>
@@ -11,7 +11,7 @@
                foreach($users as $index=>$user){
                     $user_name=json_decode(file_get_contents("http://graph.facebook.com/".$user))->name;
                     echo "<div class='other_user'><img src='http://graph.facebook.com/".$user."/picture?type=normal' alt='" . $user_name . "' title='" . $user_name . "'/>";
-                    echo "<p class='player_name'>".$user_name."</p>";
+                    //echo "<p class='player_name'>".$user_name."</p>";
 					echo"</div>";
                }
           ?>
