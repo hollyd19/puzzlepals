@@ -177,16 +177,22 @@
 
 </div>
 
-<div class="span6 landing_section tab-pane" id="completed_puz_div">
+<div class="span12 landing_section tab-pane" id="completed_puz_div">
 	<h3 id="completed_puzzles">Completed Puzzles</h3>
-
+	
+	<div class="scrollable_div" id="list_of_completed">
+	
+	<?php 
+		echo '<h4>Total Completed:' . sizeof($completed_puzzle_list) . '</h4>'; 
+	?>
+	
 	<div class="row-fluid">
-	<div class="span12">
-		<ul>
+	<div class="span9">
+				
 		<?php
-			echo sizeof($completed_puzzle_list); 
+			
 			foreach($completed_puzzle_list as $var){
-				$string_of_players="hwllo ";
+				$string_of_players="";
 				$item= $var['users'];
 				foreach($item as $player1){
 					$string_of_players= $string_of_players . $player1 . " and";
@@ -195,14 +201,19 @@
 				$your_date = $var["time"];
 				$datediff = $now - $your_date;
 				$datediff= time_elapsed($datediff);
-				echo '<li><ul><li><img src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" /></li>';
-				echo '<li>'.$datediff.'</li>';
-				echo  '<li>'.$string_of_users.'</li></ul></li>';
-				
-				
+				echo '<div class="row-fluid">';
+				echo '<img class="span6" src ="'.$var["name"].'.png " class="" alt="' . $var["name"] . '" />';
+				echo '<div class="span5">';
+				echo '<h6>Time Taken:</h6><p>' . $datediff . '</p>';
+				if($string_of_users != "") {
+					echo  '<h6>Participants</h6><p>'.$string_of_users.'</p>';
+				}
+				echo '</div>';
+				echo '</div>';
 			}
 		?>
-		</ul>
+		
+	</div>
 	</div>
 	</div>
 </div>
