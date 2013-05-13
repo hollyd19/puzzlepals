@@ -148,18 +148,7 @@ $app_name = idx($app_info, 'name', '');
 				p_name = "";
 				invited_list = "";
 				
-				// for (var i = 0; i < length; i++) {
-					// p_id = arr[i];
-					// url = url + p_id;
-		
-					//p_name = <?php echo json_decode(file_get_contents(?>url<?php))->name;?>
-					// if (invited_list == "") {
-						// invited_list = invited_list + p_name;
-					// } else {
-						// invited_list = invited_list + ", " + p_name;
-					// }
-				// }
-				 //$( '#who_you_invited' ).html("<p>You Invited:" + invited_list + "</p>);
+
               }
             }
           );
