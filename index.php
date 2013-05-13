@@ -140,7 +140,7 @@ $app_name = idx($app_info, 'name', '');
                 $('input#invited_users_id').val(response.to + "");
                 
 				logResponse(response.to + "");
-				
+
               }
             }
           );
