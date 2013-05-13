@@ -404,7 +404,7 @@ $('#completed_puz_div').click(function (e) {
 
 function check_pieces(){
     var puzzle_id=$("input[name=p-id]").val();
-    console.log("puzzle_id" + puzzle_id);
+    //console.log("puzzle_id" + puzzle_id);
     var ajaxquery= $.ajax({
 		url : "functions.php",
 		type: "POST",
