@@ -78,7 +78,7 @@
 					
 					
 					echo '<div class="span3">';
-					echo '<div id="share-app"> ';
+					echo '<div id="share-app">';
 					//echo '<ul>';
 					//echo '<li>';
 					echo '<a href="#" class="apprequests" id="sendRequest" data-message="Come Play Puzzle Pals">';
@@ -87,7 +87,7 @@
 					//echo '</li>';
 					//echo '</ul>';
 					echo '</div>';
-					<br/>
+					echo '<br/>';
 					echo '<div id="create_button_div"><br/><input class="btn btn-primary" type="submit" value="4. Create & Go!" name="create"></div>';
 					
 					echo '</div>';
