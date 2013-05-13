@@ -177,17 +177,18 @@
 
 </div>
 
-<div class="span6 landing_section tab-pane" id="completed_puz_div">
+<div class="span12 landing_section tab-pane" id="completed_puz_div">
 	<h3 id="completed_puzzles">Completed Puzzles</h3>
-
+	
+	<div class="scrollable_div" id="list_of_completed">
+	
+	<?php 
+		echo '<h4>Total Completed:' . sizeof($completed_puzzle_list) . '</h4>'; 
+	?>
+	
 	<div class="row-fluid">
-	<div class="span12">
-		
-		<?php 
-			echo '<h4>Total Completed:' . sizeof($completed_puzzle_list) . '</h4>'; 
-		?>
-		
-		
+	<div class="span11">
+				
 		<?php
 			
 			foreach($completed_puzzle_list as $var){
@@ -212,6 +213,7 @@
 			}
 		?>
 		
+	</div>
 	</div>
 	</div>
 </div>
