@@ -158,7 +158,7 @@ $app_name = idx($app_info, 'name', '');
 					});
 					
 				}
-				$( '#who_you_invited' ).html("<p>You Invited:" + invited_list + "</p>);
+				$( '#who_you_invited' ).html("<p>You Invited:" + names.join(",") + "</p>");
 
               }
             }
