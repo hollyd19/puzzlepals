@@ -267,6 +267,9 @@ function sort_puzzles($user){
                 $viewed=true; 
                 //var_dump($players);
                 $array=$item["havePLAYED"];
+                foreach($array as $item){
+                  echo $item;
+                }
                 if(!in_array($user, $array)){
                   $number_unviewed++;
                   $viewed=false;
