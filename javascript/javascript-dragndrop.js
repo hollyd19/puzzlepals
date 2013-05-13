@@ -281,7 +281,7 @@ function update_location(puzzle_name, piece_id, x, y, correct_location) {
 		    console.log(data);
                 if (data==true) {
 		    $(".piece").removeClass("ui-draggable");
-		    4("#box").removeClass("ui-droppable"); 
+		    $("#box").removeClass("ui-droppable"); 
 		    alert("YOU WON!!!!!!")
 		}
             } 
