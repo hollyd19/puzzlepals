@@ -32,6 +32,15 @@ $(document).ready(function () {
     });
     }
     
+    if($("#other_players").length != 0){
+	$("#other_players .player_name").closest('p').css('width', "0");
+	$("#other_players .other_user").hover(
+	    function(){$(this).closest('p').css('width', "200px");}, function(){$(this).closest('p').css('width', "0");}
+	)
+    }
+    
+    
+    
     if($($box).length != 0){
     // let the box be droppable as well, accepting items from the puzzle so that i can put pieces back
     $box.droppable({
