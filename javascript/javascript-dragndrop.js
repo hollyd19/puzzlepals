@@ -411,7 +411,9 @@ function check_pieces(){
 		data: {function_name: "check_pieces", pID: puzzle_id},
 		global:false,
                 success: function(data){
-		    console.log(data);
+		    $.each(data, function(item){
+			$("img[src='" + item.mgURL + "']").parent().animate({"left": item.x, "top": item.y}, "slow");
+		    });
 		}
     });
     
