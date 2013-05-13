@@ -143,13 +143,13 @@ $app_name = idx($app_info, 'name', '');
 				
 				//var acc_tok = response.authResponse.accessToken;
 				
-				var arr = response.to;
-				var url = "http://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + response.to + "'')";
+				var arr = response.to + "";
+				var url = "http://graph.facebook.com/fql?q=SELECT+name+FROM+user+WHERE+uid+IN+(" + arr + ")";
 
 				
 				$.getJSON(url, function(data){
 					var names = [];
-					$each(data["data"], function (user) {
+					$.each(data["data"], function (user) {
                         names.push(user["name"]);
                     });
                     if (names.length) {
