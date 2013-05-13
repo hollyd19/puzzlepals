@@ -127,7 +127,7 @@ $app_name = idx($app_info, 'name', '');
           console.log('The response was', response);
         }
       }
-
+		$(function(){
         $('#sendRequest').click(function() {
           FB.ui(
             {
@@ -144,7 +144,7 @@ $app_name = idx($app_info, 'name', '');
               }
             }
           );
-        //});
+        });
       });
     </script>
 	
