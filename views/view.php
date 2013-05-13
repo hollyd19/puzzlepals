@@ -1,6 +1,6 @@
 <!-- this depends on jquery and jquery ui so make sure to include them in the head -->
 <div id="popup_box">
-          <h1>CONGRATULATIONS!<br/>YOU WON THE GAME!</h1>
+          <h1>CONGRATULATIONS!<br/><br/><br/>YOU WON THE GAME!</h1>
           <a id="popupBoxClose">[X]</a>    
      </div>
 <div class="content">
