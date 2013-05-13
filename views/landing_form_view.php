@@ -193,6 +193,8 @@
 			
 			foreach($completed_puzzle_list as $var){
 				$string_of_players="";
+				echo $var['users'];
+				echo sizeof($var['user']);
 				$item= $var['users'];
 				foreach($item as $player1){
 					$string_of_players= $string_of_players . $player1 . " and";
