@@ -38,7 +38,7 @@
 	
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#create_puz_div" data-toggle="tab">Create Puzzle</a></li>
-			<li><a href="#ongoing_puz_div" data-toggle="tab">Ongoing Puzzles</a></li>
+			<li><a href="#ongoing_puz_div" data-toggle="tab">Ongoing Puzzles <span class="notification"><?php if($number_new>0){echo $number_new;} ?></span></a></li>
 			<li><a href="#completed_puz_div" data-toggle="tab">Completed Puzzles</a></li>
 		</ul>
 		
@@ -104,7 +104,7 @@
 	
 	
 	<div class="span12 landing_section tab-pane" id="ongoing_puz_div">
-	<h3 id="existing_puzzles">Ongoing Puzzles</h3>
+	<h3 id="existing_puzzles">Ongoing Puzzles <?php if($number_new>0){ ?><span class="red">Number New: <?php echo $number_new; }?></span></h3>
 
 		<div class="row-fluid span11">
 		<form action="testpuzzle.php" method="post">
