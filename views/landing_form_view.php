@@ -65,7 +65,7 @@
 						}
 					
 					echo '</div>';
-					echo '<div class="span6" id="select_difficulty">';
+					echo '<div class="span5" id="select_difficulty">';
 					echo '<h4 class="instructions">2. Select Difficulty</h4>';
 					echo '<input type="radio" name="puzzle_size" value="9" checked>Easy<br/>';
 					echo '<input type="radio" name="puzzle_size" value="25">Medium<br/>';
