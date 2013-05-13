@@ -77,7 +77,7 @@
 					
 					
 					
-					echo '<br/><br/><div class="span3">';
+					echo '<div id="form_button_div" class="span3">';
 					echo '<div id="share-app">';
 					//echo '<ul>';
 					//echo '<li>';
