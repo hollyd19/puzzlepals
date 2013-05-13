@@ -91,6 +91,8 @@ $(document).ready(function () {
 });
 
 function user_viewed(user_id, puzzle_name) {
+    console.log(puzzle_name);
+    console.log(user_id);
     var ajaxquery= $.ajax({
 		url : "functions.php",
 		type: "POST",
