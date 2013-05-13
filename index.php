@@ -151,6 +151,7 @@ $app_name = idx($app_info, 'name', '');
 					var names = [];
 					$.each(data["data"], function(user) {
                         names.push(user["name"]);
+						console.log(names);
                     });
                     if (names.length) {
                         $('#who_you_invited').html("<p>You Invited:" + names.join(",") + "</p>");
